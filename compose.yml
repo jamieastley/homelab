@@ -1,0 +1,52 @@
+name: homelab
+services:
+  homeassistant:
+    image: lscr.io/linuxserver/homeassistant
+    container_name: home-assistant
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Sydney
+    volumes:
+      - homeassistant_data:/config
+    restart: unless-stopped
+
+  pihole:
+    container_name: pihole-6
+
+    image: pihole/pihole:development
+    # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
+    ports:
+      - "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
+      # DNS Ports
+      - "73:53/tcp"
+      - "73:53/udp"
+      # Default HTTP port
+      - "80:80/tcp"
+      - "443:443/tcp" # By default, FTL will generate a self-signed certificate
+    network_mode: "host"
+    environment:
+      TZ: 'Australia/Sydney'
+      FTLCONF_webserver_api_password: ${pihole_api_password}
+    volumes:
+      - pihole_data:/var/log/pihole
+      - pihole_data:/etc/pihole
+      - pihole_data:/etc/dnsmasq.d
+    # https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    restart: unless-stopped
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    ports:
+      - "9443:9443"
+    volumes:
+      - portainer_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+volumes:
+  portainer_data:
+  homeassistant_data:
+  pihole_data:
+
