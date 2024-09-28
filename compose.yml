@@ -28,6 +28,7 @@ services:
     environment:
       TZ: 'Australia/Sydney'
       FTLCONF_webserver_api_password: ${pihole_api_password}
+      FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
     volumes:
       - pihole_data:/var/log/pihole
       - pihole_data:/etc/pihole
