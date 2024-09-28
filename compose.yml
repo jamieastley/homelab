@@ -30,9 +30,9 @@ services:
       FTLCONF_webserver_api_password: ${pihole_api_password}
       FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
     volumes:
-      - pihole_data:/var/log/pihole
+      - pihole_logs:/var/log/pihole
       - pihole_data:/etc/pihole
-      - pihole_data:/etc/dnsmasq.d
+      - pihole_dnsmasq:/etc/dnsmasq.d
     # https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     restart: unless-stopped
 
@@ -51,5 +51,9 @@ volumes:
     external: true
   homeassistant_data:
     external: true
+  pihole_logs:
+    external: true
   pihole_data:
+    external: true
+  pihole_dnsmasq:
     external: true
