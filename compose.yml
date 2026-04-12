@@ -1,16 +1,14 @@
 name: ${COMPOSE_PROJECT_NAME}
 services:
   tailscale:
-    image: tailscale/tailscale:latest
+    image: tailscale/tailscale:v1.96.5
     container_name: tailscale
     hostname: homelab
     environment:
       - TS_AUTHKEY=${TS_AUTHKEY}
       - TS_STATE_DIR=/var/lib/tailscale
       - TS_USERSPACE=false
-      #      - TS_ROUTES=192.168.50.0/24
       - TS_EXTRA_ARGS=--ssh
-    #      - TS_EXTRA_ARGS=--accept-routes --ssh
     volumes:
       - tailscale:/var/lib/tailscale
       - /dev/net/tun:/dev/net/tun
@@ -21,7 +19,7 @@ services:
   traefik:
     image: traefik:3
     container_name: homelab_traefik
-    restart: always
+    restart: unless-stopped
     security_opt:
       - no-new-privileges:true
     environment:
@@ -35,13 +33,17 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket to watch for Traefik
       - traefik_certs:/certs
-      - traefik_conf:/etc/traefik/
+      - ./traefik:/etc/traefik/
     command:
       - --accesslog=true
       - --api.insecure=true
       - --api.debug=true
       - --providers.docker=true
       - --providers.docker.exposedbydefault=false
+      - --providers.file.watch=true
+      - --providers.file.directory=/etc/traefik
+      - --ping=true
+      - --ping.entrypoint=traefik
       # Entrypoints
       - --entrypoints.web.address=:80
       - --entrypoints.web.http.redirections.entryPoint.to=websecure
@@ -57,10 +59,17 @@ services:
       - --certificatesResolvers.letsencrypt.acme.storage=/certs/acme.json
       - --certificatesResolvers.letsencrypt.acme.dnsChallenge.provider=cloudflare
       - --certificatesResolvers.letsencrypt.acme.dnsChallenge.resolvers=1.1.1.1:53,8.8.8.8:53
+    healthcheck:
+      test: [ "CMD", "traefik", "healthcheck", "--ping" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    env_file:
+      - .env
     labels:
       - tailscale=true
       - traefik.enable=true
-      - traefik.http.routers.traefik.rule=Host(`traefik.${CF_DOMAIN}`)
+      - traefik.http.routers.traefik.rule=Host(`traefik.ts.${CF_DOMAIN}`)
       - traefik.http.routers.traefik.entrypoints=websecure
       - traefik.http.routers.traefik.tls.certresolver=letsencrypt
       - traefik.http.routers.traefik.service=api@internal
@@ -71,19 +80,11 @@ services:
     environment:
       HYTALE_SESSION_TOKEN_BROKER_BEARER_TOKEN: "" # optional
     volumes:
-      - homelab_hytale_auth_data:/app/data
+      - hytale_auth_data:/app/data
       - ./config.yaml:/app/config.yaml:ro
     restart: unless-stopped
     networks:
-      - hytale_auth_broker
-    labels:
-      - tailscale=true
-      - traefik.enable=true
-      - traefik.http.routers.broker.rule=Host(`auth.hytale.${CF_DOMAIN}`)
-      - traefik.http.routers.broker.entrypoints=websecure
-      - traefik.http.routers.broker.tls=true
-      - traefik.http.routers.broker.tls.certresolver=letsencrypt
-      - traefik.http.services.broker.loadbalancer.server.port=8080
+      - hytale_internal
 
 volumes:
   tailscale:
@@ -91,15 +92,14 @@ volumes:
   traefik_certs:
     name: homelab_traefik_certs
     external: true
-  traefik_conf:
-    name: homelab_traefik_conf
-    external: true
-  homelab_hytale_auth_data:
+  hytale_auth_data:
     name: homelab_hytale_auth_data
     external: true
 
 networks:
-  hytale_auth_broker:
-    name: homelab_hytale_auth_broker
+  hytale_internal:
+    name: homelab_hytale_internal
+    internal: true
+
   tailscale:
     name: homelab_tailscale

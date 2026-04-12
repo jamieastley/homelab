@@ -4,7 +4,6 @@ init_env:
 create_volumes:
 	docker volume create --name=homelab_tailscale
 	docker volume create --name=homelab_traefik_certs
-	docker volume create --name=homelab_traefik_conf
 	docker volume create --name=homelab_hytale_auth_data
 
 delete_volumes:
@@ -15,7 +14,7 @@ delete_volumes:
 	docker volume rm pihole_dnsmasq
 
 up:
-	docker compose --env-file .env up
+	docker compose --env-file .env up -d
 
 down:
 	docker compose --env-file .env down
