@@ -2,8 +2,10 @@ name: ${COMPOSE_PROJECT_NAME}
 services:
   tailscale:
     image: tailscale/tailscale:v1.96.5
-    container_name: tailscale
-    hostname: homelab
+    container_name: games_tailscale
+    hostname: homelab-games-server
+    env_file:
+      - .env
     environment:
       - TS_AUTHKEY=${TS_AUTHKEY}
       - TS_STATE_DIR=/var/lib/tailscale
@@ -12,6 +14,8 @@ services:
       - TS_ENABLE_HEALTH_CHECK=true
     healthcheck:
       test: [ "CMD", "wget", "--spider", "-q", "http://127.0.0.1:9002/healthz" ]
+    networks:
+      - tailscale
     volumes:
       - tailscale:/var/lib/tailscale
       - /dev/net/tun:/dev/net/tun
@@ -23,7 +27,7 @@ services:
 
   traefik:
     image: traefik:3
-    container_name: homelab_traefik
+    container_name: games_traefik
     restart: unless-stopped
     cap_drop:
       - ALL
@@ -84,11 +88,12 @@ services:
 
 volumes:
   tailscale:
-    name: homelab_tailscale
+    name: games_tailscale
   traefik_certs:
-    name: homelab_traefik_certs
+    name: games_traefik_certs
     external: true
 
 networks:
   tailscale:
-    name: homelab_tailscale
+    name: games_tailscale
+    external: true

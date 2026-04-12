@@ -1,20 +1,22 @@
-init_env:
-	echo "pihole_api_password=changeme" > .env
+init:
+	echo "#TODO: add required env vars" > .env-test
+	make create_volumes
+	make create_networks
 
 create_volumes:
-	docker volume create --name=homelab_tailscale
-	docker volume create --name=homelab_traefik_certs
-	docker volume create --name=homelab_hytale_auth_data
+	docker volume create --name=games_traefik_certs
+
+create_networks:
+	docker network create games_tailscale
 
 delete_volumes:
-	docker volume rm portainer_data
-	docker volume rm homeassistant_data
-	docker volume rm pihole_data
-	docker volume rm pihole_logs
-	docker volume rm pihole_dnsmasq
+	docker volume rm games_traefik_certs
+
+delete_networks:
+	docker network rm games_tailscale
 
 up:
-	docker compose --env-file .env up -d
+	docker compose up -d
 
 down:
-	docker compose --env-file .env down
+	docker compose down
