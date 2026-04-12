@@ -1,0 +1,79 @@
+name: hytale
+services:
+  auth:
+    image: hybrowse/hytale-session-token-broker:1.0.0
+    container_name: hytale_auth
+    env_file:
+      - .env
+    environment:
+      HYTALE_SESSION_TOKEN_BROKER_BEARER_TOKEN: "" # optional
+    volumes:
+      - hytale_auth_data:/app/data
+      - ./config.yaml:/app/config.yaml:ro
+    restart: unless-stopped
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - hytale_internal
+      - hytale_auth_external
+    healthcheck:
+      test: wget -qO - http://localhost:8080/healthz || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  server:
+    image: hybrowse/hytale-server:1.0.0
+    container_name: hytale_server
+    depends_on:
+      - auth
+    stdin_open: true
+#    Only for debugging stack on Macbook
+#    platform: linux/amd64
+    tty: true
+    env_file:
+      - .env
+    volumes:
+      - ./hytale-data:/data
+    ports:
+      - "5520:5520/udp"
+    environment:
+      - HYTALE_SESSION_TOKEN_BROKER_ENABLED=true
+      - HYTALE_SESSION_TOKEN_BROKER_URL=http://auth:8080
+      - HYTALE_SESSION_TOKEN_BROKER_TIMEOUT_SECONDS=10
+      - SERVER_ACCEPT_EARLY_PLUGINS=true
+      - HYTALE_AUTO_DOWNLOAD=true
+      - SERVER_BIND=0.0.0.0:5520
+      - SERVER_BACKUP_DIR=/hytale/backups
+      - SERVER_BACKUP_INTERVAL=10
+      - SERVER_MAX_VIEW_RADIUS=12
+      - HYTALE_BACKUP_FREQUENCY_MINUTES=30
+      - HYTALE_BACKUP_ARCHIVE_MAX_COUNT=5
+    networks:
+      - hytale_internal
+      - tailscale
+    labels:
+      - tailscale=true
+      - traefik.enable=true
+      - traefik.udp.routers.hytale.rule=Host(`hytale.ts.${CF_DOMAIN}`)
+      - traefik.udp.routers.hytale.entrypoints=hytale
+      - traefik.udp.services.hytale.loadbalancer.server.port=5520
+
+volumes:
+  hytale_auth_data:
+    name: hytale_auth_data
+    external: true
+
+networks:
+  hytale_internal:
+    name: hytale_internal
+    internal: true
+
+  hytale_auth_external:
+    name: hytale_auth_external
+
+  tailscale:
+    name: games_tailscale
+    external: true
