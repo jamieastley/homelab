@@ -1,59 +1,105 @@
-name: homelab
+name: ${COMPOSE_PROJECT_NAME}
 services:
-  homeassistant:
-    image: lscr.io/linuxserver/homeassistant:2024.9.3
-    container_name: home-assistant
-    network_mode: host
+  tailscale:
+    image: tailscale/tailscale:latest
+    container_name: tailscale
+    hostname: homelab
     environment:
-      - PUID=1000
-      - PGID=1000
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_USERSPACE=false
+      #      - TS_ROUTES=192.168.50.0/24
+      - TS_EXTRA_ARGS=--ssh
+    #      - TS_EXTRA_ARGS=--accept-routes --ssh
+    volumes:
+      - tailscale:/var/lib/tailscale
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+
+  traefik:
+    image: traefik:3
+    container_name: homelab_traefik
+    restart: always
+    security_opt:
+      - no-new-privileges:true
+    environment:
       - TZ=Australia/Sydney
+      - CF_API_EMAIL=${CF_API_EMAIL}
+      - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
+      - LEGO_DISABLE_CNAME_SUPPORT=true
+    depends_on:
+      - tailscale
+    network_mode: service:tailscale
     volumes:
-      - homeassistant_data:/config
-    restart: unless-stopped
+      - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket to watch for Traefik
+      - traefik_certs:/certs
+      - traefik_conf:/etc/traefik/
+    command:
+      - --accesslog=true
+      - --api.insecure=true
+      - --api.debug=true
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      # Entrypoints
+      - --entrypoints.web.address=:80
+      - --entrypoints.web.http.redirections.entryPoint.to=websecure
+      - --entrypoints.web.http.redirections.entryPoint.scheme=https
+      - --entrypoints.websecure.address=:443
+      - --entrypoints.websecure.http.tls=true
+      - --entrypoints.websecure.http.tls.certResolver=letsencrypt
+      # TLS
+      - --certificatesresolvers.letsencrypt.acme.dnschallenge=true
+      - --certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare
+      - --certificatesresolvers.letsencrypt.acme.email=${CF_API_EMAIL}
+      - --certificatesresolvers.letsencrypt.acme.caServer=${CA_SERVER}
+      - --certificatesResolvers.letsencrypt.acme.storage=/certs/acme.json
+      - --certificatesResolvers.letsencrypt.acme.dnsChallenge.provider=cloudflare
+      - --certificatesResolvers.letsencrypt.acme.dnsChallenge.resolvers=1.1.1.1:53,8.8.8.8:53
+    labels:
+      - tailscale=true
+      - traefik.enable=true
+      - traefik.http.routers.traefik.rule=Host(`traefik.${CF_DOMAIN}`)
+      - traefik.http.routers.traefik.entrypoints=websecure
+      - traefik.http.routers.traefik.tls.certresolver=letsencrypt
+      - traefik.http.routers.traefik.service=api@internal
+      - traefik.http.services.traefik.loadbalancer.server.port=8080
 
-  pihole:
-    container_name: pihole
-    image: pihole/pihole@sha256:178fb024e2da5df1738a4b56c35de5b25bc50ba3848db1de4414dcbd7607550c
-    # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
-    ports:
-      - "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
-      # DNS Ports
-      - "53:53/tcp"
-      - "53:53/udp"
-      # Default HTTP port
-      - "80:80/tcp"
-      - "443:443/tcp" # By default, FTL will generate a self-signed certificate
-    network_mode: "host"
+  hytale_auth_broker:
+    image: hybrowse/hytale-session-token-broker:1.0.0
     environment:
-      TZ: 'Australia/Sydney'
-      FTLCONF_webserver_api_password: ${pihole_api_password}
-      FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
+      HYTALE_SESSION_TOKEN_BROKER_BEARER_TOKEN: "" # optional
     volumes:
-      - pihole_logs:/var/log/pihole
-      - pihole_data:/etc/pihole
-      - pihole_dnsmasq:/etc/dnsmasq.d
-    # https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+      - homelab_hytale_auth_data:/app/data
+      - ./config.yaml:/app/config.yaml:ro
     restart: unless-stopped
-
-  portainer:
-    container_name: portainer
-    image: portainer/portainer-ce:2.21.2
-    ports:
-      - "9443:9443"
-    volumes:
-      - portainer_data:/data
-      - /var/run/docker.sock:/var/run/docker.sock
-    restart: unless-stopped
+    networks:
+      - hytale_auth_broker
+    labels:
+      - tailscale=true
+      - traefik.enable=true
+      - traefik.http.routers.broker.rule=Host(`auth.hytale.${CF_DOMAIN}`)
+      - traefik.http.routers.broker.entrypoints=websecure
+      - traefik.http.routers.broker.tls=true
+      - traefik.http.routers.broker.tls.certresolver=letsencrypt
+      - traefik.http.services.broker.loadbalancer.server.port=8080
 
 volumes:
-  portainer_data:
+  tailscale:
+    name: homelab_tailscale
+  traefik_certs:
+    name: homelab_traefik_certs
     external: true
-  homeassistant_data:
+  traefik_conf:
+    name: homelab_traefik_conf
     external: true
-  pihole_logs:
+  homelab_hytale_auth_data:
+    name: homelab_hytale_auth_data
     external: true
-  pihole_data:
-    external: true
-  pihole_dnsmasq:
-    external: true
+
+networks:
+  hytale_auth_broker:
+    name: homelab_hytale_auth_broker
+  tailscale:
+    name: homelab_tailscale
