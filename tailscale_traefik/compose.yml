@@ -9,17 +9,24 @@ services:
       - TS_STATE_DIR=/var/lib/tailscale
       - TS_USERSPACE=false
       - TS_EXTRA_ARGS=--ssh
+      - TS_ENABLE_HEALTH_CHECK=true
+    healthcheck:
+      test: [ "CMD", "wget", "--spider", "-q", "http://127.0.0.1:9002/healthz" ]
     volumes:
       - tailscale:/var/lib/tailscale
       - /dev/net/tun:/dev/net/tun
     cap_add:
       - NET_ADMIN
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
 
   traefik:
     image: traefik:3
     container_name: homelab_traefik
     restart: unless-stopped
+    cap_drop:
+      - ALL
     security_opt:
       - no-new-privileges:true
     environment:
@@ -75,31 +82,13 @@ services:
       - traefik.http.routers.traefik.service=api@internal
       - traefik.http.services.traefik.loadbalancer.server.port=8080
 
-  hytale_auth_broker:
-    image: hybrowse/hytale-session-token-broker:1.0.0
-    environment:
-      HYTALE_SESSION_TOKEN_BROKER_BEARER_TOKEN: "" # optional
-    volumes:
-      - hytale_auth_data:/app/data
-      - ./config.yaml:/app/config.yaml:ro
-    restart: unless-stopped
-    networks:
-      - hytale_internal
-
 volumes:
   tailscale:
     name: homelab_tailscale
   traefik_certs:
     name: homelab_traefik_certs
     external: true
-  hytale_auth_data:
-    name: homelab_hytale_auth_data
-    external: true
 
 networks:
-  hytale_internal:
-    name: homelab_hytale_internal
-    internal: true
-
   tailscale:
     name: homelab_tailscale
