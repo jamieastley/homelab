@@ -147,7 +147,6 @@ services:
     labels:
       - tailscale=true
       - traefik.enable=true
-      - traefik.udp.routers.hytale.rule=Host(`hytale.${CF_DOMAIN}`)
       - traefik.udp.routers.hytale.entrypoints=hytale
       - traefik.udp.services.hytale.loadbalancer.server.port=5520
 
