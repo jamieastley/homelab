@@ -1,8 +1,16 @@
+init:
+	echo "#TODO: add required env vars" > .env
+	make create_volumes
+
 create_volumes:
-	docker volume create --name=homelab_hytale_auth_data
+	docker volume create --name=hytale_tailscale
+	docker volume create --name=hytale_traefik_certs
+	docker volume create --name=hytale_auth_data
 
 delete_volumes:
-	docker volume rm homelab_hytale_auth_data
+	docker volume rm hytale_tailscale
+	docker volume rm hytale_traefik_certs
+	docker volume rm hytale_auth_data
 
 up:
 	docker compose up -d
