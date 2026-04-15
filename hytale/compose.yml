@@ -3,6 +3,7 @@ services:
   tailscale:
     image: tailscale/tailscale:v1.96.5
     hostname: hytale
+    container_name: hytale_tailscale
     env_file:
       - .env
     environment:
@@ -26,6 +27,7 @@ services:
 
   traefik:
     image: traefik:3
+    container_name: hytale_traefik
     restart: unless-stopped
     cap_drop:
       - ALL
@@ -86,6 +88,7 @@ services:
 
   auth:
     image: hybrowse/hytale-session-token-broker:1.0.0
+    container_name: hytale_auth
     env_file:
       - .env
     environment:
@@ -109,6 +112,7 @@ services:
 
   server:
     image: hybrowse/hytale-server:1.0.0
+    container_name: hytale_server
     depends_on:
       - auth
     stdin_open: true
