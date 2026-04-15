@@ -1,6 +1,8 @@
 init:
 	echo "#TODO: add required env vars" > .env
 	make create_volumes
+	# https://github.com/Hybrowse/hytale-server-docker/blob/main/docs/image/troubleshooting.md#permission-denied-errors-on-data
+	sudo chown -R 1001:1001 ./hytale-data
 
 create_volumes:
 	docker volume create --name=hytale_tailscale
