@@ -116,8 +116,6 @@ services:
     depends_on:
       - auth
     stdin_open: true
-#    Only for debugging stack on Macbook
-    platform: linux/amd64
     tty: true
     restart: unless-stopped
     cap_drop:
