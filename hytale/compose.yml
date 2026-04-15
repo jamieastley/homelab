@@ -69,7 +69,6 @@ services:
       - --certificatesresolvers.letsencrypt.acme.email=${CF_API_EMAIL}
       - --certificatesresolvers.letsencrypt.acme.caServer=${CA_SERVER}
       - --certificatesResolvers.letsencrypt.acme.storage=/certs/acme.json
-      - --certificatesResolvers.letsencrypt.acme.dnsChallenge.provider=cloudflare
       - --certificatesResolvers.letsencrypt.acme.dnsChallenge.resolvers=1.1.1.1:53,8.8.8.8:53
     healthcheck:
       test: [ "CMD", "traefik", "healthcheck", "--ping" ]
