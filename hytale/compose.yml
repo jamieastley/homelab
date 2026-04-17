@@ -127,6 +127,7 @@ services:
       - .env
     volumes:
       - ./hytale-data:/data
+      - ./backups:/hytale/backups
     ports:
       - "5520:5520/udp"
     environment:
@@ -141,6 +142,7 @@ services:
       - SERVER_MAX_VIEW_RADIUS=12
       - HYTALE_BACKUP_FREQUENCY_MINUTES=30
       - HYTALE_BACKUP_ARCHIVE_MAX_COUNT=5
+      - HYTALE_CONFIG_SERVER_NAME=${HYTALE_SERVER_NAME}
     networks:
       - hytale_internal
       - tailscale
