@@ -113,7 +113,7 @@ services:
       retries: 3
 
   server:
-    image: hybrowse/hytale-server:1.0.0
+    image: hybrowse/hytale-server:1.1.0
     container_name: hytale_server
     user: "1001:1001"
     depends_on:
