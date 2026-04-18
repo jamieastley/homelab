@@ -115,7 +115,6 @@ services:
   server:
     image: hybrowse/hytale-server:1.1.0
     container_name: hytale_server
-    user: "1001:1001"
     depends_on:
       - auth
     stdin_open: true
@@ -129,22 +128,30 @@ services:
       - .env
     volumes:
       - ./hytale-data:/data
-      - ./backups:/hytale/backups
+      - ./backups:/backups
     ports:
       - "5520:5520/udp"
+    secrets:
+      - curseforge_api_key
     environment:
-      - HYTALE_SESSION_TOKEN_BROKER_ENABLED=true
-      - HYTALE_SESSION_TOKEN_BROKER_URL=http://auth:8080
-      - HYTALE_SESSION_TOKEN_BROKER_TIMEOUT_SECONDS=10
-      - SERVER_ACCEPT_EARLY_PLUGINS=true
-      - HYTALE_AUTO_DOWNLOAD=true
-      - SERVER_BIND=0.0.0.0:5520
-      - SERVER_BACKUP_DIR=/hytale/backups
-      - SERVER_BACKUP_INTERVAL=10
-      - SERVER_MAX_VIEW_RADIUS=12
-      - HYTALE_BACKUP_FREQUENCY_MINUTES=30
-      - HYTALE_BACKUP_ARCHIVE_MAX_COUNT=5
-      - HYTALE_CONFIG_SERVER_NAME=${HYTALE_SERVER_NAME}
+      HYTALE_SESSION_TOKEN_BROKER_ENABLED: "true"
+      HYTALE_SESSION_TOKEN_BROKER_URL: "http://auth:8080"
+      HYTALE_SESSION_TOKEN_BROKER_TIMEOUT_SECONDS: "10"
+      HYTALE_ACCEPT_EARLY_PLUGINS: "true"
+      HYTALE_AUTO_DOWNLOAD: "true"
+      HYTALE_ENABLE_BACKUP: "true"
+      HYTALE_BACKUP_DIR: "/backups"
+      HYTALE_BACKUP_INTERVAL: "10"
+      HYTALE_BACKUP_FREQUENCY_MINUTES: "30"
+      HYTALE_BACKUP_ARCHIVE_MAX_COUNT: "5"
+      HYTALE_BACKUP_MAX_COUNT: "5"
+      HYTALE_CONFIG_SERVER_NAME: "${HYTALE_SERVER_NAME}"
+      HYTALE_CONFIG_MOTD: "Welcome back"
+      HYTALE_OWNER_UUID: "${HYTALE_OWNER_UUID}"
+      HYTALE_CURSEFORGE_API_KEY_SRC: "/run/secrets/curseforge_api_key"
+      HYTALE_CURSEFORGE_MODS: |
+        1413287 
+        1420426
     networks:
       - hytale_internal
       - tailscale
@@ -152,8 +159,13 @@ services:
       - tailscale=true
       - traefik.enable=true
       - traefik.instance=hytale
+      - traefik.docker.network=hytale_tailscale # Ensure traefik is attached to the hytale_tailscale network
       - traefik.udp.routers.hytale.entrypoints=hytale
       - traefik.udp.services.hytale.loadbalancer.server.port=5520
+
+secrets:
+  curseforge_api_key:
+    file: ./secrets/curseforge_api_key.txt
 
 volumes:
   tailscale:
