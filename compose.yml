@@ -4,6 +4,8 @@ services:
     image: ghcr.io/getarcaneapp/arcane:v1.17.4
     container_name: arcane
     restart: unless-stopped
+    env_file:
+      - .env
     ports:
       - "3552:3552"
     volumes:
