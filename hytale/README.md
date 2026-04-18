@@ -1,30 +1,54 @@
 # Hytale
 
-## Authenticating
+## Setup
 
-### Auth Broker
+1. Create a `.env` file with the required variables (see below)
+2. Run `make init` to create Docker volumes and set data directory permissions
+3. Start the stack: `make up`
 
-Run the following command to get a session token after running the service for the first time:
+### Environment variables
+
+| Variable | Description |
+|---|---|
+| `TS_AUTHKEY` | Tailscale auth key |
+| `CF_API_EMAIL` | Cloudflare account email |
+| `CF_DOMAIN` | Domain managed by Cloudflare |
+| `CF_DNS_API_TOKEN` | Cloudflare DNS API token (for ACME DNS challenge) |
+| `CA_SERVER` | Let's Encrypt CA URL (staging or production) |
+| `HYTALE_SERVER_NAME` | Display name for the game server |
+
+Optional: set `HYTALE_SESSION_TOKEN_BROKER_BEARER_TOKEN` in `.env` to protect the auth broker API.
+
+## First run
+
+### Auth broker
+
+Authenticate the session token broker after the stack is running:
 
 ```bash
-docker exec -it <broker-container> \
+docker exec -it hytale_auth \
   hytale-session-token-broker -config /app/config.yaml auth-login-device default
 ```
 
-Auth status can then be checked via:
+Check auth status:
 
 ```bash
-docker exec -it <broker-container> \
+docker exec -it hytale_auth \
   hytale-session-token-broker -config /app/config.yaml auth-status default
 ```
 
 ### Game server
 
-The first run of the game server requires manual intervention to authorise the game download.
+The first run requires manual OAuth intervention to authorise the game download (`HYTALE_AUTO_DOWNLOAD=true` uses the official Hytale Downloader CLI, which requires separate OAuth credentials that the session token broker cannot provide).
 
-The auto-download feature uses the official Hytale Downloader CLI. This requires OAuth credentials.
-The session token broker can't solve this barrier. The session token broker itself uses OAuth
-credentials to generate game session tokens. However, these can only be used to enable player
-authentication on the server, not for downloading the server software.
-- [Discord message reference](https://discord.com/channels/1459154799407665397/1460066692138008732/1474505393400053962)
-- [README.md update](https://github.com/Hybrowse/hytale-server-docker/commit/3eb5a7d2142d56df552eea6c14c3142e4800209e)
+Attach to the server container and follow the prompts:
+
+```bash
+docker attach hytale_server
+```
+
+References:
+- [Discord message](https://discord.com/channels/1459154799407665397/1460066692138008732/1474505393400053962)
+- [Upstream README](https://github.com/Hybrowse/hytale-server-docker/commit/3eb5a7d2142d56df552eea6c14c3142e4800209e)
+
+
