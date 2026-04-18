@@ -51,6 +51,7 @@ services:
       - --api.debug=true
       - --providers.docker=true
       - --providers.docker.exposedbydefault=false
+      - --providers.docker.constraints=Label(`traefik.instance`,`hytale`)
       - --providers.file.watch=true
       - --providers.file.directory=/etc/traefik
       - --ping=true
@@ -80,6 +81,7 @@ services:
     labels:
       - tailscale=true
       - traefik.enable=true
+      - traefik.instance=hytale
       - traefik.http.routers.traefik.rule=Host(`traefik.hytale.${CF_DOMAIN}`)
       - traefik.http.routers.traefik.entrypoints=websecure
       - traefik.http.routers.traefik.tls.certresolver=letsencrypt
@@ -149,6 +151,7 @@ services:
     labels:
       - tailscale=true
       - traefik.enable=true
+      - traefik.instance=hytale
       - traefik.udp.routers.hytale.entrypoints=hytale
       - traefik.udp.services.hytale.loadbalancer.server.port=5520
 
