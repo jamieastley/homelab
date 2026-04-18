@@ -115,7 +115,6 @@ services:
   server:
     image: hybrowse/hytale-server:1.1.0
     container_name: hytale_server
-    user: "1001:1001"
     depends_on:
       - auth
     stdin_open: true
