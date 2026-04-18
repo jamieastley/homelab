@@ -1,5 +1,6 @@
 init:
 	echo "#TODO: add required env vars" > .env
+	echo "#TODO: add curseforge API key" > secrets/curseforge_api_key.txt
 	make create_volumes
 
 create_volumes:

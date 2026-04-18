@@ -49,6 +49,8 @@ sudo chown -R 1000:1001 /path/to/hytale-data
 sudo chown -R 1000:1001 /path/to/backups
 ```
 
+Create a `secrets/curseforge_api_key.txt` file within the same directory as the `compose.yml` file.
+
 The first run requires manual OAuth intervention to authorise the game download (
 `HYTALE_AUTO_DOWNLOAD=true` uses the official Hytale Downloader CLI, which requires separate OAuth
 credentials that the session token broker cannot provide).
