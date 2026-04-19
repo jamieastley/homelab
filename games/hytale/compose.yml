@@ -1,93 +1,5 @@
 name: hytale
 services:
-  tailscale:
-    image: tailscale/tailscale:v1.96.5
-    hostname: hytale
-    container_name: hytale_tailscale
-    env_file:
-      - .env
-    environment:
-      - TS_AUTHKEY=${TS_AUTHKEY}
-      - TS_STATE_DIR=/var/lib/tailscale
-      - TS_USERSPACE=false
-      - TS_EXTRA_ARGS=--ssh
-      - TS_ENABLE_HEALTH_CHECK=true
-    healthcheck:
-      test: [ "CMD", "wget", "--spider", "-q", "http://127.0.0.1:9002/healthz" ]
-    networks:
-      - tailscale
-    volumes:
-      - tailscale:/var/lib/tailscale
-      - /dev/net/tun:/dev/net/tun
-    cap_add:
-      - NET_ADMIN
-    security_opt:
-      - no-new-privileges:true
-    restart: unless-stopped
-
-  traefik:
-    image: traefik:v3.6.13
-    container_name: hytale_traefik
-    restart: unless-stopped
-    cap_drop:
-      - ALL
-    security_opt:
-      - no-new-privileges:true
-    environment:
-      - TZ=Australia/Sydney
-      - CF_API_EMAIL=${CF_API_EMAIL}
-      - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
-      - LEGO_DISABLE_CNAME_SUPPORT=true
-    depends_on:
-      - tailscale
-    network_mode: service:tailscale
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket to watch for Traefik
-      - traefik_certs:/certs
-      - ./traefik:/etc/traefik/
-    command:
-      - --accesslog=true
-      - --api.insecure=true
-      - --api.debug=true
-      - --providers.docker=true
-      - --providers.docker.exposedbydefault=false
-      - --providers.docker.constraints=Label(`traefik.instance`,`hytale`)
-      - --providers.file.watch=true
-      - --providers.file.directory=/etc/traefik
-      - --ping=true
-      - --ping.entrypoint=traefik
-      # Entrypoints
-      - --entrypoints.web.address=:80
-      - --entrypoints.web.http.redirections.entryPoint.to=websecure
-      - --entrypoints.web.http.redirections.entryPoint.scheme=https
-      - --entrypoints.websecure.address=:443
-      - --entrypoints.websecure.http.tls=true
-      - --entrypoints.websecure.http.tls.certResolver=letsencrypt
-      - --entrypoints.hytale.address=:5520/udp
-      # TLS
-      - --certificatesresolvers.letsencrypt.acme.dnschallenge=true
-      - --certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare
-      - --certificatesresolvers.letsencrypt.acme.email=${CF_API_EMAIL}
-      - --certificatesresolvers.letsencrypt.acme.caServer=${CA_SERVER}
-      - --certificatesResolvers.letsencrypt.acme.storage=/certs/acme.json
-      - --certificatesResolvers.letsencrypt.acme.dnsChallenge.resolvers=1.1.1.1:53,8.8.8.8:53
-    healthcheck:
-      test: [ "CMD", "traefik", "healthcheck", "--ping" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-    env_file:
-      - .env
-    labels:
-      - tailscale=true
-      - traefik.enable=true
-      - traefik.instance=hytale
-      - traefik.http.routers.traefik.rule=Host(`traefik.hytale.${CF_DOMAIN}`)
-      - traefik.http.routers.traefik.entrypoints=websecure
-      - traefik.http.routers.traefik.tls.certresolver=letsencrypt
-      - traefik.http.routers.traefik.service=api@internal
-      - traefik.http.services.traefik.loadbalancer.server.port=8080
-
   auth:
     image: hybrowse/hytale-session-token-broker:1.0.0
     container_name: hytale_auth
@@ -127,8 +39,8 @@ services:
     env_file:
       - .env
     volumes:
-      - ./hytale-data:/data
-      - ./backups:/backups
+      - hytale_server_data:/data
+      - hytale_backups:/backups
     ports:
       - "5520:5520/udp"
     secrets:
@@ -154,12 +66,12 @@ services:
         1420426
     networks:
       - hytale_internal
-      - tailscale
+      - games_server_tailscale
     labels:
       - tailscale=true
       - traefik.enable=true
-      - traefik.instance=hytale
-      - traefik.docker.network=hytale_tailscale # Ensure traefik is attached to the hytale_tailscale network
+      - traefik.instance=games
+      - traefik.docker.network=games_server_tailscale # Ensure traefik is attached to the hytale_tailscale network
       - traefik.udp.routers.hytale.entrypoints=hytale
       - traefik.udp.services.hytale.loadbalancer.server.port=5520
 
@@ -168,14 +80,14 @@ secrets:
     file: ./secrets/curseforge_api_key.txt
 
 volumes:
-  tailscale:
-    name: hytale_tailscale
-    external: true
-  traefik_certs:
-    name: hytale_traefik_certs
-    external: true
   hytale_auth_data:
     name: hytale_auth_data
+    external: true
+  hytale_server_data:
+    name: hytale_server_data
+    external: true
+  hytale_backups:
+    name: hytale_backups
     external: true
 
 networks:
@@ -186,5 +98,6 @@ networks:
   hytale_auth_external:
     name: hytale_auth_external
 
-  tailscale:
-    name: hytale_tailscale
+  games_server_tailscale:
+    name: games_server_tailscale
+    external: true
