@@ -149,6 +149,7 @@ services:
     labels:
       - tailscale=true
       - traefik.enable=true
+      - traefik.instance=valheim
       - traefik.docker.network=valheim_tailscale # Ensure traefik is attached to the valheim_tailscale network
       - traefik.http.routers.odin.rule=Host(`odin.valheim.${CF_DOMAIN}`)
       - traefik.http.routers.odin.entrypoints=websecure
