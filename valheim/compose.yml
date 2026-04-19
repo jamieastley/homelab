@@ -99,9 +99,7 @@ services:
     security_opt:
       - no-new-privileges:true
     ports:
-      - "2456:2456/udp"
-      - "2457:2457/udp"
-      - "2458:2458/udp"
+      - "2456-2458:2456-2458/udp"
       - "3000:3000"
     volumes:
       - ~/games/valheim/saves:/home/steam/.config/unity3d/IronGate/Valheim
@@ -146,6 +144,8 @@ services:
         Vapok-AdventureBackpacks-1.9.13
         Xutz-ValheimCuisine-2.2.8
 
+    networks:
+      - tailscale
     labels:
       - tailscale=true
       - traefik.enable=true
@@ -156,12 +156,8 @@ services:
       - traefik.http.routers.odin.tls=true
       - traefik.http.routers.odin.tls.certresolver=letsencrypt
       - traefik.http.services.odin.loadbalancer.server.port=3000
-      - traefik.udp.routers.valheim1.entrypoints=valheim1
-      - traefik.udp.services.valheim1.loadbalancer.server.port=2456
-      - traefik.udp.routers.valheim2.entrypoints=valheim2
-      - traefik.udp.services.valheim2.loadbalancer.server.port=2457
-      - traefik.udp.routers.valheim3.entrypoints=valheim3
-      - traefik.udp.services.valheim3.loadbalancer.server.port=2458
+      - traefik.udp.routers.valheim.entrypoints=valheim1,valheim2,valheim3
+      - traefik.udp.services.valheim.loadbalancer.server.port=2456,2457,2458
 
 volumes:
   tailscale:
