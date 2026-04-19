@@ -106,4 +106,5 @@ volumes:
 
 networks:
   tailscale:
+    # TODO: probably make this external
     name: games_server_tailscale
