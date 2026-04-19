@@ -24,11 +24,23 @@ services:
       timeout: 10s
       retries: 3
 
+  init:
+    image: busybox
+    container_name: hytale_server_init
+    command: ["sh", "-c", "chown -R 1000:1000 /data"]
+    volumes:
+      - hytale_server_data:/data
+    restart: "no"
+
   server:
     image: hybrowse/hytale-server:1.1.0
     container_name: hytale_server
+    user: "1000:1000"
     depends_on:
-      - auth
+      auth:
+        condition: service_started
+      init:
+        condition: service_completed_successfully
     stdin_open: true
     tty: true
     restart: unless-stopped
