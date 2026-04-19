@@ -25,6 +25,8 @@ services:
       - NET_ADMIN
     security_opt:
       - no-new-privileges:true
+    networks:
+      - games_network_tailscale
     restart: unless-stopped
 
   traefik:
@@ -105,6 +107,6 @@ volumes:
     external: true
 
 networks:
-  tailscale:
+  games_network_tailscale:
     name: games_server_tailscale
     external: true
