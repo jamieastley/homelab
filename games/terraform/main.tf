@@ -20,12 +20,22 @@ provider "cloudflare" {}
 
 resource "cloudflare_dns_record" "traefik" {
   name    = "traefik"
-  ttl     = 1
+  ttl     = 60
   type    = "CNAME"
   zone_id = var.zone_id
   proxied = false
   content = var.domain
   comment = "Traefik dashboard and API"
+}
+
+resource "cloudflare_dns_record" "hytale" {
+  name    = "hytale"
+  ttl     = 60
+  type    = "CNAME"
+  zone_id = var.zone_id
+  proxied = false
+  content = var.domain
+  comment = "Self-hosted Hytale server"
 }
 
 resource "cloudflare_dns_record" "valheim" {
