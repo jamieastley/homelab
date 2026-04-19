@@ -23,7 +23,7 @@ resource "cloudflare_dns_record" "traefik" {
   ttl     = 1
   type    = "CNAME"
   zone_id = var.zone_id
-  proxied = true
+  proxied = false
   content = var.domain
   comment = "Traefik dashboard and API"
 }
