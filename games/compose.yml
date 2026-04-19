@@ -1,0 +1,33 @@
+name: games_server
+services:
+  tailscale:
+    image: tailscale/tailscale:v1.96.5
+    hostname: games-server
+    container_name: games_server_tailscale
+    env_file:
+      - .env
+    environment:
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_USERSPACE=false
+      - TS_EXTRA_ARGS=--ssh
+      - TS_ENABLE_HEALTH_CHECK=true
+    healthcheck:
+      test: [ "CMD", "wget", "--spider", "-q", "http://127.0.0.1:9002/healthz" ]
+    volumes:
+      - tailscale:/var/lib/tailscale
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+volumes:
+  tailscale:
+    name: games_server_tailscale
+    external: true
+
+networks:
+  tailscale:
+    name: games_server_tailscale
