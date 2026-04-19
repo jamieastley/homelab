@@ -6,5 +6,4 @@ variable "zone_id" {
 
 variable "domain" {
   description = "The domain that the DNS records will be created against."
-  sensitive   = true
 }

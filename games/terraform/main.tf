@@ -18,8 +18,17 @@ terraform {
 
 provider "cloudflare" {}
 
+resource "cloudflare_dns_record" "traefik" {
+  name    = "traefik"
+  ttl     = 1
+  type    = "CNAME"
+  zone_id = var.zone_id
+  proxied = true
+  content = var.domain
+  comment = "Traefik dashboard and API"
+}
 
-resource "cloudflare_dns_record" "server" {
+resource "cloudflare_dns_record" "valheim" {
   name    = "valheim"
   ttl     = 60
   type    = "CNAME"
@@ -29,7 +38,7 @@ resource "cloudflare_dns_record" "server" {
   comment = "Self-hosted Valheim server"
 }
 
-resource "cloudflare_dns_record" "dashboard_wildcards" {
+resource "cloudflare_dns_record" "valheim_tools" {
   name    = "*.valheim"
   ttl     = 60
   type    = "CNAME"
