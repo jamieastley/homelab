@@ -31,7 +31,6 @@ services:
       AUTO_BACKUP_ON_SHUTDOWN: 1
       TYPE: "BepInEx"
       MODS: |
-        denikson-BepInExPack_Valheim-5.4.2333
         Advize-Armoire-1.1.4
         Advize-PlantEverything-1.20.0
         Azumatt-AAA_Crafting-2.1.6
