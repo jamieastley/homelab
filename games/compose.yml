@@ -6,12 +6,16 @@ services:
     container_name: games_server_tailscale
     env_file:
       - .env
+    secrets:
+      - ts_authkey
+    # Replace TS_AUTHKEY with new file env var when tailscale adds support
+    # https://github.com/tailscale/tailscale/issues/14210#issuecomment-4185439890
     environment:
-      - TS_AUTHKEY=${TS_AUTHKEY}
-      - TS_STATE_DIR=/var/lib/tailscale
-      - TS_USERSPACE=false
-      - TS_EXTRA_ARGS=--ssh
-      - TS_ENABLE_HEALTH_CHECK=true
+      TS_AUTHKEY: file:/run/secrets/ts_authkey
+      TS_STATE_DIR: "var/lib/tailscale"
+      TS_USERSPACE: "false"
+      TS_EXTRA_ARGS: "--ssh"
+      TS_ENABLE_HEALTH_CHECK: "true"
     healthcheck:
       test: [ "CMD", "wget", "--spider", "-q", "http://127.0.0.1:9002/healthz" ]
     volumes:
@@ -32,10 +36,10 @@ services:
     security_opt:
       - no-new-privileges:true
     environment:
-      - TZ=Australia/Sydney
-      - CF_API_EMAIL=${CF_API_EMAIL}
-      - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
-      - LEGO_DISABLE_CNAME_SUPPORT=true
+      TZ: "Australia/Sydney"
+      CF_API_EMAIL: ${CF_API_EMAIL}
+      CF_DNS_API_TOKEN: ${CF_DNS_API_TOKEN}
+      LEGO_DISABLE_CNAME_SUPPORT: "true"
     depends_on:
       - tailscale
     network_mode: service:tailscale
@@ -43,6 +47,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket to watch for Traefik
       - traefik_certs:/certs
       - ./traefik:/etc/traefik/
+    env_file:
+      - .env
     command:
       - --accesslog=true
       - --api.insecure=true
@@ -75,8 +81,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-    env_file:
-      - .env
+
     labels:
       - tailscale=true
       - traefik.enable=true
@@ -86,6 +91,10 @@ services:
       - traefik.http.routers.traefik.tls.certresolver=letsencrypt
       - traefik.http.routers.traefik.service=api@internal
       - traefik.http.services.traefik.loadbalancer.server.port=8080
+
+secrets:
+  ts_authkey:
+    file: ./secrets/ts_authkey
 
 volumes:
   tailscale:
