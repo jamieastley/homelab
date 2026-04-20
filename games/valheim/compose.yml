@@ -1,11 +1,20 @@
 name: valheim
 services:
 
-  # TODO: might need the busybox init resource to set permissions
+  init_permissions:
+    image: busybox:1.37.0
+    container_name: valheim_permissions_init
+    command: [ "sh", "-c", "chown -R 1000:1000 /home/steam/.config/unity3d/IronGate/Valheim /home/steam/valheim /home/steam/backups" ]
+    volumes:
+      - valheim_saves
+      - valheim_server_data
+      - valheim_backups
+    restart: "no"
 
   server:
     image: mbround18/valheim:3.6.0
     container_name: valheim_server
+    user: "1000:1000"
     stop_signal: SIGINT
     cap_drop:
       - ALL
