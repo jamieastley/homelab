@@ -1,94 +1,7 @@
 name: valheim
 services:
-  tailscale:
-    image: tailscale/tailscale:v1.96.5
-    hostname: valheim
-    container_name: valheim_tailscale
-    env_file:
-      - .env
-    environment:
-      - TS_AUTHKEY=${TS_AUTHKEY}
-      - TS_STATE_DIR=/var/lib/tailscale
-      - TS_USERSPACE=false
-      - TS_EXTRA_ARGS=--ssh
-      - TS_ENABLE_HEALTH_CHECK=true
-    healthcheck:
-      test: [ "CMD", "wget", "--spider", "-q", "http://127.0.0.1:9002/healthz" ]
-    networks:
-      - tailscale
-    volumes:
-      - tailscale:/var/lib/tailscale
-      - /dev/net/tun:/dev/net/tun
-    cap_add:
-      - NET_ADMIN
-    security_opt:
-      - no-new-privileges:true
-    restart: unless-stopped
 
-  traefik:
-    image: traefik:v3.6.13
-    container_name: valheim_traefik
-    restart: unless-stopped
-    cap_drop:
-      - ALL
-    security_opt:
-      - no-new-privileges:true
-    environment:
-      - TZ=Australia/Sydney
-      - CF_API_EMAIL=${CF_API_EMAIL}
-      - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
-      - LEGO_DISABLE_CNAME_SUPPORT=true
-    depends_on:
-      - tailscale
-    network_mode: service:tailscale
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket to watch for Traefik
-      - traefik_certs:/certs
-      - ./traefik:/etc/traefik/
-    command:
-      - --accesslog=true
-      - --api.insecure=true
-      - --api.debug=true
-      - --providers.docker=true
-      - --providers.docker.exposedbydefault=false
-      - --providers.docker.constraints=Label(`traefik.instance`,`valheim`)
-      - --providers.file.watch=true
-      - --providers.file.directory=/etc/traefik
-      - --ping=true
-      - --ping.entrypoint=traefik
-      # Entrypoints
-      - --entrypoints.web.address=:80
-      - --entrypoints.web.http.redirections.entryPoint.to=websecure
-      - --entrypoints.web.http.redirections.entryPoint.scheme=https
-      - --entrypoints.websecure.address=:443
-      - --entrypoints.websecure.http.tls=true
-      - --entrypoints.websecure.http.tls.certResolver=letsencrypt
-      - --entrypoints.valheim1.address=:2456/udp
-      - --entrypoints.valheim2.address=:2457/udp
-      - --entrypoints.valheim3.address=:2458/udp
-      # TLS
-      - --certificatesresolvers.letsencrypt.acme.dnschallenge=true
-      - --certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare
-      - --certificatesresolvers.letsencrypt.acme.email=${CF_API_EMAIL}
-      - --certificatesresolvers.letsencrypt.acme.caServer=${CA_SERVER}
-      - --certificatesResolvers.letsencrypt.acme.storage=/certs/acme.json
-      - --certificatesResolvers.letsencrypt.acme.dnsChallenge.resolvers=1.1.1.1:53,8.8.8.8:53
-    healthcheck:
-      test: [ "CMD", "traefik", "healthcheck", "--ping" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-    env_file:
-      - .env
-    labels:
-      - tailscale=true
-      - traefik.enable=true
-      - traefik.instance=valheim
-      - traefik.http.routers.traefik.rule=Host(`traefik.valheim.${CF_DOMAIN}`)
-      - traefik.http.routers.traefik.entrypoints=websecure
-      - traefik.http.routers.traefik.tls.certresolver=letsencrypt
-      - traefik.http.routers.traefik.service=api@internal
-      - traefik.http.services.traefik.loadbalancer.server.port=8080
+  # TODO: might need the busybox init resource to set permissions
 
   server:
     image: mbround18/valheim:3.6.0
@@ -102,9 +15,9 @@ services:
       - "2456-2458:2456-2458/udp"
       - "3000:3000"
     volumes:
-      - ~/games/valheim/saves:/home/steam/.config/unity3d/IronGate/Valheim
-      - ~/games/valheim/server:/home/steam/valheim
-      - ~/games/valheim/backups:/home/steam/backups
+      - valheim_saves:/home/steam/.config/unity3d/IronGate/Valheim
+      - valheim_server_data:/home/steam/valheim
+      - valheim_backups:/home/steam/backups
     environment:
       PORT: 2456
       NAME: "valheim.objectobject.games"
@@ -145,12 +58,12 @@ services:
         Xutz-ValheimCuisine-2.2.8
 
     networks:
-      - tailscale
+      - games_network_tailscale
     labels:
       - tailscale=true
       - traefik.enable=true
-      - traefik.instance=valheim
-      - traefik.docker.network=valheim_tailscale # Ensure traefik is attached to the valheim_tailscale network
+      - traefik.instance=games
+      - traefik.docker.network=games_network_tailscale # Ensure traefik is attached to the games_network_tailscale network
       - traefik.http.routers.odin.rule=Host(`odin.valheim.${CF_DOMAIN}`)
       - traefik.http.routers.odin.entrypoints=websecure
       - traefik.http.routers.odin.tls=true
@@ -160,13 +73,17 @@ services:
       - traefik.udp.services.valheim.loadbalancer.server.port=2456,2457,2458
 
 volumes:
-  tailscale:
-    name: valheim_tailscale
+  valheim_saves:
+    name: valheim_saves
     external: true
-  traefik_certs:
-    name: valheim_traefik_certs
+  valheim_server_data:
+    name: valheim_server_data
+    external: true
+  valheim_backups:
+    name: valheim_backups
     external: true
 
 networks:
-  tailscale:
-    name: valheim_tailscale
+  games_network_tailscale:
+    name: games_server_tailscale
+    external: true
