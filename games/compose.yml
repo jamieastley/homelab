@@ -71,6 +71,10 @@ services:
       - --entrypoints.websecure.http.tls.certResolver=letsencrypt
       # Entrypoints for Hytale
       - --entrypoints.hytale.address=:5520/udp
+      # Entrypoints for Valheim
+      - --entrypoints.valheim1.address=:2456/udp
+      - --entrypoints.valheim2.address=:2457/udp
+      - --entrypoints.valheim3.address=:2458/udp
       # TLS
       - --certificatesresolvers.letsencrypt.acme.dnschallenge=true
       - --certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare
