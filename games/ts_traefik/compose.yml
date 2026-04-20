@@ -19,14 +19,14 @@ services:
     healthcheck:
       test: [ "CMD", "wget", "--spider", "-q", "http://127.0.0.1:9002/healthz" ]
     volumes:
-      - tailscale:/var/lib/tailscale
+      - games_server_tailscale:/var/lib/tailscale
       - /dev/net/tun:/dev/net/tun
     cap_add:
       - NET_ADMIN
     security_opt:
       - no-new-privileges:true
     networks:
-      - games_network_tailscale
+      - games_server_tailscale
     restart: unless-stopped
 
   traefik:
@@ -47,7 +47,7 @@ services:
     network_mode: service:tailscale
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket to watch for Traefik
-      - traefik_certs:/certs
+      - games_server_traefik_certs:/certs
       - ./traefik:/etc/traefik/
     env_file:
       - .env
@@ -103,14 +103,14 @@ secrets:
     file: ./secrets/ts_authkey
 
 volumes:
-  tailscale:
+  games_server_tailscale:
     name: games_server_tailscale
     external: true
-  traefik_certs:
+  games_server_traefik_certs:
     name: games_server_traefik_certs
     external: true
 
 networks:
-  games_network_tailscale:
+  games_server_tailscale:
     name: games_server_tailscale
     external: true

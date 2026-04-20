@@ -58,12 +58,12 @@ services:
         Xutz-ValheimCuisine-2.2.8
 
     networks:
-      - games_network_tailscale
+      - games_server_tailscale
     labels:
       - tailscale=true
       - traefik.enable=true
       - traefik.instance=games
-      - traefik.docker.network=games_network_tailscale # Ensure traefik is attached to the games_network_tailscale network
+      - traefik.docker.network=games_server_tailscale # Ensure traefik is attached to the games_server_tailscale network
       - traefik.http.routers.huginn.rule=Host(`huginn.valheim.${CF_DOMAIN}`)
       - traefik.http.routers.huginn.entrypoints=websecure
       - traefik.http.routers.huginn.tls=true
@@ -84,6 +84,6 @@ volumes:
     external: true
 
 networks:
-  games_network_tailscale:
+  games_server_tailscale:
     name: games_server_tailscale
     external: true
