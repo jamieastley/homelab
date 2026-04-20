@@ -20,7 +20,7 @@ services:
       - valheim_backups:/home/steam/backups
     environment:
       PORT: 2456
-      NAME: "valheim.objectobject.games"
+      NAME: ${VALHEIM_WORLD_NAME}
       WORLD: "Dedicated"
       TZ: "Australia/Sydney"
       PUBLIC: 0
