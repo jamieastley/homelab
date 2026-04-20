@@ -78,8 +78,15 @@ services:
       - traefik.http.routers.huginn.tls=true
       - traefik.http.routers.huginn.tls.certresolver=letsencrypt
       - traefik.http.services.huginn.loadbalancer.server.port=3000
-      - traefik.udp.routers.valheim.entrypoints=valheim1,valheim2,valheim3
-      - traefik.udp.services.valheim.loadbalancer.server.port=2456,2457,2458
+      - traefik.udp.routers.valheim1.entrypoints=valheim1
+      - traefik.udp.routers.valheim1.service=valheim1
+      - traefik.udp.services.valheim1.loadbalancer.server.port=2456
+      - traefik.udp.routers.valheim2.entrypoints=valheim2
+      - traefik.udp.routers.valheim2.service=valheim2
+      - traefik.udp.services.valheim2.loadbalancer.server.port=2457
+      - traefik.udp.routers.valheim3.entrypoints=valheim3
+      - traefik.udp.routers.valheim3.service=valheim3
+      - traefik.udp.services.valheim3.loadbalancer.server.port=2458
 
 volumes:
   valheim_saves:
