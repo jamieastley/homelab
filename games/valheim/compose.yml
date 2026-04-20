@@ -64,11 +64,11 @@ services:
       - traefik.enable=true
       - traefik.instance=games
       - traefik.docker.network=games_network_tailscale # Ensure traefik is attached to the games_network_tailscale network
-      - traefik.http.routers.odin.rule=Host(`odin.valheim.${CF_DOMAIN}`)
-      - traefik.http.routers.odin.entrypoints=websecure
-      - traefik.http.routers.odin.tls=true
-      - traefik.http.routers.odin.tls.certresolver=letsencrypt
-      - traefik.http.services.odin.loadbalancer.server.port=3000
+      - traefik.http.routers.huginn.rule=Host(`huginn.valheim.${CF_DOMAIN}`)
+      - traefik.http.routers.huginn.entrypoints=websecure
+      - traefik.http.routers.huginn.tls=true
+      - traefik.http.routers.huginn.tls.certresolver=letsencrypt
+      - traefik.http.services.huginn.loadbalancer.server.port=3000
       - traefik.udp.routers.valheim.entrypoints=valheim1,valheim2,valheim3
       - traefik.udp.services.valheim.loadbalancer.server.port=2456,2457,2458
 
