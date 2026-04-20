@@ -4,6 +4,6 @@ variable "zone_id" {
   sensitive   = true
 }
 
-variable "domain" {
-  description = "The domain that the DNS records will be created against."
+variable "record_content" {
+  description = "The IP address or FQDN that the DNS records should point to."
 }
