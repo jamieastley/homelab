@@ -6,9 +6,9 @@ services:
     container_name: valheim_permissions_init
     command: [ "sh", "-c", "chown -R 1000:1000 /home/steam/.config/unity3d/IronGate/Valheim /home/steam/valheim /home/steam/backups" ]
     volumes:
-      - valheim_saves
-      - valheim_server_data
-      - valheim_backups
+      - valheim_saves:/home/steam/.config/unity3d/IronGate/Valheim
+      - valheim_server_data:/home/steam/valheim
+      - valheim_backups:/home/steam/backups
     restart: "no"
 
   server:
