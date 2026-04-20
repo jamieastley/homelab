@@ -4,7 +4,7 @@ terraform {
     organization = "jamieastley"
 
     workspaces {
-      name = "homelab-valheim"
+      name = "homelab-games"
     }
   }
 
