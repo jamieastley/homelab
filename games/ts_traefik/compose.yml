@@ -75,11 +75,18 @@ services:
       - --entrypoints.valheim1.address=:2456/udp
       - --entrypoints.valheim2.address=:2457/udp
       - --entrypoints.valheim3.address=:2458/udp
-      # TLS
+      # TLS - staging resolver
+      - --certificatesresolvers.letsencrypt-staging.acme.dnschallenge=true
+      - --certificatesresolvers.letsencrypt-staging.acme.dnschallenge.provider=cloudflare
+      - --certificatesresolvers.letsencrypt-staging.acme.email=${CF_API_EMAIL}
+      - --certificatesresolvers.letsencrypt-staging.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory
+      - --certificatesResolvers.letsencrypt-staging.acme.storage=/certs/acme-staging.json
+      - --certificatesResolvers.letsencrypt-staging.acme.dnsChallenge.resolvers=1.1.1.1:53,8.8.8.8:53
+      # TLS - production resolver
       - --certificatesresolvers.letsencrypt.acme.dnschallenge=true
       - --certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare
       - --certificatesresolvers.letsencrypt.acme.email=${CF_API_EMAIL}
-      - --certificatesresolvers.letsencrypt.acme.caServer=${CA_SERVER}
+      - --certificatesresolvers.letsencrypt.acme.caServer=https://acme-v02.api.letsencrypt.org/directory
       - --certificatesResolvers.letsencrypt.acme.storage=/certs/acme.json
       - --certificatesResolvers.letsencrypt.acme.dnsChallenge.resolvers=1.1.1.1:53,8.8.8.8:53
     healthcheck:
