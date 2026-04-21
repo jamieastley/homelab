@@ -4,13 +4,13 @@ services:
   init_permissions:
     image: busybox:1.37.0
     container_name: valheim_permissions_init
-    command: [ "sh", "-c", "chown -R 111:1000 /home/steam/.config/unity3d/IronGate/Valheim /home/steam/valheim /home/steam/backups" ]
+    command: [ "sh", "-c", "chown -R 111:1000 /home/steam/.config/unity3d/IronGate/Valheim /home/steam" ]
     volumes:
       - valheim_saves:/home/steam/.config/unity3d/IronGate/Valheim
       - valheim_server_data:/home/steam/valheim
       - valheim_backups:/home/steam/backups
+      - valheim_mod_configs:/home/steam/valheim/BepInEx/config
     restart: "no"
-    
 
   server:
     image: mbround18/valheim:3.6.0
@@ -28,6 +28,7 @@ services:
       - valheim_saves:/home/steam/.config/unity3d/IronGate/Valheim
       - valheim_server_data:/home/steam/valheim
       - valheim_backups:/home/steam/backups
+      - valheim_mod_configs:/home/steam/valheim/BepInEx/config
     environment:
       PORT: 2456
       NAME: ${VALHEIM_WORLD_NAME}
@@ -104,6 +105,9 @@ volumes:
     external: true
   valheim_backups:
     name: valheim_backups
+    external: true
+  valheim_mod_configs:
+    name: valheim_mod_configs
     external: true
 
 networks:
