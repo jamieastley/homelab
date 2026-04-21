@@ -1,0 +1,120 @@
+name: valheim
+services:
+
+  init_permissions:
+    image: busybox:1.37.0
+    container_name: valheim_permissions_init
+    command: [ "sh", "-c", "chown -R 111:1000 /home/steam/.config/unity3d/IronGate/Valheim /home/steam" ]
+    volumes:
+      - valheim_saves:/home/steam/.config/unity3d/IronGate/Valheim
+      - valheim_server_data:/home/steam/valheim
+      - valheim_backups:/home/steam/backups
+      - valheim_mod_configs:/home/steam/valheim/BepInEx/config
+    restart: "no"
+
+  server:
+    image: mbround18/valheim:3.6.0
+    container_name: valheim_server
+    user: "111:1000"
+    stop_signal: SIGINT
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "2456-2458:2456-2458/udp"
+      - "3000:3000"
+    volumes:
+      - valheim_saves:/home/steam/.config/unity3d/IronGate/Valheim
+      - valheim_server_data:/home/steam/valheim
+      - valheim_backups:/home/steam/backups
+      - valheim_mod_configs:/home/steam/valheim/BepInEx/config
+    environment:
+      PORT: 2456
+      NAME: ${VALHEIM_WORLD_NAME}
+      WORLD: "Valhalla"
+      TZ: "Australia/Sydney"
+      PUBLIC: 0
+      HTTP_PORT: 3000
+      AUTO_UPDATE: 0
+      AUTO_BACKUP: true
+      AUTO_BACKUP_REMOVE_OLD: 1
+      AUTO_BACKUP_DAYS_TO_LIVE: 7
+      AUTO_BACKUP_ON_UPDATE: 1
+      AUTO_BACKUP_ON_SHUTDOWN: 1
+      SCHEDULED_RESTART: 1
+      SCHEDULED_RESTART_SCHEDULE: "0 4 * * *" # Every day at 4am
+      TYPE: "BepInEx"
+      MODS: |
+        Advize-Armoire-1.1.4
+        Advize-PlantEverything-1.20.0
+        Azumatt-AAA_Crafting-2.1.6
+        Azumatt-AzuAutoStore-3.0.14
+        Azumatt-AzuCraftyBoxes-1.8.14
+        Azumatt-AzuExtendedPlayerInventory-2.4.1
+        Azumatt-Recycle_N_Reclaim-1.4.0
+        Azumatt-RepairStation-1.2.6
+        Azumatt-PetPantry-1.0.5
+        Azumatt-WardIsLove-3.7.2
+        blacks7ar-BeeKeeper-1.0.8
+        blacks7ar-Explorer-1.1.5
+        blacks7ar-Fermenting-1.1.6
+        blacks7ar-GlassPieces-1.2.5
+        blacks7ar-VikingsDoSwim-1.4.1
+        JereKuusela-Server_devcommands-1.104.0
+        MathiasDecrock-PlanBuild-0.18.4
+        OdinPlus-TeleportEverything-2.9.1
+        RandyKnapp-EpicLoot-0.12.11
+        shudnal-ConfigurationManager-1.1.13
+        Smoothbrain-Blacksmithing-1.3.3
+        Smoothbrain-Cooking-1.2.2
+        TastyChickenLegs-AutomaticFuel-1.4.8
+        ValheimModding-HookGenPatcher-0.0.4
+        ValheimModding-Jotunn-2.29.0
+        ValheimModding-JsonDotNET-13.0.4
+        ValheimModding-YamlDotNet-16.3.1
+        Vapok-AdventureBackpacks-1.9.13
+        Vapok-ShieldMeBruh-1.1.5
+        VentureValheim-Venture_Multiplayer_Tweaks-0.11.8
+        Xutz-ValheimCuisine-2.2.8
+
+    networks:
+      - games_server_tailscale
+    labels:
+      - tailscale=true
+      - traefik.enable=true
+      - traefik.instance=games
+      - traefik.docker.network=games_server_tailscale # Ensure traefik is attached to the games_server_tailscale network
+      - traefik.http.routers.huginn.rule=Host(`huginn.valheim.${CF_DOMAIN}`)
+      - traefik.http.routers.huginn.entrypoints=websecure
+      - traefik.http.routers.huginn.tls=true
+      - traefik.http.routers.huginn.tls.certresolver=letsencrypt
+      - traefik.http.services.huginn.loadbalancer.server.port=3000
+      - traefik.udp.routers.valheim1.entrypoints=valheim1
+      - traefik.udp.routers.valheim1.service=valheim1
+      - traefik.udp.services.valheim1.loadbalancer.server.port=2456
+      - traefik.udp.routers.valheim2.entrypoints=valheim2
+      - traefik.udp.routers.valheim2.service=valheim2
+      - traefik.udp.services.valheim2.loadbalancer.server.port=2457
+      - traefik.udp.routers.valheim3.entrypoints=valheim3
+      - traefik.udp.routers.valheim3.service=valheim3
+      - traefik.udp.services.valheim3.loadbalancer.server.port=2458
+
+volumes:
+  valheim_saves:
+    name: valheim_saves
+    external: true
+  valheim_server_data:
+    name: valheim_server_data
+    external: true
+  valheim_backups:
+    name: valheim_backups
+    external: true
+  valheim_mod_configs:
+    name: valheim_mod_configs
+    external: true
+
+networks:
+  games_server_tailscale:
+    name: games_server_tailscale
+    external: true

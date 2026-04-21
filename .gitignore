@@ -4,6 +4,7 @@
 # Project files
 hytale-data/
 secrets/
+adminlist.txt
 
 # Terraform
 # Local .terraform directories
