@@ -39,8 +39,11 @@ services:
       AUTO_UPDATE: 0
       AUTO_BACKUP: true
       AUTO_BACKUP_REMOVE_OLD: 1
-      AUTO_BACKUP_DAYS_TO_LIVE: 3
+      AUTO_BACKUP_DAYS_TO_LIVE: 7
+      AUTO_BACKUP_ON_UPDATE: 1
       AUTO_BACKUP_ON_SHUTDOWN: 1
+      SCHEDULED_RESTART: 1
+      SCHEDULED_RESTART_SCHEDULE: "0 4 * * *" # Every day at 4am
       TYPE: "BepInEx"
       MODS: |
         Advize-Armoire-1.1.4
