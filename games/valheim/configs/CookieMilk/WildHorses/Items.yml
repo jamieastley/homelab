@@ -1,0 +1,63 @@
+# ========================================
+# WildHorses - Items Configuration
+# ========================================
+# Configure recipes, trader info, and drops for all items
+# Singleplayer: Changes take effect immediately on save
+# Multiplayer: Server config syncs to all clients immediately on save
+
+# ===== ITEMS =====
+
+wh_horse_saddle:
+  # ===== DISPLAY =====
+  name: $item_wh_horse_saddle                                                                       # Default: $item_wh_horse_saddle | Display name for this item
+  description: $itemdesc_wh_horse_saddle                                                            # Default: $itemdesc_wh_horse_saddle | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 10                                                                                        # Default: 10 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level: 1                                                                                  # Default: 1 | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items:                                                                                   # Items required (2 configured)
+    LeatherScraps: 10                                                                               # Default: 10 | Amount required
+    BronzeNails: 5                                                                                  # Default: 5 | Amount required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+wh_horse_saddle_armor:
+  # ===== DISPLAY =====
+  name: $item_wh_horse_saddle_armor                                                                 # Default: $item_wh_horse_saddle_armor | Display name for this item
+  description: $itemdesc_wh_horse_saddle_armor                                                      # Default: $itemdesc_wh_horse_saddle_armor | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 10                                                                                        # Default: 10 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level: 4                                                                                  # Default: 4 | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items:                                                                                   # Items required (2 configured)
+    LeatherScraps: 20                                                                               # Default: 20 | Amount required
+    BronzeNails: 10                                                                                 # Default: 10 | Amount required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+

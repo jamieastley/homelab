@@ -1,0 +1,247 @@
+# ========================================
+# WildBears - Pieces Configuration
+# ========================================
+# Configure build pieces and their crafting requirements
+# Singleplayer: Changes take effect immediately on save
+# Multiplayer: Server config syncs to all clients immediately on save
+
+# ===== FISH =====
+
+wb_toy_fish:
+  # ===== DISPLAY =====
+  name: $piece_wb_toy_fish                                                                          # Default: $piece_wb_toy_fish | Display name for this piece
+  description: $piece_wb_toy_fish_description                                                       # Default: $piece_wb_toy_fish_description | Description for this piece
+
+  # ===== SPECIAL PROPERTIES =====
+  admin_only: false                                                                                 # Default: false | Options: true, false | Only admins can build this piece
+
+  # ===== WEAR AND TEAR =====
+  health: 500                                                                                       # Default: 500 | Piece health
+  material_type: Wood                                                                               # Default: Wood | Options: Wood, Stone, Iron, HardWood, Marble, Ashstone, Ancient, BlackMarble | Material type for damage calculation
+  no_roof_wear: false                                                                               # Default: false | Options: true, false | Immune to rain damage when exposed
+  no_support_wear: true                                                                             # Default: true | Options: true, false | Immune to support damage
+  ash_damage_immune: false                                                                          # Default: false | Options: true, false | Immune to ashlands damage
+  ash_damage_resist: false                                                                          # Default: false | Options: true, false | Resists ashlands damage
+  burnable: true                                                                                    # Default: true | Options: true, false | Can catch fire
+  supports: false                                                                                   # Default: false | Options: true, false | Provides structural support
+  min_tool_tier: 0                                                                                  # Default: 0 | Minimum tool tier required
+  # Damage Resistances:
+  fire_modifier: Ignore                                                                             # Damage modifier for Fire
+  frost_modifier: Ignore                                                                            # Damage modifier for Frost
+  lightning_modifier: Ignore                                                                        # Damage modifier for Lightning
+  poison_modifier: Ignore                                                                           # Damage modifier for Poison
+  spirit_modifier: Ignore                                                                           # Damage modifier for Spirit
+
+  # ===== TOOLS =====
+  tools: Hammer                                                                                     # Default: Hammer | Comma-separated list of tools
+
+  # ===== BUILD CATEGORY =====
+  category: Custom                                                                                  # Default: Custom | Options: Misc, Crafting, BuildingWorkbench, BuildingStonecutter, Furniture, All, Custom | Build menu category
+  custom_category: Misc                                                                             # Default: Misc | Custom category name
+
+  # ===== CRAFTING STATION =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge, Custom | Required crafting station
+
+  # ===== CRAFTING REQUIREMENTS =====
+  required_items:                                                                                   # Materials needed
+    Wood: 5                                                                                         # Default: 5 | Amount required
+
+# ===== FISH PONDS =====
+
+wb_pond_plant:
+  # ===== DISPLAY =====
+  name: $piece_wb_pond_plant                                                                        # Default: $piece_wb_pond_plant | Display name for this piece
+  description: $piece_wb_pond_plant_description                                                     # Default: $piece_wb_pond_plant_description | Description for this piece
+
+  # ===== SPECIAL PROPERTIES =====
+  admin_only: false                                                                                 # Default: false | Options: true, false | Only admins can build this piece
+
+  # ===== WEAR AND TEAR =====
+  health: 1500                                                                                      # Default: 1500 | Piece health
+  material_type: HardWood                                                                           # Default: HardWood | Options: Wood, Stone, Iron, HardWood, Marble, Ashstone, Ancient, BlackMarble | Material type for damage calculation
+  no_roof_wear: false                                                                               # Default: false | Options: true, false | Immune to rain damage when exposed
+  no_support_wear: true                                                                             # Default: true | Options: true, false | Immune to support damage
+  ash_damage_immune: false                                                                          # Default: false | Options: true, false | Immune to ashlands damage
+  ash_damage_resist: false                                                                          # Default: false | Options: true, false | Resists ashlands damage
+  burnable: false                                                                                   # Default: false | Options: true, false | Can catch fire
+  supports: false                                                                                   # Default: false | Options: true, false | Provides structural support
+  min_tool_tier: 0                                                                                  # Default: 0 | Minimum tool tier required
+  # Damage Resistances:
+  fire_modifier: Ignore                                                                             # Damage modifier for Fire
+  frost_modifier: Ignore                                                                            # Damage modifier for Frost
+  lightning_modifier: Ignore                                                                        # Damage modifier for Lightning
+  poison_modifier: Ignore                                                                           # Damage modifier for Poison
+  spirit_modifier: Ignore                                                                           # Damage modifier for Spirit
+
+  # ===== TOOLS =====
+  tools: Hammer                                                                                     # Default: Hammer | Comma-separated list of tools
+
+  # ===== BUILD CATEGORY =====
+  category: Custom                                                                                  # Default: Custom | Options: Misc, Crafting, BuildingWorkbench, BuildingStonecutter, Furniture, All, Custom | Build menu category
+  custom_category: Misc                                                                             # Default: Misc | Custom category name
+
+  # ===== CRAFTING STATION =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge, Custom | Required crafting station
+
+  # ===== CRAFTING REQUIREMENTS =====
+  required_items:                                                                                   # Materials needed
+    Wood: 10                                                                                        # Default: 10 | Amount required
+
+wb_pond_glass:
+  # ===== DISPLAY =====
+  name: $piece_wb_pond_glass                                                                        # Default: $piece_wb_pond_glass | Display name for this piece
+  description: $piece_wb_pond_glass_description                                                     # Default: $piece_wb_pond_glass_description | Description for this piece
+
+  # ===== SPECIAL PROPERTIES =====
+  admin_only: false                                                                                 # Default: false | Options: true, false | Only admins can build this piece
+
+  # ===== WEAR AND TEAR =====
+  health: 1500                                                                                      # Default: 1500 | Piece health
+  material_type: HardWood                                                                           # Default: HardWood | Options: Wood, Stone, Iron, HardWood, Marble, Ashstone, Ancient, BlackMarble | Material type for damage calculation
+  no_roof_wear: false                                                                               # Default: false | Options: true, false | Immune to rain damage when exposed
+  no_support_wear: true                                                                             # Default: true | Options: true, false | Immune to support damage
+  ash_damage_immune: false                                                                          # Default: false | Options: true, false | Immune to ashlands damage
+  ash_damage_resist: false                                                                          # Default: false | Options: true, false | Resists ashlands damage
+  burnable: false                                                                                   # Default: false | Options: true, false | Can catch fire
+  supports: false                                                                                   # Default: false | Options: true, false | Provides structural support
+  min_tool_tier: 0                                                                                  # Default: 0 | Minimum tool tier required
+  # Damage Resistances:
+  fire_modifier: Ignore                                                                             # Damage modifier for Fire
+  frost_modifier: Ignore                                                                            # Damage modifier for Frost
+  lightning_modifier: Ignore                                                                        # Damage modifier for Lightning
+  poison_modifier: Ignore                                                                           # Damage modifier for Poison
+  spirit_modifier: Ignore                                                                           # Damage modifier for Spirit
+
+  # ===== TOOLS =====
+  tools: Hammer                                                                                     # Default: Hammer | Comma-separated list of tools
+
+  # ===== BUILD CATEGORY =====
+  category: Custom                                                                                  # Default: Custom | Options: Misc, Crafting, BuildingWorkbench, BuildingStonecutter, Furniture, All, Custom | Build menu category
+  custom_category: Misc                                                                             # Default: Misc | Custom category name
+
+  # ===== CRAFTING STATION =====
+  crafting_station: StoneCutter                                                                     # Default: StoneCutter | Options: None, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge, Custom | Required crafting station
+
+  # ===== CRAFTING REQUIREMENTS =====
+  required_items:                                                                                   # Materials needed
+    Crystal: 10                                                                                     # Default: 10 | Amount required
+
+wb_pond_marble:
+  # ===== DISPLAY =====
+  name: $piece_wb_pond_marble                                                                       # Default: $piece_wb_pond_marble | Display name for this piece
+  description: $piece_wb_pond_marble_description                                                    # Default: $piece_wb_pond_marble_description | Description for this piece
+
+  # ===== SPECIAL PROPERTIES =====
+  admin_only: false                                                                                 # Default: false | Options: true, false | Only admins can build this piece
+
+  # ===== WEAR AND TEAR =====
+  health: 1500                                                                                      # Default: 1500 | Piece health
+  material_type: HardWood                                                                           # Default: HardWood | Options: Wood, Stone, Iron, HardWood, Marble, Ashstone, Ancient, BlackMarble | Material type for damage calculation
+  no_roof_wear: false                                                                               # Default: false | Options: true, false | Immune to rain damage when exposed
+  no_support_wear: true                                                                             # Default: true | Options: true, false | Immune to support damage
+  ash_damage_immune: false                                                                          # Default: false | Options: true, false | Immune to ashlands damage
+  ash_damage_resist: false                                                                          # Default: false | Options: true, false | Resists ashlands damage
+  burnable: false                                                                                   # Default: false | Options: true, false | Can catch fire
+  supports: false                                                                                   # Default: false | Options: true, false | Provides structural support
+  min_tool_tier: 0                                                                                  # Default: 0 | Minimum tool tier required
+  # Damage Resistances:
+  fire_modifier: Ignore                                                                             # Damage modifier for Fire
+  frost_modifier: Ignore                                                                            # Damage modifier for Frost
+  lightning_modifier: Ignore                                                                        # Damage modifier for Lightning
+  poison_modifier: Ignore                                                                           # Damage modifier for Poison
+  spirit_modifier: Ignore                                                                           # Damage modifier for Spirit
+
+  # ===== TOOLS =====
+  tools: Hammer                                                                                     # Default: Hammer | Comma-separated list of tools
+
+  # ===== BUILD CATEGORY =====
+  category: Custom                                                                                  # Default: Custom | Options: Misc, Crafting, BuildingWorkbench, BuildingStonecutter, Furniture, All, Custom | Build menu category
+  custom_category: Misc                                                                             # Default: Misc | Custom category name
+
+  # ===== CRAFTING STATION =====
+  crafting_station: StoneCutter                                                                     # Default: StoneCutter | Options: None, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge, Custom | Required crafting station
+
+  # ===== CRAFTING REQUIREMENTS =====
+  required_items:                                                                                   # Materials needed
+    BlackMarble: 10                                                                                 # Default: 10 | Amount required
+
+# ===== DECORATIONS =====
+
+wb_toy_shrimp:
+  # ===== DISPLAY =====
+  name: $piece_wb_toy_shrimp                                                                        # Default: $piece_wb_toy_shrimp | Display name for this piece
+  description: $piece_wb_toy_shrimp_description                                                     # Default: $piece_wb_toy_shrimp_description | Description for this piece
+
+  # ===== SPECIAL PROPERTIES =====
+  admin_only: false                                                                                 # Default: false | Options: true, false | Only admins can build this piece
+
+  # ===== WEAR AND TEAR =====
+  health: 500                                                                                       # Default: 500 | Piece health
+  material_type: Wood                                                                               # Default: Wood | Options: Wood, Stone, Iron, HardWood, Marble, Ashstone, Ancient, BlackMarble | Material type for damage calculation
+  no_roof_wear: false                                                                               # Default: false | Options: true, false | Immune to rain damage when exposed
+  no_support_wear: true                                                                             # Default: true | Options: true, false | Immune to support damage
+  ash_damage_immune: false                                                                          # Default: false | Options: true, false | Immune to ashlands damage
+  ash_damage_resist: false                                                                          # Default: false | Options: true, false | Resists ashlands damage
+  burnable: true                                                                                    # Default: true | Options: true, false | Can catch fire
+  supports: false                                                                                   # Default: false | Options: true, false | Provides structural support
+  min_tool_tier: 0                                                                                  # Default: 0 | Minimum tool tier required
+  # Damage Resistances:
+  fire_modifier: Ignore                                                                             # Damage modifier for Fire
+  frost_modifier: Ignore                                                                            # Damage modifier for Frost
+  lightning_modifier: Ignore                                                                        # Damage modifier for Lightning
+  poison_modifier: Ignore                                                                           # Damage modifier for Poison
+  spirit_modifier: Ignore                                                                           # Damage modifier for Spirit
+
+  # ===== TOOLS =====
+  tools: Hammer                                                                                     # Default: Hammer | Comma-separated list of tools
+
+  # ===== BUILD CATEGORY =====
+  category: Custom                                                                                  # Default: Custom | Options: Misc, Crafting, BuildingWorkbench, BuildingStonecutter, Furniture, All, Custom | Build menu category
+  custom_category: Misc                                                                             # Default: Misc | Custom category name
+
+  # ===== CRAFTING STATION =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge, Custom | Required crafting station
+
+  # ===== CRAFTING REQUIREMENTS =====
+  required_items:                                                                                   # Materials needed
+    Wood: 5                                                                                         # Default: 5 | Amount required
+
+wb_trap:
+  # ===== DISPLAY =====
+  name: $piece_wb_trap                                                                              # Default: $piece_wb_trap | Display name for this piece
+  description: $piece_wb_trap_description                                                           # Default: $piece_wb_trap_description | Description for this piece
+
+  # ===== SPECIAL PROPERTIES =====
+  admin_only: false                                                                                 # Default: false | Options: true, false | Only admins can build this piece
+
+  # ===== WEAR AND TEAR =====
+  health: 500                                                                                       # Default: 500 | Piece health
+  material_type: Wood                                                                               # Default: Wood | Options: Wood, Stone, Iron, HardWood, Marble, Ashstone, Ancient, BlackMarble | Material type for damage calculation
+  no_roof_wear: false                                                                               # Default: false | Options: true, false | Immune to rain damage when exposed
+  no_support_wear: true                                                                             # Default: true | Options: true, false | Immune to support damage
+  ash_damage_immune: false                                                                          # Default: false | Options: true, false | Immune to ashlands damage
+  ash_damage_resist: false                                                                          # Default: false | Options: true, false | Resists ashlands damage
+  burnable: true                                                                                    # Default: true | Options: true, false | Can catch fire
+  supports: false                                                                                   # Default: false | Options: true, false | Provides structural support
+  min_tool_tier: 0                                                                                  # Default: 0 | Minimum tool tier required
+  # Damage Resistances:
+  fire_modifier: Ignore                                                                             # Damage modifier for Fire
+  frost_modifier: Ignore                                                                            # Damage modifier for Frost
+  lightning_modifier: Ignore                                                                        # Damage modifier for Lightning
+  poison_modifier: Ignore                                                                           # Damage modifier for Poison
+  spirit_modifier: Ignore                                                                           # Damage modifier for Spirit
+
+  # ===== TOOLS =====
+  tools: Hammer                                                                                     # Default: Hammer | Comma-separated list of tools
+
+  # ===== BUILD CATEGORY =====
+  category: Custom                                                                                  # Default: Custom | Options: Misc, Crafting, BuildingWorkbench, BuildingStonecutter, Furniture, All, Custom | Build menu category
+  custom_category: Misc                                                                             # Default: Misc | Custom category name
+
+  # ===== CRAFTING STATION =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge, Custom | Required crafting station
+
+  # ===== CRAFTING REQUIREMENTS =====
+  required_items:                                                                                   # Materials needed
+    Wood: 5                                                                                         # Default: 5 | Amount required
+

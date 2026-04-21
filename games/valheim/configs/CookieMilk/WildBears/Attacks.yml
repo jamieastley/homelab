@@ -1,0 +1,1361 @@
+# ========================================
+# WildBears - Attack Configuration
+# ========================================
+# Configure weapon and tool attack properties
+# Singleplayer: Changes take effect immediately on save
+# Multiplayer: Server config syncs to all clients immediately on save
+
+# ===== BEARS =====
+
+wb_bear_black_bite_left:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 0                                                                                        # Default: 0 | Slash damage
+    pierce: 40                                                                                      # Default: 40 | Pierce damage
+    blunt: 0                                                                                        # Default: 0 | Blunt damage
+    chop: 0                                                                                         # Default: 0 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 4                                                                             # Default: 4 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_black_bite_right:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 0                                                                                        # Default: 0 | Slash damage
+    pierce: 40                                                                                      # Default: 40 | Pierce damage
+    blunt: 0                                                                                        # Default: 0 | Blunt damage
+    chop: 0                                                                                         # Default: 0 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 4                                                                             # Default: 4 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_black_claw_left:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 40                                                                                       # Default: 40 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 10                                                                                        # Default: 10 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 6                                                                             # Default: 6 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_black_claw_right:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 40                                                                                       # Default: 40 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 10                                                                                        # Default: 10 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 6                                                                             # Default: 6 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_black_claw_combo:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 40                                                                                       # Default: 40 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 10                                                                                        # Default: 10 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 100                                                                                    # Default: 100 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 8                                                                             # Default: 8 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_brown_bite_left:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 0                                                                                        # Default: 0 | Slash damage
+    pierce: 60                                                                                      # Default: 60 | Pierce damage
+    blunt: 0                                                                                        # Default: 0 | Blunt damage
+    chop: 0                                                                                         # Default: 0 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 4                                                                             # Default: 4 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_brown_bite_right:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 0                                                                                        # Default: 0 | Slash damage
+    pierce: 60                                                                                      # Default: 60 | Pierce damage
+    blunt: 0                                                                                        # Default: 0 | Blunt damage
+    chop: 0                                                                                         # Default: 0 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 4                                                                             # Default: 4 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_brown_claw_left:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 60                                                                                       # Default: 60 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 20                                                                                        # Default: 20 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 6                                                                             # Default: 6 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_brown_claw_right:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 60                                                                                       # Default: 60 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 20                                                                                        # Default: 20 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 6                                                                             # Default: 6 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_brown_claw_combo:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 60                                                                                       # Default: 60 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 20                                                                                        # Default: 20 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 100                                                                                    # Default: 100 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 8                                                                             # Default: 8 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_grizzly_bite_left:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 0                                                                                        # Default: 0 | Slash damage
+    pierce: 100                                                                                     # Default: 100 | Pierce damage
+    blunt: 0                                                                                        # Default: 0 | Blunt damage
+    chop: 0                                                                                         # Default: 0 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 4                                                                             # Default: 4 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_grizzly_bite_right:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 0                                                                                        # Default: 0 | Slash damage
+    pierce: 100                                                                                     # Default: 100 | Pierce damage
+    blunt: 0                                                                                        # Default: 0 | Blunt damage
+    chop: 0                                                                                         # Default: 0 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 4                                                                             # Default: 4 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_grizzly_claw_left:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 100                                                                                      # Default: 100 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 50                                                                                        # Default: 50 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 6                                                                             # Default: 6 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_grizzly_claw_right:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 100                                                                                      # Default: 100 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 50                                                                                        # Default: 50 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 6                                                                             # Default: 6 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_grizzly_claw_combo:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 100                                                                                      # Default: 100 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 50                                                                                        # Default: 50 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 100                                                                                    # Default: 100 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 8                                                                             # Default: 8 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_cosmic_bite_left:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 0                                                                                        # Default: 0 | Slash damage
+    pierce: 120                                                                                     # Default: 120 | Pierce damage
+    blunt: 0                                                                                        # Default: 0 | Blunt damage
+    chop: 0                                                                                         # Default: 0 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 4                                                                             # Default: 4 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_cosmic_bite_right:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 0                                                                                        # Default: 0 | Slash damage
+    pierce: 120                                                                                     # Default: 120 | Pierce damage
+    blunt: 0                                                                                        # Default: 0 | Blunt damage
+    chop: 0                                                                                         # Default: 0 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 4                                                                             # Default: 4 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_cosmic_claw_left:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 120                                                                                      # Default: 120 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 70                                                                                        # Default: 70 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 6                                                                             # Default: 6 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_cosmic_claw_right:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 120                                                                                      # Default: 120 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 70                                                                                        # Default: 70 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 6                                                                             # Default: 6 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_cosmic_claw_combo:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 120                                                                                      # Default: 120 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 70                                                                                        # Default: 70 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 100                                                                                    # Default: 100 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 8                                                                             # Default: 8 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_polar_bite_left:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 0                                                                                        # Default: 0 | Slash damage
+    pierce: 200                                                                                     # Default: 200 | Pierce damage
+    blunt: 0                                                                                        # Default: 0 | Blunt damage
+    chop: 0                                                                                         # Default: 0 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 4                                                                             # Default: 4 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_polar_bite_right:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 0                                                                                        # Default: 0 | Slash damage
+    pierce: 200                                                                                     # Default: 200 | Pierce damage
+    blunt: 0                                                                                        # Default: 0 | Blunt damage
+    chop: 0                                                                                         # Default: 0 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 4                                                                             # Default: 4 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_polar_claw_left:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 200                                                                                      # Default: 200 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 90                                                                                        # Default: 90 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 6                                                                             # Default: 6 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_polar_claw_right:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 200                                                                                      # Default: 200 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 90                                                                                        # Default: 90 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 50                                                                                     # Default: 50 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 6                                                                             # Default: 6 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_bear_polar_claw_combo:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 200                                                                                      # Default: 200 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 20                                                                                       # Default: 20 | Blunt damage
+    chop: 90                                                                                        # Default: 90 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 100                                                                                    # Default: 100 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 360                                                                                 # Default: 360 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 5                                                                                # Default: 5 | AI engagement range
+  ai_attack_range_min: 0                                                                            # Default: 0 | Min AI range
+  ai_attack_interval: 8                                                                             # Default: 8 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0                                                                                   # Default: 0 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+# ===== OTHER =====
+
+wb_serpent_bite:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 2                                                                                        # Default: 2 | Slash damage
+    pierce: 2                                                                                       # Default: 2 | Pierce damage
+    blunt: 0                                                                                        # Default: 0 | Blunt damage
+    chop: 0                                                                                         # Default: 0 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 0                                                                                       # Default: 0 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 100                                                                                    # Default: 100 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 3                                                                                   # Default: 3 | How far attack reaches
+  attack_angle: 80                                                                                  # Default: 80 | Attack cone angle
+  attack_height: 1                                                                                  # Default: 1 | Vertical reach
+  attack_ray_width: 2                                                                               # Default: 2 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 3                                                                                # Default: 3 | AI engagement range
+  ai_attack_range_min: -1                                                                           # Default: -1 | Min AI range
+  ai_attack_interval: 10                                                                            # Default: 10 | Time between attacks
+  ai_attack_max_angle: 45                                                                           # Default: 45 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0.6                                                                                 # Default: 0.6 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+
+wb_serpent_taunt:
+  # ===== DAMAGE =====
+  damage:                                                                                           # Base damage values for this attack
+    true: 0                                                                                         # Default: 0 | Physical damage
+    slash: 0                                                                                        # Default: 0 | Slash damage
+    pierce: 0                                                                                       # Default: 0 | Pierce damage
+    blunt: 0                                                                                        # Default: 0 | Blunt damage
+    chop: 0                                                                                         # Default: 0 | Chop damage
+    pickaxe: 0                                                                                      # Default: 0 | Pickaxe damage
+    fire: 0                                                                                         # Default: 0 | Fire damage
+    frost: 0                                                                                        # Default: 0 | Frost damage
+    lightning: 0                                                                                    # Default: 0 | Lightning damage
+    poison: 2                                                                                       # Default: 2 | Poison damage
+    spirit: 0                                                                                       # Default: 0 | Spirit damage
+  knockback: 30                                                                                     # Default: 30 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost per attack
+
+  # ===== DAMAGE MODIFIERS =====
+  damage_multiplier: 1                                                                              # Default: 1 | Overall damage multiplier
+  force_multiplier: 1                                                                               # Default: 1 | Knockback multiplier
+  stagger_multiplier: 1                                                                             # Default: 1 | Stagger multiplier
+
+  # ===== STATUS EFFECTS =====
+  attack_status_effect:                                                                             # Default:  | Status effect name
+  attack_status_effect_chance: 1                                                                    # Default: 1 | Chance to apply status effect
+
+  # ===== ATTACK BEHAVIOR =====
+  attack_range: 5                                                                                   # Default: 5 | How far attack reaches
+  attack_angle: 30                                                                                  # Default: 30 | Attack cone angle
+  attack_height: 0.99                                                                               # Default: 0.99 | Vertical reach
+  attack_ray_width: 1.5                                                                             # Default: 1.5 | Width of attack hitbox
+
+  # ===== AI ATTACK BEHAVIOR =====
+  ai_attack_range: 25                                                                               # Default: 25 | AI engagement range
+  ai_attack_range_min: 4                                                                            # Default: 4 | Min AI range
+  ai_attack_interval: 120                                                                           # Default: 120 | Time between attacks
+  ai_attack_max_angle: 15                                                                           # Default: 15 | Max angle for AI to attack
+
+  # ===== MOVEMENT =====
+  speed_factor: 0.2                                                                                 # Default: 0.2 | Movement speed during attack
+
+  # ===== TOOL =====
+  tool_tier: 0                                                                                      # Default: 0 | Tool tier
+
+  # ===== STAMINA =====
+  attack_stamina: 20                                                                                # Default: 20 | Stamina cost when mounted - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+  cooldown: 0                                                                                       # Default: 0 | Cooldown between attacks - Used when 'Use Per-Attack Values' is enabled. 0 = use global config
+
+

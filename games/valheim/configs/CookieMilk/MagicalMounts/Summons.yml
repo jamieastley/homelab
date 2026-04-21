@@ -1,0 +1,1023 @@
+# ========================================
+# MagicalMounts - Summons Configuration
+# ========================================
+# Configure recipes, trader info, and drops for all summons
+# Singleplayer: Changes take effect immediately on save
+# Multiplayer: Server config syncs to all clients immediately on save
+
+# ===== HORSES =====
+
+mm_horse_white_summon:
+  # ===== DISPLAY =====
+  name: White Horse Summon                                                                          # Default: White Horse Summon | Display name for this item
+  description: Summon onto a White Horse! F10 to unsummon                                           # Default: Summon onto a White Horse! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_horse_black_summon:
+  # ===== DISPLAY =====
+  name: Black Horse Summon                                                                          # Default: Black Horse Summon | Display name for this item
+  description: Summon onto a Black Horse! F10 to unsummon                                           # Default: Summon onto a Black Horse! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_horse_gray_summon:
+  # ===== DISPLAY =====
+  name: Gray Horse Summon                                                                           # Default: Gray Horse Summon | Display name for this item
+  description: Summon onto a Gray Horse! F10 to unsummon                                            # Default: Summon onto a Gray Horse! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_horse_brown_summon:
+  # ===== DISPLAY =====
+  name: Brown Horse Summon                                                                          # Default: Brown Horse Summon | Display name for this item
+  description: Summon onto a Brown Horse! F10 to unsummon                                           # Default: Summon onto a Brown Horse! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_horse_palomino_summon:
+  # ===== DISPLAY =====
+  name: Palomino Horse Summon                                                                       # Default: Palomino Horse Summon | Display name for this item
+  description: Summon onto a Palomino Horse! F10 to unsummon                                        # Default: Summon onto a Palomino Horse! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_horse_cosmic_summon:
+  # ===== DISPLAY =====
+  name: Cosmic Horse Summon                                                                         # Default: Cosmic Horse Summon | Display name for this item
+  description: Summon onto a Cosmic Horse! F10 to unsummon                                          # Default: Summon onto a Cosmic Horse! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+# ===== UNICORNS =====
+
+mm_unicorn_white_summon:
+  # ===== DISPLAY =====
+  name: White Unicorn Summon                                                                        # Default: White Unicorn Summon | Display name for this item
+  description: Summon onto a White Unicorn! F10 to unsummon                                         # Default: Summon onto a White Unicorn! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_unicorn_black_summon:
+  # ===== DISPLAY =====
+  name: Black Unicorn Summon                                                                        # Default: Black Unicorn Summon | Display name for this item
+  description: Summon onto a Black Unicorn! F10 to unsummon                                         # Default: Summon onto a Black Unicorn! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+# ===== PEGASUS =====
+
+mm_pegasus_white_summon:
+  # ===== DISPLAY =====
+  name: White Pegasus Summon                                                                        # Default: White Pegasus Summon | Display name for this item
+  description: Summon onto a White Pegasus! F10 to unsummon                                         # Default: Summon onto a White Pegasus! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_pegasus_black_summon:
+  # ===== DISPLAY =====
+  name: Black Pegasus Summon                                                                        # Default: Black Pegasus Summon | Display name for this item
+  description: Summon onto a Black Pegasus! F10 to unsummon                                         # Default: Summon onto a Black Pegasus! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+# ===== DEER =====
+
+mm_deer_white_summon:
+  # ===== DISPLAY =====
+  name: White Deer Summon                                                                           # Default: White Deer Summon | Display name for this item
+  description: Summon onto a White Deer! F10 to unsummon                                            # Default: Summon onto a White Deer! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_deer_black_summon:
+  # ===== DISPLAY =====
+  name: Black Deer Summon                                                                           # Default: Black Deer Summon | Display name for this item
+  description: Summon onto a Black Deer! F10 to unsummon                                            # Default: Summon onto a Black Deer! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_deer_red_summon:
+  # ===== DISPLAY =====
+  name: Red Deer Summon                                                                             # Default: Red Deer Summon | Display name for this item
+  description: Summon onto a Red Deer! F10 to unsummon                                              # Default: Summon onto a Red Deer! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_deer_brown_summon:
+  # ===== DISPLAY =====
+  name: Brown Deer Summon                                                                           # Default: Brown Deer Summon | Display name for this item
+  description: Summon onto a Brown Deer! F10 to unsummon                                            # Default: Summon onto a Brown Deer! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_deer_white_magic_summon:
+  # ===== DISPLAY =====
+  name: White Magic Deer Summon                                                                     # Default: White Magic Deer Summon | Display name for this item
+  description: Summon onto a White Magic Deer! F10 to unsummon                                      # Default: Summon onto a White Magic Deer! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_deer_black_magic_summon:
+  # ===== DISPLAY =====
+  name: Black Magic Deer Summon                                                                     # Default: Black Magic Deer Summon | Display name for this item
+  description: Summon onto a Black Magic Deer! F10 to unsummon                                      # Default: Summon onto a Black Magic Deer! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_deer_red_magic_summon:
+  # ===== DISPLAY =====
+  name: Red Magic Deer Summon                                                                       # Default: Red Magic Deer Summon | Display name for this item
+  description: Summon onto a Red Magic Deer! F10 to unsummon                                        # Default: Summon onto a Red Magic Deer! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_deer_cosmic_summon:
+  # ===== DISPLAY =====
+  name: Cosmic Deer Summon                                                                          # Default: Cosmic Deer Summon | Display name for this item
+  description: Summon onto a Cosmic Deer! F10 to unsummon                                           # Default: Summon onto a Cosmic Deer! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+# ===== UNDEAD =====
+
+mm_undead_fire_summon:
+  # ===== DISPLAY =====
+  name: Fire Undead Horse Summon                                                                    # Default: Fire Undead Horse Summon | Display name for this item
+  description: Summon onto a Fire Undead Horse! F10 to unsummon                                     # Default: Summon onto a Fire Undead Horse! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_undead_ice_summon:
+  # ===== DISPLAY =====
+  name: Ice Undead Horse Summon                                                                     # Default: Ice Undead Horse Summon | Display name for this item
+  description: Summon onto an Ice Undead Horse! F10 to unsummon                                     # Default: Summon onto an Ice Undead Horse! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_undead_toxic_summon:
+  # ===== DISPLAY =====
+  name: Toxic Undead Horse Summon                                                                   # Default: Toxic Undead Horse Summon | Display name for this item
+  description: Summon onto a Toxic Undead Horse! F10 to unsummon                                    # Default: Summon onto a Toxic Undead Horse! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_undead_rotten_summon:
+  # ===== DISPLAY =====
+  name: Rotten Undead Horse Summon                                                                  # Default: Rotten Undead Horse Summon | Display name for this item
+  description: Summon onto a Rotten Undead Horse! F10 to unsummon                                   # Default: Summon onto a Rotten Undead Horse! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_undead_cosmic_summon:
+  # ===== DISPLAY =====
+  name: Cosmic Undead Horse Summon                                                                  # Default: Cosmic Undead Horse Summon | Display name for this item
+  description: Summon onto a Cosmic Undead Horse! F10 to unsummon                                   # Default: Summon onto a Cosmic Undead Horse! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+# ===== WOLVES =====
+
+mm_wolf_white_summon:
+  # ===== DISPLAY =====
+  name: White Wolf Summon                                                                           # Default: White Wolf Summon | Display name for this item
+  description: Summon onto a White Wolf! F10 to unsummon                                            # Default: Summon onto a White Wolf! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_wolf_black_summon:
+  # ===== DISPLAY =====
+  name: Black Wolf Summon                                                                           # Default: Black Wolf Summon | Display name for this item
+  description: Summon onto a Black Wolf! F10 to unsummon                                            # Default: Summon onto a Black Wolf! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_wolf_gray_summon:
+  # ===== DISPLAY =====
+  name: Gray Wolf Summon                                                                            # Default: Gray Wolf Summon | Display name for this item
+  description: Summon onto a Gray Wolf! F10 to unsummon                                             # Default: Summon onto a Gray Wolf! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_wolf_timber_summon:
+  # ===== DISPLAY =====
+  name: Timber Wolf Summon                                                                          # Default: Timber Wolf Summon | Display name for this item
+  description: Summon onto a Timber Wolf! F10 to unsummon                                           # Default: Summon onto a Timber Wolf! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_wolf_star_summon:
+  # ===== DISPLAY =====
+  name: Star Wolf Summon                                                                            # Default: Star Wolf Summon | Display name for this item
+  description: Summon onto a Star Wolf! F10 to unsummon                                             # Default: Summon onto a Star Wolf! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_wolf_cosmic_summon:
+  # ===== DISPLAY =====
+  name: Cosmic Wolf Summon                                                                          # Default: Cosmic Wolf Summon | Display name for this item
+  description: Summon onto a Cosmic Wolf! F10 to unsummon                                           # Default: Summon onto a Cosmic Wolf! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+# ===== RAVENS =====
+
+mm_raven_white_summon:
+  # ===== DISPLAY =====
+  name: White Raven Summon                                                                          # Default: White Raven Summon | Display name for this item
+  description: Summon onto a White Raven! F10 to unsummon                                           # Default: Summon onto a White Raven! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_raven_black_summon:
+  # ===== DISPLAY =====
+  name: Black Raven Summon                                                                          # Default: Black Raven Summon | Display name for this item
+  description: Summon onto a Black Raven! F10 to unsummon                                           # Default: Summon onto a Black Raven! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_raven_gray_summon:
+  # ===== DISPLAY =====
+  name: Gray Raven Summon                                                                           # Default: Gray Raven Summon | Display name for this item
+  description: Summon onto a Gray Raven! F10 to unsummon                                            # Default: Summon onto a Gray Raven! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_raven_blackwhite_summon:
+  # ===== DISPLAY =====
+  name: Black & White Raven Summon                                                                  # Default: Black & White Raven Summon | Display name for this item
+  description: Summon onto a Black and White Raven! F10 to unsummon                                 # Default: Summon onto a Black and White Raven! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_raven_blackyellow_summon:
+  # ===== DISPLAY =====
+  name: Black & Yellow Raven Summon                                                                 # Default: Black & Yellow Raven Summon | Display name for this item
+  description: Summon onto a Black and Yellow Raven! F10 to unsummon                                # Default: Summon onto a Black and Yellow Raven! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_raven_cosmic_summon:
+  # ===== DISPLAY =====
+  name: Cosmic Raven Summon                                                                         # Default: Cosmic Raven Summon | Display name for this item
+  description: Summon onto a Cosmic Raven! F10 to unsummon                                          # Default: Summon onto a Cosmic Raven! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+# ===== DRAGONS =====
+
+mm_dragon_red_summon:
+  # ===== DISPLAY =====
+  name: Red Dragon Summon                                                                           # Default: Red Dragon Summon | Display name for this item
+  description: Summon onto a Red Dragon! F10 to unsummon                                            # Default: Summon onto a Red Dragon! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_dragon_black_summon:
+  # ===== DISPLAY =====
+  name: Black Dragon Summon                                                                         # Default: Black Dragon Summon | Display name for this item
+  description: Summon onto a Black Dragon! F10 to unsummon                                          # Default: Summon onto a Black Dragon! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_dragon_green_summon:
+  # ===== DISPLAY =====
+  name: Green Dragon Summon                                                                         # Default: Green Dragon Summon | Display name for this item
+  description: Summon onto a Green Dragon! F10 to unsummon                                          # Default: Summon onto a Green Dragon! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_dragon_brown_summon:
+  # ===== DISPLAY =====
+  name: Brown Dragon Summon                                                                         # Default: Brown Dragon Summon | Display name for this item
+  description: Summon onto a Brown Dragon! F10 to unsummon                                          # Default: Summon onto a Brown Dragon! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_dragon_cosmic_summon:
+  # ===== DISPLAY =====
+  name: Cosmic Dragon Summon                                                                        # Default: Cosmic Dragon Summon | Display name for this item
+  description: Summon onto a Cosmic Dragon! F10 to unsummon                                         # Default: Summon onto a Cosmic Dragon! F10 to unsummon | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+

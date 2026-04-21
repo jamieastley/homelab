@@ -1,0 +1,51 @@
+# ========================================
+# WildHorses - Inventory Configuration
+# ========================================
+# Configure inventory sizes for all tameable horses
+# Singleplayer: Changes take effect immediately on save
+# Multiplayer: Server config syncs to all clients immediately on save
+
+# ===== HORSES =====
+
+wh_horse_white_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+wh_horse_black_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+wh_horse_gray_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+wh_horse_brown_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+wh_horse_palomino_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+wh_horse_cosmic_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+wh_horse_ruby_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+

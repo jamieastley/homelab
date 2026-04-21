@@ -1,0 +1,444 @@
+# ========================================
+# MagicalMounts - Items Configuration
+# ========================================
+# Configure recipes, trader info, and drops for all items
+# Singleplayer: Changes take effect immediately on save
+# Multiplayer: Server config syncs to all clients immediately on save
+
+# ===== HORSES =====
+
+mm_horse_saddle:
+  # ===== DISPLAY =====
+  name: Horse Saddle                                                                                # Default: Horse Saddle | Display name for this item
+  description: A saddle to put on your tamed Horse!                                                 # Default: A saddle to put on your tamed Horse! | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level: 1                                                                                  # Default: 1 | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items:                                                                                   # Items required (2 configured)
+    LeatherScraps: 10                                                                               # Default: 10 | Amount required
+    BronzeNails: 5                                                                                  # Default: 5 | Amount required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_horse_saddle_armor:
+  # ===== DISPLAY =====
+  name: Armored Horse Saddle                                                                        # Default: Armored Horse Saddle | Display name for this item
+  description: An armored saddle to put on your tamed Horse!                                        # Default: An armored saddle to put on your tamed Horse! | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level: 4                                                                                  # Default: 4 | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items:                                                                                   # Items required (2 configured)
+    LeatherScraps: 20                                                                               # Default: 20 | Amount required
+    BronzeNails: 10                                                                                 # Default: 10 | Amount required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+# ===== UNICORNS =====
+
+mm_unicorn_rainbow:
+  # ===== DISPLAY =====
+  name: Unicorn Rainbow                                                                             # Default: Unicorn Rainbow | Display name for this item
+  description: The power of THE UNICORN!                                                            # Default: The power of THE UNICORN! | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Weapon                                                                                 # Default: Weapon | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 4                                                                                         # Default: 4 | Item weight
+  max_quality: 20                                                                                   # Default: 20 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== DURABILITY =====
+  durability: 100                                                                                   # Default: 100 | Base durability
+  durability_per_level: 50                                                                          # Default: 50 | Durability gained per upgrade
+  movement_speed_modifier: -0.2                                                                     # Default: -0.2 | Movement speed modifier
+
+  # ===== BLOCKING =====
+  block_armor: 15                                                                                   # Default: 15 | Block power
+  block_armor_per_level: 0                                                                          # Default: 0 | Block power per level
+  block_force: 50                                                                                   # Default: 50 | Deflection force
+  block_force_per_level: 10                                                                         # Default: 10 | Deflection force per level
+  parry_bonus: 2                                                                                    # Default: 2 | Parry bonus
+
+  # ===== WEAPON STATS =====
+  knockback: 200                                                                                    # Default: 200 | Knockback force
+  backstab_bonus: 2                                                                                 # Default: 2 | Backstab damage multiplier
+  attack_stamina: 25                                                                                # Default: 25 | Stamina cost per attack
+  health_cost: 0                                                                                    # Default: 0 | Health cost per attack
+  health_cost_percentage: 0                                                                         # Default: 0 | Health cost as percentage
+  eitr_cost: 0                                                                                      # Default: 0 | Eitr cost per attack
+
+  # ===== DAMAGE TYPES =====
+  damage_true: 20                                                                                   # Default: 20 | True damage
+  damage_true_per_level: 10                                                                         # Default: 10 | True damage per level
+  damage_slash: 20                                                                                  # Default: 20 | Slash damage
+  damage_slash_per_level: 10                                                                        # Default: 10 | Slash damage per level
+  damage_pierce: 20                                                                                 # Default: 20 | Pierce damage
+  damage_pierce_per_level: 10                                                                       # Default: 10 | Pierce damage per level
+  damage_blunt: 20                                                                                  # Default: 20 | Blunt damage
+  damage_blunt_per_level: 10                                                                        # Default: 10 | Blunt damage per level
+  damage_chop: 0                                                                                    # Default: 0 | Chop damage
+  damage_chop_per_level: 10                                                                         # Default: 10 | Chop damage per level
+  damage_pickaxe: 0                                                                                 # Default: 0 | Pickaxe damage
+  damage_pickaxe_per_level: 10                                                                      # Default: 10 | Pickaxe damage per level
+  damage_fire: 20                                                                                   # Default: 20 | Fire damage
+  damage_fire_per_level: 10                                                                         # Default: 10 | Fire damage per level
+  damage_poison: 20                                                                                 # Default: 20 | Poison damage
+  damage_poison_per_level: 10                                                                       # Default: 10 | Poison damage per level
+  damage_frost: 20                                                                                  # Default: 20 | Frost damage
+  damage_frost_per_level: 10                                                                        # Default: 10 | Frost damage per level
+  damage_lightning: 20                                                                              # Default: 20 | Lightning damage
+  damage_lightning_per_level: 10                                                                    # Default: 10 | Lightning damage per level
+  damage_spirit: 20                                                                                 # Default: 20 | Spirit damage
+  damage_spirit_per_level: 10                                                                       # Default: 10 | Spirit damage per level
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_unicorn_mask:
+  # ===== DISPLAY =====
+  name: Unicorn Mask                                                                                # Default: Unicorn Mask | Display name for this item
+  description: Stop horsing around!                                                                 # Default: Stop horsing around! | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Armor                                                                                  # Default: Armor | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 3                                                                                         # Default: 3 | Item weight
+  max_quality: 4                                                                                    # Default: 4 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== DURABILITY =====
+  durability: 800                                                                                   # Default: 800 | Base durability
+  durability_per_level: 100                                                                         # Default: 100 | Durability gained per upgrade
+  movement_speed_modifier: 0                                                                        # Default: 0 | Movement speed modifier
+
+  # ===== ARMOR =====
+  armor: 1                                                                                          # Default: 1 | Armor value
+  armor_per_level: 2                                                                                # Default: 2 | Armor per upgrade level
+
+  # ===== DAMAGE RESISTANCES =====
+
+  # ===== STAT MODIFIERS =====
+  eitr_regen_modifier: 0                                                                            # Default: 0 | Eitr regen modifier
+  home_items_stamina_modifier: -0.15                                                                # Default: -0.15 | Home items stamina modifier
+  heat_resistance_modifier: 0                                                                       # Default: 0 | Heat resistance modifier
+  jump_stamina_modifier: 0                                                                          # Default: 0 | Jump stamina modifier
+  attack_stamina_modifier: 0                                                                        # Default: 0 | Attack stamina modifier
+  block_stamina_modifier: 0                                                                         # Default: 0 | Block stamina modifier
+  dodge_stamina_modifier: 0                                                                         # Default: 0 | Dodge stamina modifier
+  swim_stamina_modifier: 0                                                                          # Default: 0 | Swim stamina modifier
+  sneak_stamina_modifier: 0                                                                         # Default: 0 | Sneak stamina modifier
+  run_stamina_modifier: 0                                                                           # Default: 0 | Run stamina modifier
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+# ===== DEER =====
+
+mm_deer_saddle:
+  # ===== DISPLAY =====
+  name: Deer Saddle                                                                                 # Default: Deer Saddle | Display name for this item
+  description: A saddle to put on your tamed Deer!                                                  # Default: A saddle to put on your tamed Deer! | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level: 1                                                                                  # Default: 1 | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items:                                                                                   # Items required (2 configured)
+    LeatherScraps: 10                                                                               # Default: 10 | Amount required
+    BronzeNails: 5                                                                                  # Default: 5 | Amount required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+# ===== UNDEAD =====
+
+mm_undead_saddle:
+  # ===== DISPLAY =====
+  name: Undead Horse Saddle                                                                         # Default: Undead Horse Saddle | Display name for this item
+  description: A saddle to put on your tamed Undead Horse!                                          # Default: A saddle to put on your tamed Undead Horse! | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level: 1                                                                                  # Default: 1 | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items:                                                                                   # Items required (2 configured)
+    LeatherScraps: 10                                                                               # Default: 10 | Amount required
+    BronzeNails: 5                                                                                  # Default: 5 | Amount required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_undead_saddle_armor:
+  # ===== DISPLAY =====
+  name: Armored Undead Horse Saddle                                                                 # Default: Armored Undead Horse Saddle | Display name for this item
+  description: An armored saddle to put on your tamed Undead Horse!                                 # Default: An armored saddle to put on your tamed Undead Horse! | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level: 4                                                                                  # Default: 4 | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items:                                                                                   # Items required (2 configured)
+    LeatherScraps: 20                                                                               # Default: 20 | Amount required
+    BronzeNails: 10                                                                                 # Default: 10 | Amount required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+# ===== WOLVES =====
+
+mm_wolf_saddle:
+  # ===== DISPLAY =====
+  name: Wolf Saddle                                                                                 # Default: Wolf Saddle | Display name for this item
+  description: A saddle to put on your tamed Wolf!                                                  # Default: A saddle to put on your tamed Wolf! | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level: 1                                                                                  # Default: 1 | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items:                                                                                   # Items required (2 configured)
+    LeatherScraps: 10                                                                               # Default: 10 | Amount required
+    BronzeNails: 5                                                                                  # Default: 5 | Amount required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+# ===== OTHER =====
+
+mm_cosmic_cell:
+  # ===== DISPLAY =====
+  name: Cosmic Cell                                                                                 # Default: Cosmic Cell | Display name for this item
+  description: A Cosmic Cell to safely transport your tames.                                        # Default: A Cosmic Cell to safely transport your tames. | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_cosmic_potion:
+  # ===== DISPLAY =====
+  name: Cosmic Potion                                                                               # Default: Cosmic Potion | Display name for this item
+  description: A modified berry used to heal your tames                                             # Default: A modified berry used to heal your tames | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Weapon                                                                                 # Default: Weapon | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== DURABILITY =====
+  durability: 100                                                                                   # Default: 100 | Base durability
+  durability_per_level: 50                                                                          # Default: 50 | Durability gained per upgrade
+  movement_speed_modifier: 0                                                                        # Default: 0 | Movement speed modifier
+
+  # ===== BLOCKING =====
+  block_armor: 10                                                                                   # Default: 10 | Block power
+  block_armor_per_level: 0                                                                          # Default: 0 | Block power per level
+  block_force: 0                                                                                    # Default: 0 | Deflection force
+  block_force_per_level: 0                                                                          # Default: 0 | Deflection force per level
+  parry_bonus: 1.5                                                                                  # Default: 1.5 | Parry bonus
+
+  # ===== WEAPON STATS =====
+  knockback: 30                                                                                     # Default: 30 | Knockback force
+  backstab_bonus: 4                                                                                 # Default: 4 | Backstab damage multiplier
+  attack_stamina: 0                                                                                 # Default: 0 | Stamina cost per attack
+  health_cost: 0                                                                                    # Default: 0 | Health cost per attack
+  health_cost_percentage: 0                                                                         # Default: 0 | Health cost as percentage
+  eitr_cost: 0                                                                                      # Default: 0 | Eitr cost per attack
+
+  # ===== DAMAGE TYPES =====
+  damage_true: 0                                                                                    # Default: 0 | True damage
+  damage_true_per_level: 0                                                                          # Default: 0 | True damage per level
+  damage_slash: 0                                                                                   # Default: 0 | Slash damage
+  damage_slash_per_level: 0                                                                         # Default: 0 | Slash damage per level
+  damage_pierce: 0                                                                                  # Default: 0 | Pierce damage
+  damage_pierce_per_level: 0                                                                        # Default: 0 | Pierce damage per level
+  damage_blunt: 0                                                                                   # Default: 0 | Blunt damage
+  damage_blunt_per_level: 0                                                                         # Default: 0 | Blunt damage per level
+  damage_chop: 0                                                                                    # Default: 0 | Chop damage
+  damage_chop_per_level: 0                                                                          # Default: 0 | Chop damage per level
+  damage_pickaxe: 0                                                                                 # Default: 0 | Pickaxe damage
+  damage_pickaxe_per_level: 0                                                                       # Default: 0 | Pickaxe damage per level
+  damage_fire: 0                                                                                    # Default: 0 | Fire damage
+  damage_fire_per_level: 0                                                                          # Default: 0 | Fire damage per level
+  damage_poison: 0                                                                                  # Default: 0 | Poison damage
+  damage_poison_per_level: 0                                                                        # Default: 0 | Poison damage per level
+  damage_frost: 0                                                                                   # Default: 0 | Frost damage
+  damage_frost_per_level: 0                                                                         # Default: 0 | Frost damage per level
+  damage_lightning: 0                                                                               # Default: 0 | Lightning damage
+  damage_lightning_per_level: 0                                                                     # Default: 0 | Lightning damage per level
+  damage_spirit: 0                                                                                  # Default: 0 | Spirit damage
+  damage_spirit_per_level: 0                                                                        # Default: 0 | Spirit damage per level
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_cosmic_treat:
+  # ===== DISPLAY =====
+  name: Cosmic Treat                                                                                # Default: Cosmic Treat | Display name for this item
+  description: This delicious looking treat seems to be irresistible to magical creatures!          # Default: This delicious looking treat seems to be irresistible to magical creatures! | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 99                                                                                # Default: 99 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: Cauldron                                                                        # Default: Cauldron | Options: None, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level: 1                                                                                  # Default: 1 | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items:                                                                                   # Items required (2 configured)
+    Raspberry: 5                                                                                    # Default: 5 | Amount required
+    Blueberries: 5                                                                                  # Default: 5 | Amount required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+mm_cosmic_berry:
+  # ===== DISPLAY =====
+  name: Cosmic Berry                                                                                # Default: Cosmic Berry | Display name for this item
+  description: This delicious looking berry seems to be able to divide into two other berries!      # Default: This delicious looking berry seems to be able to divide into two other berries! | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Generic                                                                                # Default: Generic | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+

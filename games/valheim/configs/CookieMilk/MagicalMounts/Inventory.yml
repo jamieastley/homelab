@@ -1,0 +1,193 @@
+# ========================================
+# MagicalMounts - Inventory Configuration
+# ========================================
+# Configure inventory sizes for all tameable creatures
+# Singleplayer: Changes take effect immediately on save
+# Multiplayer: Server config syncs to all clients immediately on save
+
+# ===== HORSES =====
+
+mm_horse_white_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_horse_black_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_horse_gray_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_horse_brown_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_horse_palomino_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_horse_cosmic_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+# ===== UNICORNS =====
+
+mm_unicorn_white_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_unicorn_black_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+# ===== PEGASUS =====
+
+mm_pegasus_white_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_pegasus_black_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+# ===== UNDEAD =====
+
+mm_undead_fire_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_undead_ice_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_undead_toxic_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_undead_rotten_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_undead_cosmic_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+# ===== DEER =====
+
+mm_deer_white_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_deer_black_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_deer_red_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_deer_brown_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_deer_white_magic_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_deer_black_magic_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_deer_red_magic_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_deer_cosmic_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+# ===== WOLVES =====
+
+mm_wolf_white_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_wolf_black_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_wolf_gray_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_wolf_timber_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_wolf_star_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+
+mm_wolf_cosmic_wild:
+  width: 3                                                                                          # Default: 3 | Inventory width
+  height: 1                                                                                         # Default: 1 | Inventory height
+  armored_width: 4                                                                                  # Default: 4 | Inventory width with armored saddle
+  armored_height: 3                                                                                 # Default: 3 | Inventory height with armored saddle
+

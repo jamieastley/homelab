@@ -1,0 +1,325 @@
+# ========================================
+# MagicalMounts - Drop Configuration
+# ========================================
+# Configure boss drop behavior, chances, and item weights
+# Singleplayer: Changes take effect immediately on save
+# Multiplayer: Server config syncs to all clients immediately on save
+#
+# ===== DROP MODES =====
+# chance:
+#   - Rolls for drop first using drop_chance
+#   - If successful, drops ONE item from the pool
+#   - If failed, drops nothing
+#   - With drop_per_player: false → One roll for the group (shared result)
+#   - With drop_per_player: true → Each player gets their own independent roll
+#   - Example: drop_chance: 0.5 → 50% to get 1 item, 50% to get nothing
+#   - Example with 3 players + drop_per_player: true → Each player has 50% chance (some may get, some may not)
+#
+# chancemultiple:
+#   - Each item in the pool gets its own independent roll
+#   - Uses drop_chance for each item separately
+#   - Can result in 0 items, 1 item, or multiple items
+#   - Example: 9 items with drop_chance: 0.3 → Each has 30% chance
+#   - Statistically: ~2-3 items on average, but could be 0 or all 9
+#
+# one:
+#   - Drop ONE item from the pool (guaranteed)
+#   - Item is randomly selected based on weights
+#   - Example: Kill Eikthyr → Always get 1 horse/unicorn/pegasus
+#
+# multiple:
+#   - Drop multiple items from the pool (guaranteed)
+#   - Number of drops is random between min_drops and max_drops
+#   - Items are randomly selected based on weights (can be duplicates)
+#   - Example: min_drops: 2, max_drops: 3 → Get 2-3 random items
+#
+# all:
+#   - Drop ALL items from the pool (guaranteed)
+#   - Useful for testing or generous servers
+#   - Example: Kill Eikthyr → Get all 9 summons at once
+#
+# ===== WEIGHT SYSTEM =====
+#   - Higher weight = Higher chance to be selected
+#   - Total weight is calculated from all items in the pool
+#   - Drop chance = (item weight / total weight) × 100%
+#   - Example Pool:
+#     • Item A: 20 weight → 20/26 = 76.9% chance
+#     • Item B: 5 weight  → 5/26 = 19.2% chance
+#     • Item C: 1 weight  → 1/26 = 3.8% chance
+#     • Total: 26 weight
+#
+# ===== PER-PLAYER DROPS =====
+# drop_per_player: true
+#   - Each player gets their own individual drops
+#   - false (default): Drops are shared - only one set spawns for the group
+#   - true: Each player gets their own set of drops
+#   - Example: 3 players kill boss → 3 separate drop rolls (one per player)
+#
+# ===== PLAYER SCALING =====
+# scale_with_players: true
+#   - Increases drop chance or quantity based on nearby players
+#   - player_scale_multiplier: 0.5 means +50% per extra player
+#   - Example: 3 players = +100% bonus (2 extra players × 0.5)
+#
+# ===== INVENTORY DELIVERY =====
+# add_to_inventory: true
+#   - Items are added directly to player inventory instead of spawning on ground
+#   - false (default): Items spawn on the ground at boss location
+#   - true: Items go directly into player inventory with on-screen message
+#   - If inventory is full, items will spawn on ground as fallback
+#   - Works great with drop_per_player for guaranteed rewards
+#
+# ===== DISPLAY STYLING =====
+# reward_color: "#FFFF00"
+#   - Hex color for the reward title text
+#   - Examples: #90EE90 (light green), #87CEEB (sky blue), #FF4500 (orange red)
+#
+# item_color: "#00FF88"
+#   - Hex color for the item name text
+#   - Default mint green looks good with most reward colors
+#
+# reward_message: "★ Boss Reward ★"
+#   - Custom title text shown above the item name
+#   - Color is applied automatically from reward_color
+#   - Supports <b>bold</b>, <i>italic</i>, <size=20>size</size> tags
+#
+# ===== REWARD EFFECTS =====
+# reward_sfx: "sfx_lootspawn"
+#   - Sound effect prefab played on the player when receiving reward
+#   - Examples: sfx_coins_placed, sfx_lootspawn, sfx_secretfound
+#   - Leave empty for no SFX
+#
+# reward_vfx: "fx_creature_tamed"
+#   - Visual effect prefab spawned on the player when receiving reward
+#   - Examples: vfx_Potion_stamina_medium, fx_creature_tamed, vfx_GodExplosion
+#   - Leave empty for no VFX
+#
+# reward_emote: "cheer"
+#   - Animation trigger to play on the player
+#   - Works with ANY trigger in the player's Animator controller
+#   - Emotes: cheer, wave, point, sit, challenge, despair, flex, bow, laugh, roar, thumbsup
+#   - Leave empty for no animation
+# ===================================================================
+
+Eikthyr:
+  # ===== DROP SETTINGS =====
+  enabled: true                                                                                     # Default: true | Options: true, false | Drops enabled for this boss
+  drop_mode: chance                                                                                 # Default: chance | Options: chance, chancemultiple, one, multiple, all
+  drop_chance: 0.3                                                                                  # Default: 0.3 | Chance to drop
+  min_drops: 1                                                                                      # Default: 1 | Minimum items to drop
+  max_drops: 1                                                                                      # Default: 1 | Maximum items to drop
+
+  # ===== MULTIPLAYER =====
+  drop_per_player: false                                                                            # Default: false | Options: true, false | Each player gets own drops
+  scale_with_players: true                                                                          # Default: true | Options: true, false | Drop count scales with player count
+  player_scale_multiplier: 0.5                                                                      # Default: 0.5 | Bonus per extra player
+  add_to_inventory: true                                                                            # Default: true | Options: true, false | Adds directly to inventory
+
+  # ===== REWARD EFFECTS =====
+  reward_color: "#90EE90"                                                                           # Default: #FFFF00 | Hex color for reward title
+  item_color: "#00FF88"                                                                             # Default: #00FF88 | Hex color for item name
+  reward_message: "Eikthyr's Blessing"                                                              # Default: Eikthyr's Blessing | Custom reward title
+  reward_sfx: sfx_mm_horse_idle                                                                     # Default: sfx_mm_horse_idle | SFX prefab
+  reward_vfx: vfx_MeadTamer                                                                         # Default: vfx_MeadTamer | VFX prefab
+  reward_emote: emote_cheer                                                                         # Default: emote_cheer | Animation trigger
+
+  # ===== ITEMS =====
+  items:
+    mm_horse_white_summon: 20                                                                       # 16.52892% chance
+    mm_horse_black_summon: 20                                                                       # 16.52892% chance
+    mm_horse_gray_summon: 20                                                                        # 16.52892% chance
+    mm_horse_brown_summon: 20                                                                       # 16.52892% chance
+    mm_horse_palomino_summon: 20                                                                    # 16.52892% chance
+    mm_unicorn_white_summon: 10                                                                     # 8.264462% chance
+    mm_unicorn_black_summon: 10                                                                     # 8.264462% chance
+    mm_pegasus_white_summon: 0.5                                                                    # 0.4132231% chance
+    mm_pegasus_black_summon: 0.5                                                                    # 0.4132231% chance
+
+gd_king:
+  # ===== DROP SETTINGS =====
+  enabled: true                                                                                     # Default: true | Options: true, false | Drops enabled for this boss
+  drop_mode: chance                                                                                 # Default: chance | Options: chance, chancemultiple, one, multiple, all
+  drop_chance: 0.3                                                                                  # Default: 0.3 | Chance to drop
+  min_drops: 1                                                                                      # Default: 1 | Minimum items to drop
+  max_drops: 1                                                                                      # Default: 1 | Maximum items to drop
+
+  # ===== MULTIPLAYER =====
+  drop_per_player: false                                                                            # Default: false | Options: true, false | Each player gets own drops
+  scale_with_players: true                                                                          # Default: true | Options: true, false | Drop count scales with player count
+  player_scale_multiplier: 0.5                                                                      # Default: 0.5 | Bonus per extra player
+  add_to_inventory: true                                                                            # Default: true | Options: true, false | Adds directly to inventory
+
+  # ===== REWARD EFFECTS =====
+  reward_color: "#8B4513"                                                                           # Default: #FFFF00 | Hex color for reward title
+  item_color: "#00FF88"                                                                             # Default: #00FF88 | Hex color for item name
+  reward_message: "Elder's Blessing"                                                                # Default: Elder's Blessing | Custom reward title
+  reward_sfx: vfx_MeadTamer                                                                         # Default: vfx_MeadTamer | SFX prefab
+  reward_vfx: sfx_mm_deer_idle                                                                      # Default: sfx_mm_deer_idle | VFX prefab
+  reward_emote: emote_cheer                                                                         # Default: emote_cheer | Animation trigger
+
+  # ===== ITEMS =====
+  items:
+    mm_deer_white_summon: 20                                                                        # 17.3913% chance
+    mm_deer_black_summon: 20                                                                        # 17.3913% chance
+    mm_deer_red_summon: 20                                                                          # 17.3913% chance
+    mm_deer_brown_summon: 20                                                                        # 17.3913% chance
+    mm_deer_white_magic_summon: 10                                                                  # 8.695652% chance
+    mm_deer_black_magic_summon: 10                                                                  # 8.695652% chance
+    mm_deer_red_magic_summon: 10                                                                    # 8.695652% chance
+    mm_deer_cosmic_summon: 5                                                                        # 4.347826% chance
+
+Bonemass:
+  # ===== DROP SETTINGS =====
+  enabled: true                                                                                     # Default: true | Options: true, false | Drops enabled for this boss
+  drop_mode: chance                                                                                 # Default: chance | Options: chance, chancemultiple, one, multiple, all
+  drop_chance: 0.25                                                                                 # Default: 0.25 | Chance to drop
+  min_drops: 1                                                                                      # Default: 1 | Minimum items to drop
+  max_drops: 1                                                                                      # Default: 1 | Maximum items to drop
+
+  # ===== MULTIPLAYER =====
+  drop_per_player: false                                                                            # Default: false | Options: true, false | Each player gets own drops
+  scale_with_players: true                                                                          # Default: true | Options: true, false | Drop count scales with player count
+  player_scale_multiplier: 0.5                                                                      # Default: 0.5 | Bonus per extra player
+  add_to_inventory: true                                                                            # Default: true | Options: true, false | Adds directly to inventory
+
+  # ===== REWARD EFFECTS =====
+  reward_color: "#00FF00"                                                                           # Default: #FFFF00 | Hex color for reward title
+  item_color: "#00FF88"                                                                             # Default: #00FF88 | Hex color for item name
+  reward_message: "Bonemass's Blessing"                                                             # Default: Bonemass's Blessing | Custom reward title
+  reward_sfx: sfx_mm_horse_idle                                                                     # Default: sfx_mm_horse_idle | SFX prefab
+  reward_vfx: vfx_MeadTamer                                                                         # Default: vfx_MeadTamer | VFX prefab
+  reward_emote: emote_cheer                                                                         # Default: emote_cheer | Animation trigger
+
+  # ===== ITEMS =====
+  items:
+    mm_undead_fire_summon: 20                                                                       # 23.52941% chance
+    mm_undead_ice_summon: 20                                                                        # 23.52941% chance
+    mm_undead_toxic_summon: 20                                                                      # 23.52941% chance
+    mm_undead_rotten_summon: 20                                                                     # 23.52941% chance
+    mm_undead_cosmic_summon: 5                                                                      # 5.882353% chance
+
+Dragon:
+  # ===== DROP SETTINGS =====
+  enabled: true                                                                                     # Default: true | Options: true, false | Drops enabled for this boss
+  drop_mode: chance                                                                                 # Default: chance | Options: chance, chancemultiple, one, multiple, all
+  drop_chance: 0.25                                                                                 # Default: 0.25 | Chance to drop
+  min_drops: 1                                                                                      # Default: 1 | Minimum items to drop
+  max_drops: 1                                                                                      # Default: 1 | Maximum items to drop
+
+  # ===== MULTIPLAYER =====
+  drop_per_player: false                                                                            # Default: false | Options: true, false | Each player gets own drops
+  scale_with_players: true                                                                          # Default: true | Options: true, false | Drop count scales with player count
+  player_scale_multiplier: 0.5                                                                      # Default: 0.5 | Bonus per extra player
+  add_to_inventory: true                                                                            # Default: true | Options: true, false | Adds directly to inventory
+
+  # ===== REWARD EFFECTS =====
+  reward_color: "#87CEEB"                                                                           # Default: #FFFF00 | Hex color for reward title
+  item_color: "#00FF88"                                                                             # Default: #00FF88 | Hex color for item name
+  reward_message: "Moder's Blessing"                                                                # Default: Moder's Blessing | Custom reward title
+  reward_sfx: sfx_mm_wolf_idle                                                                      # Default: sfx_mm_wolf_idle | SFX prefab
+  reward_vfx: vfx_MeadTamer                                                                         # Default: vfx_MeadTamer | VFX prefab
+  reward_emote: emote_cheer                                                                         # Default: emote_cheer | Animation trigger
+
+  # ===== ITEMS =====
+  items:
+    mm_wolf_white_summon: 20                                                                        # 21.05263% chance
+    mm_wolf_black_summon: 20                                                                        # 21.05263% chance
+    mm_wolf_gray_summon: 20                                                                         # 21.05263% chance
+    mm_wolf_timber_summon: 20                                                                       # 21.05263% chance
+    mm_wolf_star_summon: 10                                                                         # 10.52632% chance
+    mm_wolf_cosmic_summon: 5                                                                        # 5.263158% chance
+
+GoblinKing:
+  # ===== DROP SETTINGS =====
+  enabled: true                                                                                     # Default: true | Options: true, false | Drops enabled for this boss
+  drop_mode: chance                                                                                 # Default: chance | Options: chance, chancemultiple, one, multiple, all
+  drop_chance: 0.2                                                                                  # Default: 0.2 | Chance to drop
+  min_drops: 1                                                                                      # Default: 1 | Minimum items to drop
+  max_drops: 1                                                                                      # Default: 1 | Maximum items to drop
+
+  # ===== MULTIPLAYER =====
+  drop_per_player: false                                                                            # Default: false | Options: true, false | Each player gets own drops
+  scale_with_players: true                                                                          # Default: true | Options: true, false | Drop count scales with player count
+  player_scale_multiplier: 0.5                                                                      # Default: 0.5 | Bonus per extra player
+  add_to_inventory: true                                                                            # Default: true | Options: true, false | Adds directly to inventory
+
+  # ===== REWARD EFFECTS =====
+  reward_color: "#FF4500"                                                                           # Default: #FFFF00 | Hex color for reward title
+  item_color: "#00FF88"                                                                             # Default: #00FF88 | Hex color for item name
+  reward_message: "Yagluth's Blessing"                                                              # Default: Yagluth's Blessing | Custom reward title
+  reward_sfx: sfx_mm_raven_idle                                                                     # Default: sfx_mm_raven_idle | SFX prefab
+  reward_vfx: vfx_MeadTamer                                                                         # Default: vfx_MeadTamer | VFX prefab
+  reward_emote: emote_cheer                                                                         # Default: emote_cheer | Animation trigger
+
+  # ===== ITEMS =====
+  items:
+    mm_raven_white_summon: 20                                                                       # 21.05263% chance
+    mm_raven_black_summon: 20                                                                       # 21.05263% chance
+    mm_raven_gray_summon: 20                                                                        # 21.05263% chance
+    mm_raven_blackwhite_summon: 15                                                                  # 15.78947% chance
+    mm_raven_blackyellow_summon: 15                                                                 # 15.78947% chance
+    mm_raven_cosmic_summon: 5                                                                       # 5.263158% chance
+
+SeekerQueen:
+  # ===== DROP SETTINGS =====
+  enabled: true                                                                                     # Default: true | Options: true, false | Drops enabled for this boss
+  drop_mode: chance                                                                                 # Default: chance | Options: chance, chancemultiple, one, multiple, all
+  drop_chance: 0.2                                                                                  # Default: 0.2 | Chance to drop
+  min_drops: 1                                                                                      # Default: 1 | Minimum items to drop
+  max_drops: 1                                                                                      # Default: 1 | Maximum items to drop
+
+  # ===== MULTIPLAYER =====
+  drop_per_player: false                                                                            # Default: false | Options: true, false | Each player gets own drops
+  scale_with_players: true                                                                          # Default: true | Options: true, false | Drop count scales with player count
+  player_scale_multiplier: 0.5                                                                      # Default: 0.5 | Bonus per extra player
+  add_to_inventory: true                                                                            # Default: true | Options: true, false | Adds directly to inventory
+
+  # ===== REWARD EFFECTS =====
+  reward_color: "#9370DB"                                                                           # Default: #FFFF00 | Hex color for reward title
+  item_color: "#00FF88"                                                                             # Default: #00FF88 | Hex color for item name
+  reward_message: "Queen's Blessing"                                                                # Default: Queen's Blessing | Custom reward title
+  reward_sfx: sfx_mm_dragon_idle                                                                    # Default: sfx_mm_dragon_idle | SFX prefab
+  reward_vfx: vfx_MeadTamer                                                                         # Default: vfx_MeadTamer | VFX prefab
+  reward_emote: emote_cheer                                                                         # Default: emote_cheer | Animation trigger
+
+  # ===== ITEMS =====
+  items:
+    mm_dragon_red_summon: 20                                                                        # 23.52941% chance
+    mm_dragon_black_summon: 20                                                                      # 23.52941% chance
+    mm_dragon_green_summon: 20                                                                      # 23.52941% chance
+    mm_dragon_brown_summon: 20                                                                      # 23.52941% chance
+    mm_dragon_cosmic_summon: 5                                                                      # 5.882353% chance
+
+Fader:
+  # ===== DROP SETTINGS =====
+  enabled: true                                                                                     # Default: true | Options: true, false | Drops enabled for this boss
+  drop_mode: one                                                                                    # Default: one | Options: chance, chancemultiple, one, multiple, all
+  drop_chance: 1                                                                                    # Default: 1 | Chance to drop
+  min_drops: 1                                                                                      # Default: 1 | Minimum items to drop
+  max_drops: 1                                                                                      # Default: 1 | Maximum items to drop
+
+  # ===== MULTIPLAYER =====
+  drop_per_player: true                                                                             # Default: true | Options: true, false | Each player gets own drops
+  scale_with_players: true                                                                          # Default: true | Options: true, false | Drop count scales with player count
+  player_scale_multiplier: 0.5                                                                      # Default: 0.5 | Bonus per extra player
+  add_to_inventory: true                                                                            # Default: true | Options: true, false | Adds directly to inventory
+
+  # ===== REWARD EFFECTS =====
+  reward_color: "#8B0000"                                                                           # Default: #FFFF00 | Hex color for reward title
+  item_color: "#FFD700"                                                                             # Default: #00FF88 | Hex color for item name
+  reward_message: "Fader's Blessing"                                                                # Default: Fader's Blessing | Custom reward title
+  reward_vfx: vfx_MeadTamer                                                                         # Default: vfx_MeadTamer | VFX prefab
+  reward_emote: gpower                                                                              # Default: gpower | Animation trigger
+
+  # ===== ITEMS =====
+  items:
+    mm_horse_cosmic_summon: 1                                                                       # 11.11111% chance
+    mm_deer_cosmic_summon: 1                                                                        # 11.11111% chance
+    mm_undead_cosmic_summon: 1                                                                      # 11.11111% chance
+    mm_wolf_cosmic_summon: 1                                                                        # 11.11111% chance
+    mm_raven_cosmic_summon: 1                                                                       # 11.11111% chance
+    mm_dragon_cosmic_summon: 1                                                                      # 11.11111% chance
+    mm_unicorn_rainbow: 1                                                                           # 11.11111% chance
+    mm_cosmic_potion: 1                                                                             # 11.11111% chance
+    mm_cosmic_cell: 1                                                                               # 11.11111% chance
+

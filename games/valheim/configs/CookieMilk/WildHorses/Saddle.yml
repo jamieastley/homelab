@@ -1,0 +1,85 @@
+# ========================================
+# WildHorses - Saddle Configuration
+# ========================================
+
+# ===== DEFAULT CONFIG =====
+default_config:
+  animation_trigger: attach_lox                                                                     # Default: attach_lox | Animation trigger name for saddle attachment
+  offset_x: 0                                                                                       # Default: 0 | Left/Right offset
+  offset_y: 0                                                                                       # Default: 0 | Up/Down offset
+  offset_z: 0                                                                                       # Default: 0 | Forward/Back offset
+  rotation_x: 0                                                                                     # Default: 0 | Pitch rotation
+  rotation_y: 0                                                                                     # Default: 0 | Yaw rotation
+  rotation_z: 0                                                                                     # Default: 0 | Roll rotation
+
+# ===== HORSES =====
+horse:
+  animation_trigger: attach_lox                                                                     # Default: attach_lox | Animation trigger name for saddle attachment
+  offset_x: 0                                                                                       # Default: 0 | Left/Right offset
+  offset_y: 0                                                                                       # Default: 0 | Up/Down offset
+  offset_z: 0                                                                                       # Default: 0 | Forward/Back offset
+  rotation_x: 0                                                                                     # Default: 0 | Pitch rotation
+  rotation_y: 0                                                                                     # Default: 0 | Yaw rotation
+  rotation_z: 0                                                                                     # Default: 0 | Roll rotation
+
+  # ----- Individual Creatures -----
+  wh_horse_black_wild:
+    override: false                                                                                 # Default: false | Options: true, false | Use creature-specific saddle settings
+    animation_trigger: attach_lox                                                                   # Default: attach_lox | Animation trigger name for saddle attachment
+    offset_x: 0                                                                                     # Default: 0 | Left/Right offset
+    offset_y: 0                                                                                     # Default: 0 | Up/Down offset
+    offset_z: 0                                                                                     # Default: 0 | Forward/Back offset
+    rotation_x: 0                                                                                   # Default: 0 | Pitch rotation
+    rotation_y: 0                                                                                   # Default: 0 | Yaw rotation
+    rotation_z: 0                                                                                   # Default: 0 | Roll rotation
+
+  wh_horse_brown_wild:
+    override: false                                                                                 # Default: false | Options: true, false | Use creature-specific saddle settings
+    animation_trigger: attach_lox                                                                   # Default: attach_lox | Animation trigger name for saddle attachment
+    offset_x: 0                                                                                     # Default: 0 | Left/Right offset
+    offset_y: 0                                                                                     # Default: 0 | Up/Down offset
+    offset_z: 0                                                                                     # Default: 0 | Forward/Back offset
+    rotation_x: 0                                                                                   # Default: 0 | Pitch rotation
+    rotation_y: 0                                                                                   # Default: 0 | Yaw rotation
+    rotation_z: 0                                                                                   # Default: 0 | Roll rotation
+
+  wh_horse_cosmic_wild:
+    override: false                                                                                 # Default: false | Options: true, false | Use creature-specific saddle settings
+    animation_trigger: attach_lox                                                                   # Default: attach_lox | Animation trigger name for saddle attachment
+    offset_x: 0                                                                                     # Default: 0 | Left/Right offset
+    offset_y: 0                                                                                     # Default: 0 | Up/Down offset
+    offset_z: 0                                                                                     # Default: 0 | Forward/Back offset
+    rotation_x: 0                                                                                   # Default: 0 | Pitch rotation
+    rotation_y: 0                                                                                   # Default: 0 | Yaw rotation
+    rotation_z: 0                                                                                   # Default: 0 | Roll rotation
+
+  wh_horse_gray_wild:
+    override: false                                                                                 # Default: false | Options: true, false | Use creature-specific saddle settings
+    animation_trigger: attach_lox                                                                   # Default: attach_lox | Animation trigger name for saddle attachment
+    offset_x: 0                                                                                     # Default: 0 | Left/Right offset
+    offset_y: 0                                                                                     # Default: 0 | Up/Down offset
+    offset_z: 0                                                                                     # Default: 0 | Forward/Back offset
+    rotation_x: 0                                                                                   # Default: 0 | Pitch rotation
+    rotation_y: 0                                                                                   # Default: 0 | Yaw rotation
+    rotation_z: 0                                                                                   # Default: 0 | Roll rotation
+
+  wh_horse_palomino_wild:
+    override: false                                                                                 # Default: false | Options: true, false | Use creature-specific saddle settings
+    animation_trigger: attach_lox                                                                   # Default: attach_lox | Animation trigger name for saddle attachment
+    offset_x: 0                                                                                     # Default: 0 | Left/Right offset
+    offset_y: 0                                                                                     # Default: 0 | Up/Down offset
+    offset_z: 0                                                                                     # Default: 0 | Forward/Back offset
+    rotation_x: 0                                                                                   # Default: 0 | Pitch rotation
+    rotation_y: 0                                                                                   # Default: 0 | Yaw rotation
+    rotation_z: 0                                                                                   # Default: 0 | Roll rotation
+
+  wh_horse_white_wild:
+    override: false                                                                                 # Default: false | Options: true, false | Use creature-specific saddle settings
+    animation_trigger: attach_lox                                                                   # Default: attach_lox | Animation trigger name for saddle attachment
+    offset_x: 0                                                                                     # Default: 0 | Left/Right offset
+    offset_y: 0                                                                                     # Default: 0 | Up/Down offset
+    offset_z: 0                                                                                     # Default: 0 | Forward/Back offset
+    rotation_x: 0                                                                                   # Default: 0 | Pitch rotation
+    rotation_y: 0                                                                                   # Default: 0 | Yaw rotation
+    rotation_z: 0                                                                                   # Default: 0 | Roll rotation
+

@@ -1,0 +1,228 @@
+# ========================================
+# WildBears - Items Configuration
+# ========================================
+# Configure recipes, trader info, and drops for all items
+# Singleplayer: Changes take effect immediately on save
+# Multiplayer: Server config syncs to all clients immediately on save
+
+# ===== ITEMS =====
+
+wb_honeycake:
+  # ===== DISPLAY =====
+  name: $item_wb_honeycake                                                                          # Default: $item_wb_honeycake | Display name for this item
+  description: $itemdesc_wb_honeycake                                                               # Default: $itemdesc_wb_honeycake | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Consumable                                                                             # Default: Consumable | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 99                                                                                # Default: 99 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== STAT MODIFIERS =====
+  eitr_regen_modifier: 0                                                                            # Default: 0 | Eitr regen modifier
+  home_items_stamina_modifier: 0                                                                    # Default: 0 | Home items stamina modifier
+  heat_resistance_modifier: 0                                                                       # Default: 0 | Heat resistance modifier
+  jump_stamina_modifier: 0                                                                          # Default: 0 | Jump stamina modifier
+  attack_stamina_modifier: 0                                                                        # Default: 0 | Attack stamina modifier
+  block_stamina_modifier: 0                                                                         # Default: 0 | Block stamina modifier
+  dodge_stamina_modifier: 0                                                                         # Default: 0 | Dodge stamina modifier
+  swim_stamina_modifier: 0                                                                          # Default: 0 | Swim stamina modifier
+  sneak_stamina_modifier: 0                                                                         # Default: 0 | Sneak stamina modifier
+  run_stamina_modifier: 0                                                                           # Default: 0 | Run stamina modifier
+
+  # ===== RECIPE =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level: 1                                                                                  # Default: 1 | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items:                                                                                   # Items required (3 configured)
+    Honey: 5                                                                                        # Default: 5 | Amount required
+    Raspberry: 5                                                                                    # Default: 5 | Amount required
+    Blueberries: 5                                                                                  # Default: 5 | Amount required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+wb_sockeye_salmon_raw:
+  # ===== DISPLAY =====
+  name: $item_wb_sockeye_salmon_raw                                                                 # Default: $item_wb_sockeye_salmon_raw | Display name for this item
+  description: $itemdesc_wb_sockeye_salmon_raw                                                      # Default: $itemdesc_wb_sockeye_salmon_raw | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Material                                                                               # Default: Material | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 99                                                                                # Default: 99 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+wb_chinook_salmon_raw:
+  # ===== DISPLAY =====
+  name: $item_wb_chinook_salmon_raw                                                                 # Default: $item_wb_chinook_salmon_raw | Display name for this item
+  description: $itemdesc_wb_chinook_salmon_raw                                                      # Default: $itemdesc_wb_chinook_salmon_raw | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Material                                                                               # Default: Material | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 99                                                                                # Default: 99 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+wb_sockeye_roe:
+  # ===== DISPLAY =====
+  name: $item_wb_sockeye_roe                                                                        # Default: $item_wb_sockeye_roe | Display name for this item
+  description: $itemdesc_wb_sockeye_roe                                                             # Default: $itemdesc_wb_sockeye_roe | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Misc                                                                                   # Default: Misc | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 99                                                                                # Default: 99 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops:                                                                                            # Creatures that drop this item (1 configured)
+    Neck: 0.5                                                                                       # Default: 0.5 | Drop chance
+
+wb_chinook_roe:
+  # ===== DISPLAY =====
+  name: $item_wb_chinook_roe                                                                        # Default: $item_wb_chinook_roe | Display name for this item
+  description: $itemdesc_wb_chinook_roe                                                             # Default: $itemdesc_wb_chinook_roe | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Misc                                                                                   # Default: Misc | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 99                                                                                # Default: 99 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops:                                                                                            # Creatures that drop this item (1 configured)
+    Neck: 0.5                                                                                       # Default: 0.5 | Drop chance
+
+wb_pondnoodle_egg:
+  # ===== DISPLAY =====
+  name: $item_wb_pondnoodle_egg                                                                     # Default: $item_wb_pondnoodle_egg | Display name for this item
+  description: $itemdesc_wb_pondnoodle_egg                                                          # Default: $itemdesc_wb_pondnoodle_egg | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Misc                                                                                   # Default: Misc | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 99                                                                                # Default: 99 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops:                                                                                            # Creatures that drop this item (1 configured)
+    Serpent: 1                                                                                      # Default: 1 | Drop chance
+
+wb_bamboo_bundle:
+  # ===== DISPLAY =====
+  name: $item_wb_bamboo_bundle                                                                      # Default: $item_wb_bamboo_bundle | Display name for this item
+  description: $itemdesc_wb_bamboo_bundle                                                           # Default: $itemdesc_wb_bamboo_bundle | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Material                                                                               # Default: Material | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 99                                                                                # Default: 99 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: null                                                                            # Default: null | Options: null, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level:                                                                                    # Default:  | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items: {}                                                                                # Default: {} | Items required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
+wb_pusheen:
+  # ===== DISPLAY =====
+  name: $item_wb_pusheen                                                                            # Default: $item_wb_pusheen | Display name for this item
+  description: $itemdesc_wb_pusheen                                                                 # Default: $itemdesc_wb_pusheen | Description for this item
+
+  # ===== ITEM STATS =====
+  item_type: Misc                                                                                   # Default: Misc | Options: Generic, Consumable, Weapon, Shield, Armor, Tool
+  max_stack_size: 1                                                                                 # Default: 1 | Maximum stack size
+  weight: 1                                                                                         # Default: 1 | Item weight
+  max_quality: 1                                                                                    # Default: 1 | Maximum upgrade level
+  value: 0                                                                                          # Default: 0 | Coin value
+  teleportable: true                                                                                # Default: true | Options: true, false | Can be teleported through portals
+
+  # ===== RECIPE =====
+  crafting_station: Workbench                                                                       # Default: Workbench | Options: None, Inventory, Workbench, Forge, Cauldron, ArtisanTable, StoneCutter, MageTable, BlackForge
+  station_level: 1                                                                                  # Default: 1 | Required station level
+  maximum_station_level:                                                                            # Default:  | Max level for upgrades/repairs
+  required_items:                                                                                   # Items required (1 configured)
+    LeatherScraps: 5                                                                                # Default: 5 | Amount required
+  required_upgrade_items: {}                                                                        # Default: {} | Items for upgrades if different from base craft
+  require_one_ingredient: false                                                                     # Default: false | Options: true, false | Only one ingredient type needed
+  quality_multiplier: 1                                                                             # Default: 1 | Multiplies craft amount by resource quality
+
+  # ===== DROPS =====
+  drops: {}                                                                                         # Default: {} | Creatures that drop this item
+
