@@ -72,9 +72,6 @@ services:
         Vapok-AdventureBackpacks-1.9.13
         Xutz-ValheimCuisine-2.2.8
 
-    # TODO: admin server arg?
-    # update mods
-
     networks:
       - games_server_tailscale
     labels:
