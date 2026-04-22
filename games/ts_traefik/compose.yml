@@ -30,7 +30,7 @@ services:
     restart: unless-stopped
 
   traefik:
-    image: traefik:v3.6.13
+    image: traefik:v3.6.14
     container_name: games_server_traefik
     restart: unless-stopped
     cap_drop:
