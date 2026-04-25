@@ -20,3 +20,5 @@ external Docker volumes and should be created before running `docker compose up`
 - https://thunderstore.io/c/valheim/p/ComfyMods/SearsCatalog/
 - https://thunderstore.io/c/valheim/p/Azumatt/Recipe_Description_Expansion/
 - https://thunderstore.io/c/valheim/p/Azumatt/AzuHoverStats/
+- https://thunderstore.io/c/valheim/p/TastyChickenLegs/RecyclePlus/
+- https://thunderstore.io/c/valheim/p/Azumatt/Minimal_UI/
