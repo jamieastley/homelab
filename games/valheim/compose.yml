@@ -46,7 +46,7 @@ services:
       SCHEDULED_RESTART_SCHEDULE: "0 4 * * *" # Every day at 4am
       TYPE: "BepInEx"
       MODS: |
-        Advize-Armoire-1.1.4
+        Advize-Armoire-1.1.5
         Advize-PlantEverything-1.20.0
         Azumatt-AAA_Crafting-2.1.6
         Azumatt-AzuAutoStore-3.0.14
