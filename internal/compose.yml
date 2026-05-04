@@ -1,0 +1,154 @@
+name: homelab
+services:
+  tailscale:
+    image: tailscale/tailscale:v1.96.5
+    hostname: homelab
+    container_name: homelab_tailscale
+    env_file:
+      - .env
+    secrets:
+      - ts_authkey
+    # Replace TS_AUTHKEY with new file env var when tailscale adds support
+    # https://github.com/tailscale/tailscale/issues/14210#issuecomment-4185439890
+    environment:
+      TS_AUTHKEY: file:/run/secrets/ts_authkey
+      TS_STATE_DIR: "var/lib/tailscale"
+      TS_USERSPACE: "false"
+      TS_EXTRA_ARGS: "--ssh"
+      TS_ENABLE_HEALTH_CHECK: "true"
+    healthcheck:
+      test: [ "CMD", "wget", "--spider", "-q", "http://127.0.0.1:9002/healthz" ]
+    volumes:
+      - homelab_tailscale:/var/lib/tailscale
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - homelab_tailscale
+    restart: unless-stopped
+
+  traefik:
+    image: traefik:v3.6.13
+    container_name: homelab_traefik
+    restart: unless-stopped
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    secrets:
+      - cf_dns_api_token
+    environment:
+      TZ: "Australia/Sydney"
+      CF_API_EMAIL: ${CF_API_EMAIL}
+      CF_DNS_API_TOKEN: file:/run/secrets/cf_dns_api_token
+      LEGO_DISABLE_CNAME_SUPPORT: "true"
+    depends_on:
+      - tailscale
+    network_mode: service:tailscale
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket to watch for Traefik
+      - homelab_traefik_certs:/certs
+      - ./traefik:/etc/traefik/
+    env_file:
+      - .env
+    command:
+      - --accesslog=true
+      - --api.insecure=true
+      - --api.debug=true
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --providers.docker.constraints=Label(`traefik.instance`,`homelab`) # will ONLY watch for containers with this label
+      - --providers.file.watch=true
+      - --providers.file.directory=/etc/traefik
+      - --ping=true
+      - --ping.entrypoint=traefik
+      # Entrypoints
+      - --entrypoints.web.address=:80
+      - --entrypoints.web.http.redirections.entryPoint.to=websecure
+      - --entrypoints.web.http.redirections.entryPoint.scheme=https
+      - --entrypoints.websecure.address=:443
+      - --entrypoints.websecure.http.tls=true
+      - --entrypoints.websecure.http.tls.certResolver=letsencrypt
+      # TLS - staging resolver
+      - --certificatesresolvers.letsencrypt-staging.acme.dnschallenge=true
+      - --certificatesresolvers.letsencrypt-staging.acme.dnschallenge.provider=cloudflare
+      - --certificatesresolvers.letsencrypt-staging.acme.email=${CF_API_EMAIL}
+      - --certificatesresolvers.letsencrypt-staging.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory
+      - --certificatesResolvers.letsencrypt-staging.acme.storage=/certs/acme-staging.json
+      - --certificatesResolvers.letsencrypt-staging.acme.dnsChallenge.resolvers=1.1.1.1:53,8.8.8.8:53
+      # TLS - production resolver
+      - --certificatesresolvers.letsencrypt.acme.dnschallenge=true
+      - --certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare
+      - --certificatesresolvers.letsencrypt.acme.email=${CF_API_EMAIL}
+      - --certificatesresolvers.letsencrypt.acme.caServer=https://acme-v02.api.letsencrypt.org/directory
+      - --certificatesResolvers.letsencrypt.acme.storage=/certs/acme.json
+      - --certificatesResolvers.letsencrypt.acme.dnsChallenge.resolvers=1.1.1.1:53,8.8.8.8:53
+    healthcheck:
+      test: [ "CMD", "traefik", "healthcheck", "--ping" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+    labels:
+      - tailscale=true
+      - traefik.enable=true
+      - traefik.instance=homelab # watch in expected instance
+      - traefik.http.routers.traefik.rule=Host(`traefik.${CF_DOMAIN}`)
+      - traefik.http.routers.traefik.entrypoints=websecure
+      - traefik.http.routers.traefik.tls.certresolver=letsencrypt
+      - traefik.http.routers.traefik.service=api@internal
+      - traefik.http.services.traefik.loadbalancer.server.port=8080
+
+  arcane:
+    image: ghcr.io/getarcaneapp/arcane:v1.18.1
+    container_name: arcane
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "3552:3552"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - arcane_data:/app/data
+      - arcane_backups:/backups
+      - ../games/hytale:/app/data/projects/hytale
+      - ../games/valheim:/app/data/projects/valheim
+      - ../games/ts_traefik:/app/data/projects/ts_traefik
+      - ./:/app/data/projects/internal
+    environment:
+      - APP_URL=http://localhost:3552
+      - PUID=1000
+      - PGID=1000
+      - ENCRYPTION_KEY=${ARCANE_ENCRYPTION_KEY}
+      - JWT_SECRET=${ARCANE_JWT_SECRET}
+      - LOG_LEVEL=info
+      - LOG_JSON=false
+      - OIDC_ENABLED=false
+      - DATABASE_URL=file:data/arcane.db?_pragma=journal_mode(WAL)&_pragma=busy_timeout(2500)&_txlock=immediate
+
+secrets:
+  ts_authkey:
+    file: ./secrets/ts_authkey
+  cf_dns_api_token:
+    file: ./secrets/cf_dns_api_token
+
+volumes:
+  homelab_tailscale:
+    name: homelab_tailscale
+    external: true
+  homelab_traefik_certs:
+    name: homelab_traefik_certs
+    external: true
+  arcane_data:
+    name: arcane_data
+    external: true
+  arcane_backups:
+    name: arcane_backups
+    external: true
+
+networks:
+  homelab_server_tailscale:
+    name: homelab_server_tailscale
+    external: true
