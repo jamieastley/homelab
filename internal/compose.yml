@@ -42,7 +42,7 @@ services:
     environment:
       TZ: "Australia/Sydney"
       CF_API_EMAIL: ${CF_API_EMAIL}
-      CF_DNS_API_TOKEN: file:/run/secrets/cf_dns_api_token
+      CF_DNS_API_TOKEN: ${CF_DNS_API_TOKEN}
       LEGO_DISABLE_CNAME_SUPPORT: "true"
     depends_on:
       - tailscale
@@ -97,7 +97,7 @@ services:
       - traefik.instance=homelab # watch in expected instance
       - traefik.http.routers.traefik.rule=Host(`traefik.ts.${CF_DOMAIN}`)
       - traefik.http.routers.traefik.entrypoints=websecure
-      - traefik.http.routers.traefik.tls.certresolver=letsencrypt
+      - traefik.http.routers.traefik.tls.certresolver=letsencrypt-staging
       - traefik.http.routers.traefik.service=api@internal
       - traefik.http.services.traefik.loadbalancer.server.port=8080
 
@@ -138,7 +138,7 @@ services:
       - traefik.instance=homelab # watch in expected instance
       - traefik.http.routers.arcane.rule=Host(`arcane.ts.${CF_DOMAIN}`)
       - traefik.http.routers.arcane.entrypoints=websecure
-      - traefik.http.routers.arcane.tls.certresolver=letsencrypt
+      - traefik.http.routers.arcane.tls.certresolver=letsencrypt-staging
       - traefik.http.services.arcane.loadbalancer.server.port=3552
 
 secrets:
