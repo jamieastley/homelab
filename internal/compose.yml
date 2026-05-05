@@ -110,7 +110,7 @@ services:
     ports:
       - "3552:3552"
     networks:
-      - homelab_server_tailscale
+      - homelab_tailscale
     secrets:
       - arcane_encryption_key
       - arcane_jwt_secret
@@ -166,6 +166,6 @@ volumes:
     external: true
 
 networks:
-  homelab_server_tailscale:
-    name: homelab_server_tailscale
+  homelab_tailscale:
+    name: homelab_tailscale
     external: true
