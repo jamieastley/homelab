@@ -95,7 +95,7 @@ services:
       - tailscale=true
       - traefik.enable=true
       - traefik.instance=homelab # watch in expected instance
-      - traefik.http.routers.traefik.rule=Host(`traefik.${CF_DOMAIN}`)
+      - traefik.http.routers.traefik.rule=Host(`traefik.ts.${CF_DOMAIN}`)
       - traefik.http.routers.traefik.entrypoints=websecure
       - traefik.http.routers.traefik.tls.certresolver=letsencrypt
       - traefik.http.routers.traefik.service=api@internal
@@ -136,7 +136,7 @@ services:
       - tailscale=true
       - traefik.enable=true
       - traefik.instance=homelab # watch in expected instance
-      - traefik.http.routers.arcane.rule=Host(`arcane.${CF_DOMAIN}`)
+      - traefik.http.routers.arcane.rule=Host(`arcane.ts.${CF_DOMAIN}`)
       - traefik.http.routers.arcane.entrypoints=websecure
       - traefik.http.routers.arcane.tls.certresolver=letsencrypt
       - traefik.http.services.arcane.loadbalancer.server.port=3552
