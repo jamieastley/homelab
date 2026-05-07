@@ -21,7 +21,7 @@ provider "cloudflare" {}
 resource "cloudflare_dns_record" "tailscale_record" {
   name    = "*.ts"
   ttl     = 60
-  type    = "CNAME"
+  type    = "A"
   zone_id = var.zone_id
   proxied = false
   content = var.dns_record_content
