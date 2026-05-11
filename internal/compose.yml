@@ -161,7 +161,7 @@ services:
       - pihole_dnsmasq_data:/etc/dnsmasq.d
     environment:
       TZ: "Australia/Sydney"
-      WEBPASSWORD_FILE: /run/secrets/pihole_webpassword
+      WEBPASSWORD_FILE: pihole_webpassword
       FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
 
 secrets:
