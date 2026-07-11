@@ -102,7 +102,7 @@ services:
       - traefik.http.services.traefik.loadbalancer.server.port=8080
 
   arcane:
-    image: ghcr.io/getarcaneapp/arcane:v2.3.1
+    image: ghcr.io/getarcaneapp/arcane:v2.4.0
     container_name: arcane
     restart: unless-stopped
     env_file:
