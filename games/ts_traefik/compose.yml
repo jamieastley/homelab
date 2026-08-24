@@ -1,7 +1,7 @@
 name: games_server
 services:
   tailscale:
-    image: tailscale/tailscale:v1.102.2
+    image: tailscale/tailscale:v1.102.3
     hostname: games-server
     container_name: games_server_tailscale
     env_file:
