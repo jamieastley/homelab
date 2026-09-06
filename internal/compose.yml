@@ -70,7 +70,7 @@ services:
       - --entrypoints.web.http.redirections.entryPoint.scheme=https
       - --entrypoints.websecure.address=:443
       - --entrypoints.websecure.http.tls=true
-      - --entrypoints.websecure.http.tls.certResolver=letsencrypt
+      - --entrypoints.websecure.http.tls.certResolver=${TRAEFIK_CERT_RESOLVER:-letsencrypt}
       # TLS - staging resolver
       - --certificatesresolvers.letsencrypt-staging.acme.dnschallenge=true
       - --certificatesresolvers.letsencrypt-staging.acme.dnschallenge.provider=cloudflare
@@ -95,9 +95,9 @@ services:
       - tailscale=true
       - traefik.enable=true
       - traefik.instance=homelab # watch in expected instance
-      - traefik.http.routers.traefik.rule=Host(`traefik.ts.${CF_DOMAIN}`)
+      - traefik.http.routers.traefik.rule=Host(`${TRAEFIK_SUBDOMAIN:-traefik.ts}.${CF_DOMAIN}`)
       - traefik.http.routers.traefik.entrypoints=websecure
-      - traefik.http.routers.traefik.tls.certresolver=letsencrypt
+      - traefik.http.routers.traefik.tls.certresolver=${TRAEFIK_CERT_RESOLVER:-letsencrypt}
       - traefik.http.routers.traefik.service=api@internal
       - traefik.http.services.traefik.loadbalancer.server.port=8080
 
@@ -138,7 +138,7 @@ services:
       - traefik.instance=homelab # watch in expected instance
       - traefik.http.routers.arcane.rule=Host(`arcane.ts.${CF_DOMAIN}`)
       - traefik.http.routers.arcane.entrypoints=websecure
-      - traefik.http.routers.arcane.tls.certresolver=letsencrypt
+      - traefik.http.routers.arcane.tls.certresolver=${TRAEFIK_CERT_RESOLVER:-letsencrypt}
       - traefik.http.services.arcane.loadbalancer.server.port=3552
 
 secrets:
