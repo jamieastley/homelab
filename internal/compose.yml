@@ -113,7 +113,7 @@ services:
       - homelab_tailscale
     secrets:
       - arcane_encryption_key
-      - arcane_jwt_secret
+#      - arcane_jwt_secret
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - arcane_data:/app/data
@@ -127,7 +127,7 @@ services:
       - PUID=1000
       - PGID=1000
       - ENCRYPTION_KEY=file:/run/secrets/arcane_encryption_key
-      - JWT_SECRET=file:/run/secrets/arcane_jwt_secret
+#      - JWT_SECRET=file:/run/secrets/arcane_jwt_secret
       - LOG_LEVEL=info
       - LOG_JSON=false
       - OIDC_ENABLED=false
@@ -148,8 +148,8 @@ secrets:
     file: ./secrets/cf_dns_api_token
   arcane_encryption_key:
     file: ./secrets/arcane_encryption_key
-  arcane_jwt_secret:
-    file: ./secrets/arcane_jwt_secret
+#  arcane_jwt_secret:
+#    file: ./secrets/arcane_jwt_secret
 
 volumes:
   homelab_tailscale:
