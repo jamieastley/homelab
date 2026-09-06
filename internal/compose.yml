@@ -71,19 +71,12 @@ services:
       - --entrypoints.websecure.address=:443
       - --entrypoints.websecure.http.tls=true
       - --entrypoints.websecure.http.tls.certResolver=letsencrypt
-      # TLS - staging resolver
-      - --certificatesresolvers.letsencrypt-staging.acme.dnschallenge=true
-      - --certificatesresolvers.letsencrypt-staging.acme.dnschallenge.provider=cloudflare
-      - --certificatesresolvers.letsencrypt-staging.acme.email=${CF_API_EMAIL}
-      - --certificatesresolvers.letsencrypt-staging.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory
-      - --certificatesResolvers.letsencrypt-staging.acme.storage=/certs/acme-staging.json
-      - --certificatesResolvers.letsencrypt-staging.acme.dnsChallenge.resolvers=1.1.1.1:53,8.8.8.8:53
-      # TLS - production resolver
+      # TLS - ACME resolver (switch CA/storage via env vars for staging/prod)
       - --certificatesresolvers.letsencrypt.acme.dnschallenge=true
       - --certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare
       - --certificatesresolvers.letsencrypt.acme.email=${CF_API_EMAIL}
-      - --certificatesresolvers.letsencrypt.acme.caServer=https://acme-v02.api.letsencrypt.org/directory
-      - --certificatesResolvers.letsencrypt.acme.storage=/certs/acme.json
+      - --certificatesresolvers.letsencrypt.acme.caServer=${ACME_CA_SERVER:-https://acme-v02.api.letsencrypt.org/directory}
+      - --certificatesResolvers.letsencrypt.acme.storage=${ACME_STORAGE:-/certs/acme.json}
       - --certificatesResolvers.letsencrypt.acme.dnsChallenge.resolvers=1.1.1.1:53,8.8.8.8:53
     healthcheck:
       test: [ "CMD", "traefik", "healthcheck", "--ping" ]
@@ -95,14 +88,14 @@ services:
       - tailscale=true
       - traefik.enable=true
       - traefik.instance=homelab # watch in expected instance
-      - traefik.http.routers.traefik.rule=Host(`traefik.ts.${CF_DOMAIN}`)
+      - traefik.http.routers.traefik.rule=Host(`${TRAEFIK_SUBDOMAIN:-traefik.ts}.${CF_DOMAIN}`)
       - traefik.http.routers.traefik.entrypoints=websecure
       - traefik.http.routers.traefik.tls.certresolver=letsencrypt
       - traefik.http.routers.traefik.service=api@internal
       - traefik.http.services.traefik.loadbalancer.server.port=8080
 
   arcane:
-    image: ghcr.io/getarcaneapp/arcane:v2.10.2
+    image: ghcr.io/getarcaneapp/manager:v2.10.2
     container_name: arcane
     restart: unless-stopped
     env_file:
@@ -113,7 +106,6 @@ services:
       - homelab_tailscale
     secrets:
       - arcane_encryption_key
-      - arcane_jwt_secret
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - arcane_data:/app/data
@@ -127,7 +119,6 @@ services:
       - PUID=1000
       - PGID=1000
       - ENCRYPTION_KEY=file:/run/secrets/arcane_encryption_key
-      - JWT_SECRET=file:/run/secrets/arcane_jwt_secret
       - LOG_LEVEL=info
       - LOG_JSON=false
       - OIDC_ENABLED=false
@@ -148,8 +139,6 @@ secrets:
     file: ./secrets/cf_dns_api_token
   arcane_encryption_key:
     file: ./secrets/arcane_encryption_key
-  arcane_jwt_secret:
-    file: ./secrets/arcane_jwt_secret
 
 volumes:
   homelab_tailscale:
