@@ -4,7 +4,7 @@ services:
   init_permissions:
     image: busybox:1.38.0
     container_name: valheim_permissions_init
-    command: [ "sh", "-c", "chown -R 111:1000 /home/steam/.config/unity3d/IronGate/Valheim /home/steam" ]
+    command: [ "sh", "-c", "chown -R 1000:1000 /home/steam/.config/unity3d/IronGate/Valheim /home/steam" ]
     volumes:
       - valheim_saves:/home/steam/.config/unity3d/IronGate/Valheim
       - valheim_server_data:/home/steam/valheim
@@ -15,7 +15,7 @@ services:
   server:
     image: mbround18/valheim:3.8.3
     container_name: valheim_server
-    user: "111:1000"
+    user: "1000:1000"
     stop_signal: SIGINT
     cap_drop:
       - ALL
