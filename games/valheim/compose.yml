@@ -89,7 +89,9 @@ services:
         hex:Smoothbrain-Jewelcrafting-2.0.8
         hex:Smoothbrain-Mining-1.1.7
         hex:Smoothbrain-Network-1.1.1
+        hex:Smoothbrain-PackHorse-1.0.5
         hex:Smoothbrain-PassivePowers-1.1.8
+        hex:Smoothbrain-Ranching-1.1.7
         hex:Smoothbrain-Sailing-1.1.9
         hex:Smoothbrain-TargetPortal-1.2.6
         ts:TastyChickenLegs-LongerDays-1.1.3
