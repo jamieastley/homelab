@@ -46,8 +46,8 @@ services:
       SCHEDULED_RESTART_SCHEDULE: "0 4 * * *" # Every day at 4am
       TYPE: "BepInEx"
       MODS: |
-        ts:Advize-Armoire-1.2.0
-        ts:Advize-PlantEverything-1.21.1
+        ts:Advize-Armoire-1.2.1
+        ts:Advize-PlantEverything-1.21.2
         hex:ArgusMagnus-ServersideQoL-2.0.7
         hex:ArgusMagnus-ServersideQoL_JustSleep-2.0.0
         hex:Azumatt-AAA_Crafting-2.1.8
@@ -70,12 +70,12 @@ services:
         hex:blacks7ar-FeatherCollector-1.2.0
         hex:blacks7ar-Fermenting-1.1.7
         hex:blacks7ar-GlassPieces-1.2.7
-        hex:JereKuusela-Server_devcommands-1.112.0
+        hex:JereKuusela-Server_devcommands-1.113.0
         hex:OdinPlus-BeeQueen-1.1.2
         hex:OdinPlus-OdinsFoodBarrels-1.2.6
-        hex:shudnal-ConditionalConfigSync-1.0.5
+        hex:shudnal-ConditionalConfigSync-1.0.6
         hex:shudnal-ConfigurationManager-1.1.18
-        hex:shudnal-ProtectiveWards-2.0.9
+        hex:shudnal-ProtectiveWards-2.0.10
         hex:Smoothbrain-Afterdeath-1.0.9
         hex:Smoothbrain-Backpacks-1.3.10
         hex:Smoothbrain-Blacksmithing-1.3.5
@@ -85,14 +85,14 @@ services:
         hex:Smoothbrain-Farming-2.2.3
         hex:Smoothbrain-Groups-1.2.11
         hex:Smoothbrain-Guilds-1.1.14
-        hex:Smoothbrain-Jewelcrafting-2.0.7
+        hex:Smoothbrain-Jewelcrafting-2.0.8
         hex:Smoothbrain-Mining-1.1.7
         hex:Smoothbrain-Network-1.1.1
         hex:Smoothbrain-PassivePowers-1.1.8
         hex:Smoothbrain-Sailing-1.1.9
         hex:Smoothbrain-TargetPortal-1.2.6
-        ts:TastyChickenLegs-LongerDays-1.1.2
-        ts:TastyChickenLegs-RecyclePlus-1.3.2
+        ts:TastyChickenLegs-LongerDays-1.1.3
+        ts:TastyChickenLegs-RecyclePlus-1.3.3
         hex:ValheimModding-Jotunn-2.30.0
         hex:ValheimModding-JsonDotNET-13.0.4
         hex:ValheimModding-YamlDotNet-16.3.1
