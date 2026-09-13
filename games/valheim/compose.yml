@@ -94,7 +94,6 @@ services:
         hex:Smoothbrain-PassivePowers-1.1.8
         hex:Smoothbrain-Ranching-1.1.7
         hex:Smoothbrain-Sailing-1.1.9
-        hex:Smoothbrain-ServerCharacters-1.4.17
         hex:Smoothbrain-TargetPortal-1.2.6
         ts:TastyChickenLegs-LongerDays-1.1.3
         ts:TastyChickenLegs-RecyclePlus-1.3.3
