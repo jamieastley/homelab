@@ -1,19 +1,18 @@
 name: homelab
 services:
-  # Tailscale + Traefik are defined in ../base/tailscale-traefik.compose.yml.
   # Instance-specific values come from .env (see that file for required vars).
   # NOTE: `extends` REPLACES sequences (command/volumes/labels) rather than
   # merging them — any override here must repeat the full list from the base.
   tailscale:
     extends:
-      file: ../base/tailscale-traefik.compose.yml
+      file: ../shared/tailscale-traefik.compose.yml
       service: tailscale
     env_file:
       - .env
 
   traefik:
     extends:
-      file: ../base/tailscale-traefik.compose.yml
+      file: ../shared/tailscale-traefik.compose.yml
       service: traefik
     env_file:
       - .env
