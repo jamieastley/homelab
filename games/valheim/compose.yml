@@ -96,7 +96,7 @@ services:
         hex:Smoothbrain-GapFiller-1.0.7
         hex:Smoothbrain-Groups-1.2.11
         hex:Smoothbrain-Guilds-1.1.14
-        hex:Smoothbrain-Jewelcrafting-2.0.8
+        hex:Smoothbrain-Jewelcrafting-2.0.9
         hex:Smoothbrain-Lumberjacking-1.0.7
         hex:Smoothbrain-Mining-1.1.7
         hex:Smoothbrain-Network-1.1.1
