@@ -1,14 +1,23 @@
 init:
 	echo "#TODO: add required env vars" > .env
+	# Required
 	echo "CF_API_EMAIL=\"\"" >> .env
 	echo "CF_DOMAIN=\"\"" >> .env
+	echo "PROJECT_PREFIX=\"homelab\"" >> .env
+	echo "TAILSCALE_NETWORK=\"homelab_tailscale\"" >> .env
+	echo "TAILSCALE_STATE_VOLUME=\"homelab_tailscale\"" >> .env
+	echo "TAILSCALE_CERTS_VOLUME=\"homelab_traefik_certs\"" >> .env
+	echo "TAILSCALE_INSTANCE=\"homelab\"" >> .env
+	echo "TS_HOSTNAME=\"homelab\"" >> .env
+	# Optional
 	echo "ACME_CA_SERVER=\"https://acme-v02.api.letsencrypt.org/directory\"" >> .env
 	echo "ACME_STORAGE=\"/certs/acme.json\"" >> .env
+	echo "ARCANE_SUBDOMAIN=\"arcane.ts\"" >> .env
 	echo "TRAEFIK_SUBDOMAIN=\"traefik.ts\"" >> .env
+	# Secrets
 	echo "TODO: ts_authkey" > secrets/ts_authkey
 	echo "TODO: cf_dns_api_token" > secrets/cf_dns_api_token
 	echo "TODO: arcane_encryption_key" > secrets/arcane_encryption_key
-	echo "TODO: arcane_jwt_secret" > secrets/arcane_jwt_secret
 	make create_volumes
 
 create_volumes:
