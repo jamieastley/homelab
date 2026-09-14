@@ -15,10 +15,9 @@ external Docker volumes and should be created before running `docker compose up`
 
 ### Client-side only
 
-- https://thunderstore.io/c/valheim/p/OdinPlus/QuickTeleport/
-- https://thunderstore.io/c/valheim/p/Azumatt/CurrencyPocket/
-- https://thunderstore.io/c/valheim/p/ComfyMods/SearsCatalog/
-- https://thunderstore.io/c/valheim/p/Azumatt/Recipe_Description_Expansion/
-- https://thunderstore.io/c/valheim/p/Azumatt/AzuHoverStats/
-- https://thunderstore.io/c/valheim/p/TastyChickenLegs/RecyclePlus/
-- https://thunderstore.io/c/valheim/p/Azumatt/Minimal_UI/
+- https://valheim.hexium.gg/mods/Azumatt/ItemCompare
+- https://valheim.hexium.gg/mods/Azumatt/AzuHoverStats
+- https://valheim.hexium.gg/mods/Azumatt/CurrencyPocket
+- https://valheim.hexium.gg/mods/Azumatt/Minimal_UI
+- https://valheim.hexium.gg/mods/Azumatt/TooltipExpansion
+- https://valheim.hexium.gg/mods/Azumatt/Recipe_Description_Expansion
