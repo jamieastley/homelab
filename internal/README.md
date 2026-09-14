@@ -1,6 +1,7 @@
 # Homelab - Internal
 
-If running this Compose stack for the first time, run the following command to initialise the required `.env` file:
+If running this Compose stack for the first time, run the following command to initialise the
+required `.env` file:
 
 ```shell
 make init
