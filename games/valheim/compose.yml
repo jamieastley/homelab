@@ -121,7 +121,7 @@ services:
         ts:VentureValheim-Venture_Multiplayer_Tweaks-1.0.0
 
     networks:
-      - games_server_tailscale
+      - tailscale
     labels:
       - tailscale=true
       - traefik.enable=true
@@ -152,8 +152,14 @@ volumes:
   valheim_backups:
     name: valheim_backups
     external: true
+  tailscale:
+    name: valheim_tailscale
+    external: true
+  traefik_certs:
+    name: valheim_traefik_certs
+    external: true
 
 networks:
-  games_server_tailscale:
-    name: games_server_tailscale
+  tailscale:
+    name: valheim_tailscale
     external: true
