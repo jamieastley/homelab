@@ -5,9 +5,9 @@ services:
     image: busybox:1.38.0
     command: [ "sh", "-c", "chown -R 1000:1000 /home/steam/.config/unity3d/IronGate/Valheim /home/steam" ]
     volumes:
-      - saves
-      - server-data
-      - backups
+      - saves:/home/steam/.config/unity3d/IronGate/Valheim
+      - server_data:/home/steam/valheim
+      - backups:/home/steam/backups
       - ./mod_configs:/home/steam/valheim/BepInEx/config
     restart: "no"
 
@@ -76,9 +76,9 @@ services:
       - "2456-2458:2456-2458/udp"
       - "3000:3000"
     volumes:
-      - saves
-      - server-data
-      - backups
+      - saves:/home/steam/.config/unity3d/IronGate/Valheim
+      - server_data:/home/steam/valheim
+      - backups:/home/steam/backups
       - ./mod_configs:/home/steam/valheim/BepInEx/config
     environment:
       PORT: 2456
