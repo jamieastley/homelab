@@ -11,16 +11,13 @@ make init
 
 Create a `.env` file in this directory. The following variables are required:
 
-| Variable                 | Description                                   | Example                 |
-|--------------------------|-----------------------------------------------|-------------------------|
-| `CF_API_EMAIL`           | Cloudflare account email (ACME DNS challenge) | `someone@example.com`   |
-| `CF_DOMAIN`              | Base domain for Traefik routes                | `example.com`           |
-| `PROJECT_PREFIX`         | Prefix for container names                    | `homelab`               |
-| `TAILSCALE_NETWORK`      | External Docker network name                  | `homelab_tailscale`     |
-| `TAILSCALE_STATE_VOLUME` | External volume for Tailscale state           | `homelab_tailscale`     |
-| `TRAEFIK_CERTS_VOLUME`   | External volume for ACME certificates         | `homelab_traefik_certs` |
-| `TRAEFIK_INSTANCE`       | Docker provider constraint label value        | `homelab`               |
-| `TS_HOSTNAME`            | Tailscale hostname for this host              | `homelab`               |
+| Variable           | Description                                   | Example               |
+|--------------------|-----------------------------------------------|-----------------------|
+| `CF_API_EMAIL`     | Cloudflare account email (ACME DNS challenge) | `someone@example.com` |
+| `CF_DOMAIN`        | Base domain for Traefik routes                | `example.com`         |
+| `PROJECT_PREFIX`   | Prefix for container names                    | `homelab`             |
+| `TRAEFIK_INSTANCE` | Docker provider constraint label value        | `homelab`             |
+| `TS_HOSTNAME`      | Tailscale hostname for this host              | `homelab`             |
 
 ### Optional
 
@@ -56,6 +53,10 @@ The external Docker network `homelab_tailscale` must also exist:
 ```sh
 docker network create homelab_tailscale
 ```
+
+> [!IMPORTANT]
+> Volume and network model IDs for `traefik` and `tailscale` must match what is defined in the
+> shared compose file, but their name can be customised on a per-project basis.
 
 ## Secrets
 

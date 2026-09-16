@@ -1,8 +1,5 @@
 name: homelab
 services:
-  # Instance-specific values come from .env (see that file for required vars).
-  # NOTE: `extends` REPLACES sequences (command/volumes/labels) rather than
-  # merging them — any override here must repeat the full list from the base.
   tailscale:
     extends:
       file: ../shared/tailscale-traefik.compose.yml
@@ -26,7 +23,7 @@ services:
     ports:
       - "3552:3552"
     networks:
-      - homelab_tailscale
+      - tailscale
     secrets:
       - arcane_encryption_key
     volumes:
@@ -63,11 +60,12 @@ secrets:
   arcane_encryption_key:
     file: ./secrets/arcane_encryption_key
 
+# Model IDs align with what is defined in the base compose
 volumes:
-  homelab_tailscale:
+  tailscale:
     name: homelab_tailscale
     external: true
-  homelab_traefik_certs:
+  traefik_certs:
     name: homelab_traefik_certs
     external: true
   arcane_data:
@@ -78,6 +76,6 @@ volumes:
     external: true
 
 networks:
-  homelab_tailscale:
+  tailscale:
     name: homelab_tailscale
     external: true

@@ -1,6 +1,9 @@
 .env
 .idea
 
+# 1Password
+**/.op/**
+
 # Project files
 hytale-data/
 secrets/
