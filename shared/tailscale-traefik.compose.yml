@@ -9,14 +9,12 @@
 #   extending project.
 # - Top-level secrets/volumes/networks below only satisfy base-file validation;
 #   they are NOT merged into extending projects — each project must declare its
-#   own top-level secrets/volumes/networks.
+#   own top-level secrets/volumes/networks, and the model IDs must align with
+#   what is defined below.
 #
 # Required env vars per project (.env):
 #   TS_HOSTNAME             e.g. "homelab" | "games-server"
 #   PROJECT_PREFIX          e.g. "homelab" | "games_server"
-#   TAILSCALE_STATE_VOLUME  e.g. "homelab_tailscale"
-#   TAILSCALE_NETWORK       e.g. "homelab_tailscale"
-#   TRAEFIK_CERTS_VOLUME    e.g. "homelab_traefik_certs"
 #   TRAEFIK_INSTANCE        e.g. "homelab" | "games"
 #   TRAEFIK_SUBDOMAIN       e.g. "traefik.ts" | "traefik"
 #   CF_API_EMAIL, CF_DOMAIN, ACME_CA_SERVER, ACME_STORAGE (as before)
@@ -38,14 +36,14 @@ services:
     healthcheck:
       test: [ "CMD", "wget", "--spider", "-q", "http://127.0.0.1:9002/healthz" ]
     volumes:
-      - ${TAILSCALE_STATE_VOLUME}:/var/lib/tailscale
       - /dev/net/tun:/dev/net/tun
+      - tailscale:/var/lib/tailscale
     cap_add:
       - NET_ADMIN
     security_opt:
       - no-new-privileges:true
     networks:
-      - ${TAILSCALE_NETWORK}
+      - tailscale
     restart: unless-stopped
 
   traefik:
@@ -68,8 +66,8 @@ services:
     network_mode: service:tailscale
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket to watch for Traefik
-      - ${TRAEFIK_CERTS_VOLUME}:/certs
       - ./traefik:/etc/traefik/
+      - traefik_certs:/certs
     command:
       - --accesslog=true
       - --api.insecure=true
@@ -121,14 +119,14 @@ secrets:
     environment: CF_DNS_API_TOKEN_PLACEHOLDER
 
 volumes:
-  tailscale_state:
-    name: ${TAILSCALE_STATE_VOLUME}
+  tailscale:
+    name: tailscale
     external: true
   traefik_certs:
-    name: ${TRAEFIK_CERTS_VOLUME}
+    name: traefik_certs
     external: true
 
 networks:
   tailscale:
-    name: ${TAILSCALE_NETWORK}
+    name: tailscale
     external: true
