@@ -5,7 +5,7 @@ services:
     image: busybox:1.38.0
     command: [ "sh", "-c", "chown -R 1000:1000 /home/steam/.config/unity3d/IronGate/Valheim /home/steam" ]
     volumes:
-      - saves
+      - valhalla-saves
       - server-data
       - backups
       - ./mod_configs:/home/steam/valheim/BepInEx/config
@@ -76,7 +76,7 @@ services:
       - "2456-2458:2456-2458/udp"
       - "3000:3000"
     volumes:
-      - saves
+      - valhalla-saves
       - server-data
       - backups
       - ./mod_configs:/home/steam/valheim/BepInEx/config
@@ -193,7 +193,7 @@ secrets:
     file: ./secrets/cf_dns_api_token
 
 volumes:
-  saves:
+  valhalla-saves:
     name: valhalla-saves
     external: true
   server-data:
