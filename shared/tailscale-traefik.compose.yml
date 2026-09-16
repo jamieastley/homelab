@@ -24,11 +24,11 @@ services:
     hostname: ${TS_HOSTNAME}
     container_name: ${PROJECT_PREFIX}_tailscale
     secrets:
-      - ts_authkey
+      - ts-authkey
     # Replace TS_AUTHKEY with new file env var when tailscale adds support
     # https://github.com/tailscale/tailscale/issues/14210#issuecomment-4185439890
     environment:
-      TS_AUTHKEY: file:/run/secrets/ts_authkey
+      TS_AUTHKEY: file:/run/secrets/ts-authkey
       TS_STATE_DIR: "var/lib/tailscale"
       TS_USERSPACE: "false"
       TS_EXTRA_ARGS: "--ssh"
@@ -55,7 +55,7 @@ services:
     security_opt:
       - no-new-privileges:true
     secrets:
-      - cf_dns_api_token
+      - cf-dns-api-token
     environment:
       TZ: "Australia/Sydney"
       CF_API_EMAIL: ${CF_API_EMAIL}
@@ -67,7 +67,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket to watch for Traefik
       - ./traefik:/etc/traefik/
-      - traefik_certs:/certs
+      - traefik-certs:/certs
     command:
       - --accesslog=true
       - --api.insecure=true
@@ -75,7 +75,7 @@ services:
       - --providers.docker=true
       - --providers.docker.exposedbydefault=false
       # will ONLY watch for containers with this label
-      - --providers.docker.constraints=Label(`traefik.instance`,`${TRAEFIK_INSTANCE}`)
+      - --providers.docker.constraints=Label(`traefik.instance`,`${TRAEFIK_INSTANCE:-traefik}`)
       - --providers.file.watch=true
       - --providers.file.directory=/etc/traefik
       - --ping=true
@@ -103,7 +103,7 @@ services:
     labels:
       - tailscale=true
       - traefik.enable=true
-      - traefik.instance=${TRAEFIK_INSTANCE} # watch in expected instance
+      - traefik.instance=${TRAEFIK_INSTANCE:-traefik} # watch in expected instance
       - traefik.http.routers.traefik.rule=Host(`${TRAEFIK_SUBDOMAIN:-traefik.ts}.${CF_DOMAIN}`)
       - traefik.http.routers.traefik.entrypoints=websecure
       - traefik.http.routers.traefik.tls.certresolver=letsencrypt
@@ -113,16 +113,16 @@ services:
 # The declarations below exist only so this file parses standalone; `extends`
 # does not merge top-level elements into the extending project.
 secrets:
-  ts_authkey:
+  ts-authkey:
     environment: TS_AUTHKEY_PLACEHOLDER
-  cf_dns_api_token:
+  cf-dns-api-token:
     environment: CF_DNS_API_TOKEN_PLACEHOLDER
 
 volumes:
   tailscale:
     name: tailscale
     external: true
-  traefik_certs:
+  traefik-certs:
     name: traefik_certs
     external: true
 
