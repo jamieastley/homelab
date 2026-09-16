@@ -36,7 +36,7 @@ services:
       - valheim_saves:/home/steam/.config/unity3d/IronGate/Valheim
       - valheim_server_data:/home/steam/valheim
       - valheim_backups:/home/steam/backups
-      - valheim_mod_configs:/home/steam/valheim/BepInEx/config
+      - ./mod_configs:/home/steam/valheim/BepInEx/config
     environment:
       PORT: 2456
       NAME: ${VALHEIM_WORLD_NAME}
@@ -151,9 +151,6 @@ volumes:
     external: true
   valheim_backups:
     name: valheim_backups
-    external: true
-  valheim_mod_configs:
-    name: valheim_mod_configs
     external: true
 
 networks:
