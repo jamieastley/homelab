@@ -4,6 +4,9 @@
 *.log
 *.tmp
 
+# 1Password
+**/.op/**
+
 # Project files
 hytale-data/
 dist/
