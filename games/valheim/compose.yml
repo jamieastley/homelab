@@ -56,9 +56,9 @@ services:
         hex:Azumatt-AAABuildMenu-1.0.4
         hex:Azumatt-AzuAutoStore-3.1.4
         hex:Azumatt-AzuClock-1.1.0
-        hex:Azumatt-AzuContainerSizes-1.1.5
-        hex:Azumatt-AzuCraftyBoxes-1.8.19
-        hex:Azumatt-AzuExtendedPlayerInventory-2.4.14
+        hex:Azumatt-AzuContainerSizes-1.1.7
+        hex:Azumatt-AzuCraftyBoxes-1.8.20
+        hex:Azumatt-AzuExtendedPlayerInventory-2.5.0
         hex:Azumatt-AzuMiscPatches-1.2.9
         hex:Azumatt-AzuWearNTearPatches-1.0.9
         hex:Azumatt-AzuWorkbenchTweaks-1.0.7
@@ -70,7 +70,7 @@ services:
         hex:Azumatt-Recycle_N_Reclaim-1.4.4
         hex:Azumatt-SaveCrossbowState-1.0.3
         hex:Azumatt-WardIsLove-4.0.0
-        hex:Azumatt-Where_You_At-1.0.12
+        hex:Azumatt-Where_You_At-1.0.13
         hex:blacks7ar-BeeKeeper-1.0.9
         hex:blacks7ar-Endurance-1.1.2
         hex:blacks7ar-Explorer-1.1.6
