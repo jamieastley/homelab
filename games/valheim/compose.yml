@@ -53,6 +53,7 @@ services:
       SCHEDULED_RESTART: 1
       SCHEDULED_RESTART_SCHEDULE: "0 4 * * *" # Every day at 4am
       TYPE: "BepInEx"
+      MODIFIERS: "resources=more,raids=less,portals=casual"
       MODS: |
         ts:Advize-Armoire-1.2.1
         ts:Advize-PlantEverything-1.21.2
