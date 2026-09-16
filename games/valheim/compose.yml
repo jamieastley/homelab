@@ -12,6 +12,13 @@ services:
       - valheim_mod_configs:/home/steam/valheim/BepInEx/config
     restart: "no"
 
+  traefik:
+    extends:
+      file: ../shared/tailscale-traefik.compose.yml
+      service: traefik
+    env_file:
+      - .env
+
   server:
     image: mbround18/valheim:3.8.4
     container_name: valheim_server
