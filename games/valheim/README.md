@@ -7,9 +7,8 @@ external Docker volumes and should be created before running `docker compose up`
 
 ## Getting started
 
-- create `adminlist.txt`, populate with [steamID64](https://steamid.io/) _on separate lines_ and place file in root of `valheim_saves` volume.
-- Upload required mod configs to root of `valheim_mod_configs` volume
-- ensure `init_permissions` container has been executed prior to (re)starting server container
+- create `adminlist.txt`, populate with [steamID64](https://steamid.io/) _on separate lines_ and place file in root of `saves` volume.
+- ensure `init-permissions` container has been executed prior to (re)starting server container
 
 ## Mods to add
 
@@ -17,6 +16,7 @@ external Docker volumes and should be created before running `docker compose up`
 
 - https://valheim.hexium.gg/mods/Azumatt/ItemCompare
 - https://valheim.hexium.gg/mods/Azumatt/AzuHoverStats
+- https://valheim.hexium.gg/mods/Azumatt/ChangeOfScenery
 - https://valheim.hexium.gg/mods/Azumatt/CurrencyPocket
 - https://valheim.hexium.gg/mods/Azumatt/Minimal_UI
 - https://valheim.hexium.gg/mods/Azumatt/TooltipExpansion
