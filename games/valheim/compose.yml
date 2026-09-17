@@ -11,7 +11,7 @@ services:
       - saves:/home/steam/.config/unity3d/IronGate/Valheim
       - server_data:/home/steam/valheim
       - backups:/home/steam/backups
-      - ./mod_configs:/home/steam/valheim/BepInEx/config
+      - mod_configs:/home/steam/valheim/BepInEx/config
     restart: "no"
 
   tailscale:
@@ -83,7 +83,7 @@ services:
       - saves:/home/steam/.config/unity3d/IronGate/Valheim
       - server_data:/home/steam/valheim
       - backups:/home/steam/backups
-      - ./mod_configs:/home/steam/valheim/BepInEx/config
+      - mod_configs:/home/steam/valheim/BepInEx/config
     environment:
       PORT: 2456
       NAME: "Valhalla"
@@ -205,6 +205,9 @@ volumes:
     external: true
   backups:
     name: valhalla_backups
+    external: true
+  mod_configs:
+    name: valhalla_mod_configs
     external: true
   tailscale:
     name: valhalla_tailscale
