@@ -25,11 +25,11 @@ services:
     networks:
       - tailscale
     secrets:
-      - arcane-encryption-key
+      - arcane_encryption_key
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - arcane-data:/app/data
-      - arcane-backups:/backups
+      - arcane_data:/app/data
+      - arcane_backups:/backups
       - ../games/hytale:/app/data/projects/hytale
       - ../games/valheim:/app/data/projects/valheim
       - ../games/ts_traefik:/app/data/projects/ts_traefik
@@ -53,11 +53,11 @@ services:
       - traefik.http.services.arcane.loadbalancer.server.port=3552
 
 secrets:
-  ts-authkey:
+  ts_authkey:
     file: ./secrets/ts_authkey
-  cf-dns-api-token:
+  cf_dns_api_token:
     file: ./secrets/cf_dns_api_token
-  arcane-encryption-key:
+  arcane_encryption_key:
     file: ./secrets/arcane_encryption_key
 
 # Model IDs align with what is defined in the base compose
@@ -65,13 +65,13 @@ volumes:
   tailscale:
     name: homelab_tailscale
     external: true
-  traefik-certs:
+  traefik_certs:
     name: homelab_traefik_certs
     external: true
-  arcane-data:
+  arcane_data:
     name: arcane_data
     external: true
-  arcane-backups:
+  arcane_backups:
     name: arcane_backups
     external: true
 

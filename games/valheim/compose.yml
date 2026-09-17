@@ -1,12 +1,15 @@
-name: valhalla-valheim
+name: valhalla_valheim
 services:
 
-  init-permissions:
+  # TODO - revert back to underscores, investigate mod download rate limits
+
+  init_permissions:
     image: busybox:1.38.0
+    container_name: "valhalla_init_permissions"
     command: [ "sh", "-c", "chown -R 1000:1000 /home/steam/.config/unity3d/IronGate/Valheim /home/steam" ]
     volumes:
       - saves:/home/steam/.config/unity3d/IronGate/Valheim
-      - server-data:/home/steam/valheim
+      - server_data:/home/steam/valheim
       - backups:/home/steam/backups
       - ./mod_configs:/home/steam/valheim/BepInEx/config
     restart: "no"
@@ -66,6 +69,7 @@ services:
 
   server:
     image: mbround18/valheim:3.8.4
+    container_name: "valhalla_server"
     user: "1000:1000"
     stop_signal: SIGINT
     cap_drop:
@@ -77,7 +81,7 @@ services:
       - "3000:3000"
     volumes:
       - saves:/home/steam/.config/unity3d/IronGate/Valheim
-      - server-data:/home/steam/valheim
+      - server_data:/home/steam/valheim
       - backups:/home/steam/backups
       - ./mod_configs:/home/steam/valheim/BepInEx/config
     environment:
@@ -170,7 +174,7 @@ services:
       - tailscale=true
       - traefik.enable=true
       - traefik.instance=valhalla # MUST match instance label defined in traefik service
-      - traefik.docker.network=valhalla-tailscale # Ensure traefik is attached to the valhalla-tailscale network
+      - traefik.docker.network=valhalla_tailscale # Ensure traefik is attached to the valhalla_tailscale network
       - traefik.http.routers.huginn.rule=Host(`huginn.valhalla.${CF_DOMAIN}`)
       - traefik.http.routers.huginn.entrypoints=websecure
       - traefik.http.routers.huginn.tls=true
@@ -187,28 +191,28 @@ services:
       - traefik.udp.services.valheim3.loadbalancer.server.port=2458
 
 secrets:
-  ts-authkey:
+  ts_authkey:
     file: ./secrets/ts_authkey
-  cf-dns-api-token:
+  cf_dns_api_token:
     file: ./secrets/cf_dns_api_token
 
 volumes:
   saves:
-    name: valhalla-saves
+    name: valhalla_saves
     external: true
-  server-data:
-    name: valhalla-server-data
+  server_data:
+    name: valhalla_server_data
     external: true
   backups:
-    name: valhalla-backups
+    name: valhalla_backups
     external: true
   tailscale:
-    name: valhalla-tailscale
+    name: valhalla_tailscale
     external: true
-  traefik-certs:
-    name: valhalla-traefik-certs
+  traefik_certs:
+    name: valhalla_traefik_certs
     external: true
 
 networks:
   tailscale:
-    name: valhalla-tailscale # Set explicitly as it's referenced in traefik label
+    name: valhalla_tailscale # Set explicitly as it's referenced in traefik label
