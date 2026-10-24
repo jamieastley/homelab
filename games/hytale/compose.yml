@@ -1,7 +1,7 @@
 name: hytale
 services:
   auth:
-    image: hybrowse/hytale-session-token-broker:1.0.0
+    image: hybrowse/hytale-session-token-broker:1.0.1
     container_name: hytale_auth
     env_file:
       - .env
