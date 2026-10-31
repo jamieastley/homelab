@@ -47,7 +47,7 @@ services:
     restart: unless-stopped
 
   traefik:
-    image: traefik:v3.7.13
+    image: traefik:v3.7.17
     container_name: ${PROJECT_PREFIX}_traefik
     restart: unless-stopped
     cap_drop:
