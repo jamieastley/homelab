@@ -34,7 +34,7 @@ services:
     restart: "no"
 
   server:
-    image: hybrowse/hytale-server:1.1.0
+    image: hybrowse/hytale-server:1.3.0
     container_name: hytale_server
     user: "1000:1000"
     depends_on:
