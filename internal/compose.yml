@@ -58,16 +58,7 @@ services:
     restart: unless-stopped
     secrets:
       - pihole_webpassword
-    ports:
-      # DNS Ports
-      - "53:53/tcp"
-      - "53:53/udp"
-      # Default HTTP port
-      - "80:80/tcp"
-      - "443:443/tcp" # By default, FTL will generate a self-signed certificate
     network_mode: host
-    cap_add:
-      - NET_ADMIN
     volumes:
       - pihole_logs:/var/log/pihole
       - pihole_data:/etc/pihole
@@ -76,7 +67,6 @@ services:
       TZ: "Australia/Sydney"
       WEBPASSWORD_FILE: pihole_webpassword
       FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
-      FTLCONF_dns_listeningMode: 'ALL'
 
 secrets:
   ts_authkey:
