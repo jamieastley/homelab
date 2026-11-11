@@ -58,6 +58,13 @@ services:
     restart: unless-stopped
     secrets:
       - pihole_webpassword
+    ports:
+      # DNS Ports
+      - "53:53/tcp"
+      - "53:53/udp"
+      # Default HTTP port
+      - "80:80/tcp"
+      - "443:443/tcp" # By default, FTL will generate a self-signed certificate
     network_mode: "service:tailscale" # Use Tailscale network for Pi-hole
     depends_on:
       - tailscale
