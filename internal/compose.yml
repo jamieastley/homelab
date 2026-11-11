@@ -52,6 +52,29 @@ services:
       - traefik.http.routers.arcane.tls.certresolver=letsencrypt
       - traefik.http.services.arcane.loadbalancer.server.port=3552
 
+  pihole:
+    image: pihole/pihole:2026.10.1
+    container_name: pihole
+    restart: unless-stopped
+    secrets:
+      - pihole_webpassword
+    ports:
+      # DNS Ports
+      - "53:53/tcp"
+      - "53:53/udp"
+      # Default HTTP port
+      - "80:80/tcp"
+      - "443:443/tcp" # By default, FTL will generate a self-signed certificate
+    network_mode: host
+    volumes:
+      - pihole_logs:/var/log/pihole
+      - pihole_data:/etc/pihole
+      - pihole_dnsmasq_data:/etc/dnsmasq.d
+    environment:
+      TZ: "Australia/Sydney"
+      WEBPASSWORD_FILE: pihole_webpassword
+      FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
+
 secrets:
   ts_authkey:
     file: ./secrets/ts_authkey
@@ -59,6 +82,8 @@ secrets:
     file: ./secrets/cf_dns_api_token
   arcane_encryption_key:
     file: ./secrets/arcane_encryption_key
+  pihole_webpassword:
+    file: ./secrets/pihole_webpassword
 
 # Model IDs align with what is defined in the base compose
 volumes:
@@ -73,6 +98,15 @@ volumes:
     external: true
   arcane_backups:
     name: arcane_backups
+    external: true
+  pihole_logs:
+    name: pihole_logs
+    external: true
+  pihole_data:
+    name: pihole_data
+    external: true
+  pihole_dnsmasq_data:
+    name: pihole_dnsmasq_data
     external: true
 
 networks:
