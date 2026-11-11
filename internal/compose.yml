@@ -76,7 +76,7 @@ services:
       TZ: "Australia/Sydney"
       WEBPASSWORD_FILE: pihole_webpassword
       FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
-      DNSMASQ_LISTENING: 'all'
+      FTLCONF_dns_listeningMode: 'ALL'
 
 secrets:
   ts_authkey:
