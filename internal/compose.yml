@@ -6,6 +6,10 @@ services:
       service: tailscale
     env_file:
       - .env
+    environment:
+      TS_ROUTES: "${PIHOLE_LAN_IP}/32"
+    sysctls:
+      net.ipv4.ip_forward: "1"
 
   traefik:
     extends:
