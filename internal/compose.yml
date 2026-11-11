@@ -65,9 +65,7 @@ services:
       # Default HTTP port
       - "80:80/tcp"
       - "443:443/tcp" # By default, FTL will generate a self-signed certificate
-    network_mode: "service:tailscale" # Use Tailscale network for Pi-hole
-    depends_on:
-      - tailscale
+    network_mode: host
     volumes:
       - pihole_logs:/var/log/pihole
       - pihole_data:/etc/pihole
