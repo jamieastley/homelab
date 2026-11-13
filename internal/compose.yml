@@ -17,8 +17,6 @@ services:
       service: traefik
     env_file:
       - .env
-    extra_hosts:
-      - "host.docker.internal=${PIHOLE_LAN_IP}"
 
   arcane:
     image: ghcr.io/getarcaneapp/manager:v2.17.3
@@ -64,13 +62,20 @@ services:
     restart: unless-stopped
     secrets:
       - pihole_webpassword
-    network_mode: host
+    networks:
+      - tailscale
+    ports:
+      - "${PIHOLE_LAN_IP}:53:53/tcp"
+      - "${PIHOLE_LAN_IP}:53:53/udp"
+      - "127.0.0.1:53:53/tcp"
+      - "127.0.0.1:53:53/udp"
+      - "8081:80/tcp"
     volumes:
       - pihole_logs:/var/log/pihole
       - pihole_data:/etc/pihole
       - pihole_dnsmasq_data:/etc/dnsmasq.d
     healthcheck:
-      test: ["CMD", "dig", "+time=2", "+tries=1", "@127.0.0.1", "pi.hole"]
+      test: [ "CMD", "dig", "+time=2", "+tries=1", "@127.0.0.1", "pi.hole" ]
       interval: 30s
       timeout: 5s
       retries: 3
@@ -79,6 +84,7 @@ services:
       TZ: "Australia/Sydney"
       WEBPASSWORD_FILE: pihole_webpassword
       FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
+      FTLCONF_dns_listeningMode: ALL
     labels:
       - tailscale=true
       - traefik.enable=true
