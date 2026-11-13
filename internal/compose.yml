@@ -71,6 +71,14 @@ services:
       TZ: "Australia/Sydney"
       WEBPASSWORD_FILE: pihole_webpassword
       FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
+    labels:
+      - tailscale=true
+      - traefik.enable=true
+      - traefik.instance=${TRAEFIK_INSTANCE:-homelab} # watch in expected instance
+      - traefik.http.routers.pihole.rule=Host(`${PIHOLE_SUBDOMAIN:-pihole.ts}.${CF_DOMAIN}`)
+      - traefik.http.routers.pihole.entrypoints=websecure
+      - traefik.http.routers.pihole.tls.certresolver=letsencrypt
+      - traefik.http.services.pihole.loadbalancer.server.port=80
 
 secrets:
   ts_authkey:
