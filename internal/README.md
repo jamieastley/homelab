@@ -7,6 +7,15 @@ required `.env` file:
 make init
 ```
 
+## DNS configuration
+
+The following must be ran once on the host machine so `pihole` can act as the systems DNS forwarder:
+
+```shell
+sudo systemctl disable systemd-resolved.service 
+sudo service systemd-resolved stop
+```
+
 ## Environment Variables
 
 Create a `.env` file in this directory. The following variables are required:
