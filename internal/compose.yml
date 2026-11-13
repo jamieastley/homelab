@@ -59,6 +59,7 @@ services:
   pihole:
     image: pihole/pihole:2026.11.0
     container_name: pihole
+    hostname: homelab
     restart: unless-stopped
     secrets:
       - pihole_webpassword
