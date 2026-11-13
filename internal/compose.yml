@@ -17,6 +17,8 @@ services:
       service: traefik
     env_file:
       - .env
+    extra_hosts:
+      - "host.docker.internal=${PIHOLE_LAN_IP}"
 
   arcane:
     image: ghcr.io/getarcaneapp/manager:v2.17.3
