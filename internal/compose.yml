@@ -86,7 +86,9 @@ services:
       WEBPASSWORD_FILE: pihole_webpassword
       FTLCONF_dns_upstreams: 1.1.1.1;1.0.0.1
       FTLCONF_dns_listeningMode: ALL
-      FTLCONF_dns_hostRecord: "homelab,${PIHOLE_LAN_IP}"
+      FTLCONF_dns_hostRecord: "${FTLCONF_DNS_HOSTRECORD}"
+      FTLCONF_dns_reply_host_force4: "true"
+      FTLCONF_dns_reply_host_IPv4: "${PIHOLE_LAN_IP}"
     labels:
       - tailscale=true
       - traefik.enable=true
