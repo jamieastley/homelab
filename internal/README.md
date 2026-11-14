@@ -9,24 +9,38 @@ make init
 
 ## DNS configuration
 
-The following must be ran once on the host machine so `pihole` can act as the systems DNS forwarder:
+Pi-hole publishes DNS on the host's LAN IP and loopback. Configure the host's network
+manager to use Pi-hole as its DNS server if host queries should pass through it.
+If `/etc/resolv.conf` points to the `systemd-resolved` stub at `127.0.0.53`, keep
+that service enabled and running:
 
 ```shell
-sudo systemctl disable systemd-resolved.service 
-sudo service systemd-resolved stop
+sudo systemctl enable --now systemd-resolved
 ```
+
+The LAN dashboard is available at `http://<host-lan-ip>:8081/admin/`. See
+[ADR 0001](../docs/adr/0001-pihole-docker-networking.md) for the networking
+decisions and access restrictions.
+
+Pi-hole serves `homelab` and `homelab.<router_hostname>` at `PIHOLE_LAN_IP`. The
+qualified name matches the LAN's `<router_hostname>` search domain; update the record
+if that search domain changes. Pi-hole's automatic IPv4 replies for its own
+hostname and `pi.hole` are pinned to `PIHOLE_LAN_IP` so clients receive the LAN
+address rather than the container's Docker address.
 
 ## Environment Variables
 
 Create a `.env` file in this directory. The following variables are required:
 
-| Variable           | Description                                   | Example               |
-|--------------------|-----------------------------------------------|-----------------------|
-| `CF_API_EMAIL`     | Cloudflare account email (ACME DNS challenge) | `someone@example.com` |
-| `CF_DOMAIN`        | Base domain for Traefik routes                | `example.com`         |
-| `PROJECT_PREFIX`   | Prefix for container names                    | `homelab`             |
-| `TRAEFIK_INSTANCE` | Docker provider constraint label value        | `homelab`             |
-| `TS_HOSTNAME`      | Tailscale hostname for this host              | `homelab`             |
+| Variable                 | Description                                   | Example               |
+|--------------------------|-----------------------------------------------|-----------------------|
+| `CF_API_EMAIL`           | Cloudflare account email (ACME DNS challenge) | `someone@example.com` |
+| `CF_DOMAIN`              | Base domain for Traefik routes                | `example.com`         |
+| `PROJECT_PREFIX`         | Prefix for container names                    | `homelab`             |
+| `TRAEFIK_INSTANCE`       | Docker provider constraint label value        | `homelab`             |
+| `TS_HOSTNAME`            | Tailscale hostname for this host              | `homelab`             |
+| `PIHOLE_LAN_IP`          | Host LAN address for Pi-hole DNS and routing  | `192.168.1.10`        |
+| `FTLCONF_DNS_HOSTRECORD` | The DNS host records that Pi-Hole will use    | `homelab`             |
 
 ### Optional
 
@@ -74,3 +88,4 @@ The following files must exist under `./secrets/`:
 - `secrets/ts_authkey` — Tailscale auth key
 - `secrets/cf_dns_api_token` — Cloudflare DNS API token
 - `secrets/arcane_encryption_key` — Arcane encryption key
+- `secrets/pihole_webpassword` — Pi-hole web interface password
