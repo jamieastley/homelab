@@ -20,7 +20,7 @@
 #   CF_API_EMAIL, CF_DOMAIN, ACME_CA_SERVER, ACME_STORAGE (as before)
 services:
   tailscale:
-    image: tailscale/tailscale:v1.102.3
+    image: tailscale/tailscale:v1.104.7
     hostname: ${TS_HOSTNAME}
     container_name: ${PROJECT_PREFIX}_tailscale # TODO: rename
     secrets:
