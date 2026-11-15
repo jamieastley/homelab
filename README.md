@@ -22,3 +22,11 @@
 
 Use the staging CA (`https://acme-staging-v02.api.letsencrypt.org/directory`) and a separate storage
 file (e.g., `/certs/acme-staging.json`) to avoid production rate limits while testing.
+
+## Pi-Hole
+
+### Upgrading the image
+
+Given that Pi-Hole has been configured as the DNS server for the host machine, the new
+image must be manually pulled _before_ recreating the container - failing to do so results
+in stopping the `pihole` service and prevents network access to the host machine.

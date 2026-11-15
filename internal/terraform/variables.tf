@@ -4,6 +4,8 @@ variable "zone_id" {
   sensitive   = true
 }
 
-variable "dns_record_content" {
-  description = "The content of the DNS record"
+variable "pihole_lan_ip" {
+  description = "The LAN IP address of the Pi-hole device."
+  type        = string
+  sensitive   = true
 }
