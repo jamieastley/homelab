@@ -35,10 +35,10 @@ services:
       - ../games/ts_traefik:/app/data/projects/ts_traefik
       - ./:/app/data/projects/internal
     environment:
-      - APP_URL=http://localhost:3552
+      - ARCANE_APP_URL=http://localhost:3552
+      - ARCANE_ENCRYPTION_KEY=file:/run/secrets/arcane_encryption_key
       - PUID=1000
       - PGID=1000
-      - ENCRYPTION_KEY=file:/run/secrets/arcane_encryption_key
       - LOG_LEVEL=info
       - LOG_JSON=false
       - OIDC_ENABLED=false
