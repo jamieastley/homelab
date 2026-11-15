@@ -5,5 +5,10 @@
   ],
   "assignees": [
     "jamieastley"
-  ]
+  ],
+  "docker-compose": {
+    "managerFilePatterns": [
+      "/(^|/)\\.?.*\\.compose\\.ya?ml$/"
+    ]
+  }
 }
