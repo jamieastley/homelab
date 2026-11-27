@@ -19,7 +19,7 @@ services:
       - .env
 
   arcane:
-    image: ghcr.io/getarcaneapp/manager:v3.1.0
+    image: ghcr.io/getarcaneapp/manager:v3.2.0
     container_name: arcane
     restart: unless-stopped
     env_file:
